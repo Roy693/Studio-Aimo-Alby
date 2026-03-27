@@ -1927,6 +1927,7 @@ app.get('/home', (c) => {
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>STUDIO AIMO — Interior Sorcery &amp; Spatial Tailoring</title>
+  <meta name="description" content="Where imagination shapes reality. Bespoke interior design for commercial and private spaces."/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -1955,6 +1956,7 @@ app.get('/home', (c) => {
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a href="#contact" class="header-cta-link">Begin a Project</a>
       <button class="menu-toggle" aria-label="Menu" id="menu-toggle">
         <span></span><span></span>
       </button>
@@ -1963,82 +1965,144 @@ app.get('/home', (c) => {
 
   <!-- ── HERO ── -->
   <section class="hero" id="hero">
-    <!-- Animated blueprint background -->
+    <!-- Animated blueprint background — chalk gold illustration -->
     <div class="hero-bg-lines" aria-hidden="true">
       <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
           <filter id="hchalk">
-            <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" seed="8" result="n"/>
-            <feDisplacementMap in="SourceGraphic" in2="n" scale="1.3" xChannelSelector="R" yChannelSelector="G"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" seed="8" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" xChannelSelector="R" yChannelSelector="G"/>
           </filter>
-          <pattern id="hgrid-fine" width="24" height="24" patternUnits="userSpaceOnUse">
-            <path d="M24 0L0 0 0 24" fill="none" stroke="rgba(200,169,110,0.04)" stroke-width="0.3"/>
+          <filter id="hglow">
+            <feGaussianBlur stdDeviation="3.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <pattern id="hgrid-fine" width="28" height="28" patternUnits="userSpaceOnUse">
+            <path d="M28 0L0 0 0 28" fill="none" stroke="rgba(201,170,111,0.035)" stroke-width="0.3"/>
           </pattern>
-          <pattern id="hgrid-major" width="120" height="120" patternUnits="userSpaceOnUse">
-            <path d="M120 0L0 0 0 120" fill="none" stroke="rgba(200,169,110,0.06)" stroke-width="0.5"/>
+          <pattern id="hgrid-major" width="140" height="140" patternUnits="userSpaceOnUse">
+            <path d="M140 0L0 0 0 140" fill="none" stroke="rgba(201,170,111,0.055)" stroke-width="0.5"/>
           </pattern>
+          <radialGradient id="heroFade" cx="72%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(13,12,10,0)"/>
+            <stop offset="100%" stop-color="rgba(13,12,10,0.96)"/>
+          </radialGradient>
         </defs>
-        <!-- Atmospheric grid -->
+        <!-- Gold-tinted atmospheric grid -->
         <rect width="1440" height="900" fill="url(#hgrid-fine)"/>
         <rect width="1440" height="900" fill="url(#hgrid-major)"/>
-        <!-- Blueprint furniture illustration — right side, low opacity -->
-        <g filter="url(#hchalk)" opacity="0.22" class="hero-illustration">
-          <!-- Room box isometric -->
-          <polygon points="780,580 1100,460 1360,600 1040,720" fill="none" stroke="#c8a96e" stroke-width="0.9"/>
-          <polygon points="1100,460 1360,600 1360,820 1100,680" fill="none" stroke="#c8a96e" stroke-width="0.7"/>
-          <polygon points="780,580 780,800 1040,940 1040,720" fill="none" stroke="#c8a96e" stroke-width="0.7"/>
-          <!-- Tall shelving unit -->
-          <rect x="1270" y="462" width="72" height="296" fill="none" stroke="#c8a96e" stroke-width="0.8"/>
-          <polygon points="1342,462 1372,482 1372,778 1342,758" fill="none" stroke="#c8a96e" stroke-width="0.6"/>
-          <line x1="1270" y1="522" x2="1342" y2="522" stroke="#c8a96e" stroke-width="0.7"/>
-          <line x1="1270" y1="582" x2="1342" y2="582" stroke="#c8a96e" stroke-width="0.7"/>
-          <line x1="1270" y1="642" x2="1342" y2="642" stroke="#c8a96e" stroke-width="0.7"/>
-          <line x1="1270" y1="702" x2="1342" y2="702" stroke="#c8a96e" stroke-width="0.7"/>
-          <!-- Sofa -->
-          <polygon points="820,686 1040,638 1085,666 865,714" fill="none" stroke="#c8a96e" stroke-width="1.0"/>
-          <polygon points="820,686 820,740 865,768 865,714" fill="none" stroke="#c8a96e" stroke-width="0.8"/>
-          <polygon points="1040,638 1085,666 1085,720 1040,692" fill="none" stroke="#c8a96e" stroke-width="0.8"/>
-          <polygon points="820,686 828,642 1048,596 1040,638" fill="none" stroke="#c8a96e" stroke-width="0.9"/>
-          <!-- Coffee table -->
-          <polygon points="868,722 1020,688 1048,706 896,740" fill="none" stroke="#c8a96e" stroke-width="0.9"/>
-          <line x1="878" y1="728" x2="878" y2="788" stroke="#c8a96e" stroke-width="0.7"/>
-          <line x1="1030" y1="706" x2="1030" y2="766" stroke="#c8a96e" stroke-width="0.7"/>
-          <!-- Floor lamp -->
-          <line x1="1150" y1="740" x2="1150" y2="510" stroke="#c8a96e" stroke-width="0.9"/>
-          <path d="M1150,510 Q1150,476 1178,460" fill="none" stroke="#c8a96e" stroke-width="0.8"/>
-          <ellipse cx="1188" cy="454" rx="28" ry="9" fill="none" stroke="#c8a96e" stroke-width="0.9"/>
-          <line x1="1160" y1="454" x2="1162" y2="488" stroke="#c8a96e" stroke-width="0.8"/>
-          <line x1="1216" y1="454" x2="1214" y2="488" stroke="#c8a96e" stroke-width="0.8"/>
-          <ellipse cx="1188" cy="488" rx="22" ry="7" fill="none" stroke="#c8a96e" stroke-width="0.7"/>
-          <!-- Pendant chandelier -->
-          <line x1="960" y1="460" x2="960" y2="520" stroke="#c8a96e" stroke-width="0.8"/>
-          <ellipse cx="960" cy="540" rx="48" ry="16" fill="none" stroke="#c8a96e" stroke-width="1.0"/>
-          <line x1="912" y1="540" x2="924" y2="580" stroke="#c8a96e" stroke-width="0.8"/>
-          <line x1="1008" y1="540" x2="996" y2="580" stroke="#c8a96e" stroke-width="0.8"/>
-          <ellipse cx="960" cy="580" rx="32" ry="10" fill="none" stroke="#c8a96e" stroke-width="0.9"/>
-          <!-- Annotation dimensions -->
-          <line x1="820" y1="830" x2="1100" y2="830" stroke="#c8a96e" stroke-width="0.5" stroke-dasharray="4,5"/>
-          <line x1="820" y1="825" x2="820" y2="835" stroke="#c8a96e" stroke-width="0.6"/>
-          <line x1="1100" y1="825" x2="1100" y2="835" stroke="#c8a96e" stroke-width="0.6"/>
-          <line x1="1380" y1="462" x2="1380" y2="758" stroke="#c8a96e" stroke-width="0.5" stroke-dasharray="4,5"/>
+
+        <!-- Chalk-gold interior illustration — right-side atmospheric -->
+        <g filter="url(#hchalk)" class="hero-illustration">
+          <!-- Grand room isometric frame -->
+          <polygon points="740,560 1060,430 1340,580 1020,710" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="1.1"/>
+          <polygon points="1060,430 1340,580 1340,810 1060,660" fill="none" stroke="rgba(201,170,111,0.36)" stroke-width="0.9"/>
+          <polygon points="740,560 740,790 1020,940 1020,710" fill="none" stroke="rgba(201,170,111,0.32)" stroke-width="0.9"/>
+
+          <!-- Grand sofa — statement piece -->
+          <polygon points="778,668 1010,608 1062,640 830,700" fill="none" stroke="rgba(201,170,111,0.80)" stroke-width="1.4"/>
+          <polygon points="778,668 778,734 830,766 830,700" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="1.1"/>
+          <polygon points="1010,608 1062,640 1062,706 1010,674" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.0"/>
+          <polygon points="778,668 790,616 1022,558 1010,608" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.2"/>
+          <!-- Sofa cushion dividers -->
+          <line x1="862" y1="626" x2="862" y2="712" stroke="rgba(201,170,111,0.38)" stroke-width="0.7"/>
+          <line x1="936" y1="598" x2="936" y2="684" stroke="rgba(201,170,111,0.34)" stroke-width="0.6"/>
+          <!-- Sofa cushion seams -->
+          <line x1="794" y1="640" x2="860" y2="620" stroke="rgba(201,170,111,0.22)" stroke-width="0.4"/>
+          <line x1="870" y1="612" x2="934" y2="592" stroke="rgba(201,170,111,0.20)" stroke-width="0.4"/>
+
+          <!-- Coffee table — marble hairpin -->
+          <polygon points="836,710 1008,666 1040,686 868,730" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.2"/>
+          <polygon points="836,710 836,728 868,748 868,730" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="0.9"/>
+          <polygon points="868,730 868,748 1040,704 1040,686" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.8"/>
+          <!-- Hairpin legs -->
+          <line x1="848" y1="726" x2="844" y2="780" stroke="rgba(201,170,111,0.52)" stroke-width="0.9"/>
+          <line x1="848" y1="726" x2="856" y2="780" stroke="rgba(201,170,111,0.48)" stroke-width="0.8"/>
+          <line x1="1028" y1="690" x2="1024" y2="744" stroke="rgba(201,170,111,0.48)" stroke-width="0.8"/>
+          <line x1="1028" y1="690" x2="1036" y2="744" stroke="rgba(201,170,111,0.44)" stroke-width="0.7"/>
+          <!-- Table decor: candle and book -->
+          <rect x="918" y="669" width="18" height="6" fill="none" stroke="rgba(201,170,111,0.42)" stroke-width="0.6" transform="skewX(-8)"/>
+          <line x1="927" y1="667" x2="927" y2="663" stroke="rgba(201,170,111,0.38)" stroke-width="0.6"/>
+
+          <!-- Floor lamp — arc style -->
+          <ellipse cx="1118" cy="714" rx="20" ry="7" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.1"/>
+          <line x1="1118" y1="707" x2="1114" y2="482" stroke="rgba(201,170,111,0.75)" stroke-width="1.5"/>
+          <path d="M1114,482 Q1114,454 1148,440" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+          <ellipse cx="1162" cy="434" rx="32" ry="10" fill="none" stroke="rgba(201,170,111,0.82)" stroke-width="1.4"/>
+          <line x1="1130" y1="434" x2="1132" y2="468" stroke="rgba(201,170,111,0.72)" stroke-width="1.2"/>
+          <line x1="1194" y1="434" x2="1192" y2="468" stroke="rgba(201,170,111,0.68)" stroke-width="1.1"/>
+          <ellipse cx="1162" cy="468" rx="26" ry="8" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="1.1"/>
+          <!-- Bulb glow -->
+          <circle cx="1162" cy="466" r="5" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="0.9" filter="url(#hglow)"/>
+
+          <!-- Pendant chandelier — statement piece -->
+          <line x1="922" y1="430" x2="922" y2="498" stroke="rgba(201,170,111,0.72)" stroke-width="1.1"/>
+          <ellipse cx="922" cy="518" rx="56" ry="18" fill="none" stroke="rgba(201,170,111,0.82)" stroke-width="1.4"/>
+          <ellipse cx="922" cy="518" rx="42" ry="13" fill="none" stroke="rgba(201,170,111,0.40)" stroke-width="0.6" stroke-dasharray="3,4"/>
+          <line x1="866" y1="518" x2="880" y2="562" stroke="rgba(201,170,111,0.78)" stroke-width="1.2"/>
+          <line x1="978" y1="518" x2="964" y2="562" stroke="rgba(201,170,111,0.74)" stroke-width="1.1"/>
+          <ellipse cx="922" cy="562" rx="38" ry="12" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.2"/>
+          <!-- Chandelier arms + candles -->
+          <line x1="894" y1="508" x2="886" y2="548" stroke="rgba(201,170,111,0.55)" stroke-width="0.9"/>
+          <line x1="950" y1="508" x2="958" y2="548" stroke="rgba(201,170,111,0.52)" stroke-width="0.9"/>
+          <circle cx="886" cy="550" r="3" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="0.8"/>
+          <circle cx="958" cy="550" r="3" fill="none" stroke="rgba(201,170,111,0.52)" stroke-width="0.8"/>
+
+          <!-- Tall shelving unit — right wall -->
+          <rect x="1248" y="436" width="76" height="318" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.1"/>
+          <polygon points="1324,436 1356,458 1356,778 1324,754" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="0.9"/>
+          <polygon points="1248,436 1324,436 1356,458 1280,458" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="0.9"/>
+          <line x1="1248" y1="498" x2="1324" y2="498" stroke="rgba(201,170,111,0.48)" stroke-width="0.7"/>
+          <line x1="1248" y1="562" x2="1324" y2="562" stroke="rgba(201,170,111,0.44)" stroke-width="0.7"/>
+          <line x1="1248" y1="626" x2="1324" y2="626" stroke="rgba(201,170,111,0.42)" stroke-width="0.7"/>
+          <line x1="1248" y1="690" x2="1324" y2="690" stroke="rgba(201,170,111,0.40)" stroke-width="0.6"/>
+          <!-- Books on shelf -->
+          <line x1="1258" y1="452" x2="1258" y2="494" stroke="rgba(201,170,111,0.36)" stroke-width="1.2"/>
+          <line x1="1264" y1="452" x2="1264" y2="494" stroke="rgba(201,170,111,0.32)" stroke-width="0.9"/>
+          <line x1="1270" y1="454" x2="1270" y2="494" stroke="rgba(201,170,111,0.28)" stroke-width="0.8"/>
+
+          <!-- Rug outline -->
+          <polygon points="796,704 1038,644 1072,664 830,724" fill="none" stroke="rgba(201,170,111,0.38)" stroke-width="0.8" stroke-dasharray="8,4"/>
+          <polygon points="808,700 1026,648 1060,666 842,718" fill="none" stroke="rgba(201,170,111,0.22)" stroke-width="0.5" stroke-dasharray="5,5"/>
+
+          <!-- Architectural dimension annotations -->
+          <line x1="758" y1="830" x2="1060" y2="830" stroke="rgba(201,170,111,0.28)" stroke-width="0.5" stroke-dasharray="4,5"/>
+          <line x1="758" y1="824" x2="758" y2="836" stroke="rgba(201,170,111,0.32)" stroke-width="0.7"/>
+          <line x1="1060" y1="824" x2="1060" y2="836" stroke="rgba(201,170,111,0.32)" stroke-width="0.7"/>
+          <polyline points="764,827 758,830 764,833" fill="none" stroke="rgba(201,170,111,0.28)" stroke-width="0.6"/>
+          <polyline points="1054,827 1060,830 1054,833" fill="none" stroke="rgba(201,170,111,0.28)" stroke-width="0.6"/>
+          <line x1="1360" y1="436" x2="1360" y2="756" stroke="rgba(201,170,111,0.24)" stroke-width="0.5" stroke-dasharray="4,5"/>
+          <line x1="1354" y1="436" x2="1366" y2="436" stroke="rgba(201,170,111,0.28)" stroke-width="0.7"/>
+          <line x1="1354" y1="756" x2="1366" y2="756" stroke="rgba(201,170,111,0.28)" stroke-width="0.7"/>
+
+          <!-- Construction axis lines from vanishing point -->
+          <line x1="900" y1="580" x2="758" y2="440" stroke="rgba(201,170,111,0.04)" stroke-width="0.4" stroke-dasharray="2,12"/>
+          <line x1="900" y1="580" x2="1360" y2="440" stroke="rgba(201,170,111,0.04)" stroke-width="0.4" stroke-dasharray="2,12"/>
+          <line x1="900" y1="580" x2="740" y2="800" stroke="rgba(201,170,111,0.035)" stroke-width="0.3" stroke-dasharray="2,12"/>
+          <line x1="900" y1="580" x2="1340" y2="800" stroke="rgba(201,170,111,0.035)" stroke-width="0.3" stroke-dasharray="2,12"/>
+
+          <!-- Fade vignette right edge -->
+          <rect width="1440" height="900" fill="url(#heroFade)"/>
         </g>
       </svg>
     </div>
 
     <div class="hero-content">
-      <div class="hero-eyebrow reveal-up" data-delay="0">
+      <div class="hero-eyebrow">
         <span class="eyebrow-line"></span>
         Interior Sorcery &amp; Spatial Tailoring
       </div>
-      <h1 class="hero-title reveal-up" data-delay="1">
+      <h1 class="hero-title">
         <span class="ht-line">STUDIO</span>
         <span class="ht-line ht-accent">AIMO</span>
       </h1>
-      <p class="hero-sub reveal-up" data-delay="2">
-        Where imagination shapes reality.<br/>
-        Bespoke interior design for<br/>commercial and private spaces.
+      <p class="hero-tagline">
+        Where imagination shapes reality.
       </p>
-      <div class="hero-ctas reveal-up" data-delay="3">
+      <p class="hero-sub">
+        Bespoke interior design for commercial<br/>and private spaces — conjured, not decorated.
+      </p>
+      <div class="hero-ctas">
         <a href="#work" class="btn-primary">
           <span>Explore Work</span>
           <svg viewBox="0 0 20 20" width="14" height="14"><line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" stroke-width="1.3"/><polyline points="12,5 17,10 12,15" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
@@ -2046,7 +2110,7 @@ app.get('/home', (c) => {
         <a href="#contact" class="btn-ghost">Begin a Project</a>
       </div>
       <!-- Stats row -->
-      <div class="hero-stats reveal-up" data-delay="4">
+      <div class="hero-stats">
         <div class="hero-stat">
           <span class="stat-num">12+</span>
           <span class="stat-label">Years of Practice</span>
@@ -2065,6 +2129,7 @@ app.get('/home', (c) => {
     </div>
 
     <div class="hero-scroll-hint" aria-hidden="true">
+      <span class="scroll-label">Scroll</span>
       <span class="scroll-line"></span>
     </div>
   </section>
@@ -2076,32 +2141,34 @@ app.get('/home', (c) => {
       <span>Spatial Tailoring</span><span class="marquee-dot">✦</span>
       <span>STUDIO AIMO</span><span class="marquee-dot">✦</span>
       <span>Bespoke Design</span><span class="marquee-dot">✦</span>
-      <span>Commercial &amp; Private</span><span class="marquee-dot">✦</span>
+      <span>Before &amp; After Transformation</span><span class="marquee-dot">✦</span>
       <span>Where imagination shapes reality</span><span class="marquee-dot">✦</span>
+      <span>Commercial &amp; Private Spaces</span><span class="marquee-dot">✦</span>
       <span>Interior Sorcery</span><span class="marquee-dot">✦</span>
       <span>Spatial Tailoring</span><span class="marquee-dot">✦</span>
       <span>STUDIO AIMO</span><span class="marquee-dot">✦</span>
       <span>Bespoke Design</span><span class="marquee-dot">✦</span>
-      <span>Commercial &amp; Private</span><span class="marquee-dot">✦</span>
+      <span>Before &amp; After Transformation</span><span class="marquee-dot">✦</span>
       <span>Where imagination shapes reality</span><span class="marquee-dot">✦</span>
+      <span>Commercial &amp; Private Spaces</span><span class="marquee-dot">✦</span>
     </div>
   </div>
 
   <!-- ── MANIFESTO BAND ── -->
   <section class="manifesto-band" id="manifesto">
     <div class="manifesto-inner">
-      <p class="manifesto-text reveal-up" data-delay="0">
+      <span class="manifesto-label reveal-up" data-delay="0">The Manifesto</span>
+      <p class="manifesto-text reveal-up" data-delay="1">
         We don't decorate spaces.<br/>
         <em>We conjure them.</em>
       </p>
-      <div class="manifesto-rule reveal-scale" data-delay="1"></div>
-      <p class="manifesto-sub reveal-up" data-delay="2">
+      <div class="manifesto-rule reveal-scale" data-delay="2"></div>
+      <p class="manifesto-sub reveal-up" data-delay="3">
         Every project is an act of transformation — raw space alchemised into lived experience,<br class="br-lg"/>
-        through precision craft, daring vision, and an uncompromising commitment to the extraordinary.
+        through precision craft, daring vision, and an uncompromising commitment to the extraordinary.<br class="br-lg"/>
+        Aesthetics, functionality, and durability in harmony. This is where your story begins.
       </p>
     </div>
-    <!-- Large decorative letter -->
-    <div class="manifesto-bg-letter" aria-hidden="true">A</div>
   </section>
 
   <!-- ── SELECTED WORK ── -->
@@ -2116,42 +2183,67 @@ app.get('/home', (c) => {
       <article class="work-card wc-large reveal-up" data-delay="1">
         <div class="wc-image">
           <div class="wc-svg-placeholder">
-            <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-              <defs><filter id="wchalk1"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.1" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-              <rect width="640" height="480" fill="#161412"/>
-              <g filter="url(#wchalk1)" opacity="0.52">
-                <!-- Isometric room perspective -->
-                <polygon points="80,320 340,220 460,300 200,400" fill="none" stroke="#c8b898" stroke-width="1.3"/>
-                <polygon points="340,220 460,300 460,420 340,340" fill="none" stroke="#c8b898" stroke-width="1.1"/>
-                <polygon points="80,320 80,440 200,520 200,400" fill="none" stroke="#c8b898" stroke-width="1.1"/>
-                <!-- Large sofa -->
-                <polygon points="110,370 310,316 352,342 152,396" fill="none" stroke="#c8b898" stroke-width="1.2"/>
-                <polygon points="310,316 352,342 352,392 310,366" fill="none" stroke="#c8b898" stroke-width="1.0"/>
-                <polygon points="110,370 110,420 152,446 152,396" fill="none" stroke="#c8b898" stroke-width="1.0"/>
-                <polygon points="110,370 120,328 320,276 310,316" fill="none" stroke="#c8b898" stroke-width="1.1"/>
-                <!-- Pendant light -->
-                <line x1="270" y1="220" x2="270" y2="278" stroke="#c8b898" stroke-width="1.0"/>
-                <ellipse cx="270" cy="300" rx="42" ry="14" fill="none" stroke="#c8b898" stroke-width="1.1"/>
-                <line x1="228" y1="300" x2="240" y2="344" stroke="#c8b898" stroke-width="1.0"/>
-                <line x1="312" y1="300" x2="300" y2="344" stroke="#c8b898" stroke-width="1.0"/>
-                <ellipse cx="270" cy="344" rx="28" ry="9" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <!-- Side table + lamp -->
-                <ellipse cx="404" cy="310" rx="32" ry="10" fill="none" stroke="#c8b898" stroke-width="1.0"/>
-                <line x1="372" y1="310" x2="372" y2="380" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="436" y1="310" x2="436" y2="380" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="404" y1="298" x2="404" y2="252" stroke="#c8b898" stroke-width="1.0"/>
-                <polygon points="380,252 428,252 420,276 388,276" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <!-- Shelving right -->
-                <rect x="434" y="222" width="56" height="196" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="434" y1="272" x2="490" y2="272" stroke="#c8b898" stroke-width="0.7"/>
-                <line x1="434" y1="322" x2="490" y2="322" stroke="#c8b898" stroke-width="0.7"/>
-                <line x1="434" y1="372" x2="490" y2="372" stroke="#c8b898" stroke-width="0.7"/>
+            <svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="wchalk1">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" seed="5" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+                <radialGradient id="wc1bg" cx="50%" cy="50%" r="70%">
+                  <stop offset="0%" stop-color="#1e1a14"/>
+                  <stop offset="100%" stop-color="#0e0c09"/>
+                </radialGradient>
+              </defs>
+              <rect width="640" height="520" fill="url(#wc1bg)"/>
+              <g filter="url(#wchalk1)" opacity="0.60">
+                <!-- Isometric living room -->
+                <polygon points="60,310 330,200 470,290 200,400" fill="none" stroke="#c9aa6f" stroke-width="1.5"/>
+                <polygon points="330,200 470,290 470,420 330,330" fill="none" stroke="#c9aa6f" stroke-width="1.2"/>
+                <polygon points="60,310 60,440 200,530 200,400" fill="none" stroke="#c9aa6f" stroke-width="1.2"/>
+                <!-- Grand sofa -->
+                <polygon points="90,356 306,294 354,322 138,384" fill="none" stroke="#c9aa6f" stroke-width="1.4"/>
+                <polygon points="306,294 354,322 354,380 306,352" fill="none" stroke="#c9aa6f" stroke-width="1.1"/>
+                <polygon points="90,356 90,414 138,442 138,384" fill="none" stroke="#c9aa6f" stroke-width="1.1"/>
+                <polygon points="90,356 100,308 316,248 306,294" fill="none" stroke="#c9aa6f" stroke-width="1.2"/>
+                <!-- Cushions seams -->
+                <line x1="180" y1="316" x2="180" y2="402" stroke="#c9aa6f" stroke-width="0.5" opacity="0.55"/>
+                <line x1="252" y1="294" x2="252" y2="380" stroke="#c9aa6f" stroke-width="0.5" opacity="0.48"/>
+                <!-- Coffee table glass hairpin -->
+                <polygon points="128,384 318,334 350,354 160,404" fill="none" stroke="#c9aa6f" stroke-width="1.1"/>
+                <line x1="142" y1="398" x2="138" y2="450" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="142" y1="398" x2="150" y2="450" stroke="#c9aa6f" stroke-width="0.8"/>
+                <line x1="336" y1="352" x2="332" y2="404" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="336" y1="352" x2="344" y2="404" stroke="#c9aa6f" stroke-width="0.8"/>
+                <!-- Pendant dome light -->
+                <line x1="260" y1="200" x2="260" y2="262" stroke="#c9aa6f" stroke-width="1.1"/>
+                <ellipse cx="260" cy="286" rx="46" ry="15" fill="none" stroke="#c9aa6f" stroke-width="1.3"/>
+                <line x1="214" y1="286" x2="226" y2="332" stroke="#c9aa6f" stroke-width="1.1"/>
+                <line x1="306" y1="286" x2="294" y2="332" stroke="#c9aa6f" stroke-width="1.0"/>
+                <ellipse cx="260" cy="332" rx="30" ry="10" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <!-- Dome ribs -->
+                <line x1="240" y1="276" x2="242" y2="334" stroke="#c9aa6f" stroke-width="0.4" opacity="0.45"/>
+                <line x1="280" y1="276" x2="278" y2="334" stroke="#c9aa6f" stroke-width="0.4" opacity="0.45"/>
+                <!-- Floor lamp arc -->
+                <ellipse cx="412" cy="388" rx="18" ry="6" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="412" y1="382" x2="410" y2="218" stroke="#c9aa6f" stroke-width="1.4"/>
+                <path d="M410,218 Q410,196 432,186" fill="none" stroke="#c9aa6f" stroke-width="1.2"/>
+                <ellipse cx="444" cy="180" rx="28" ry="9" fill="none" stroke="#c9aa6f" stroke-width="1.2"/>
+                <line x1="416" y1="180" x2="418" y2="210" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="472" y1="180" x2="470" y2="210" stroke="#c9aa6f" stroke-width="1.0"/>
+                <ellipse cx="444" cy="210" rx="22" ry="7" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <!-- Shelving -->
+                <rect x="434" y="196" width="60" height="218" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <polygon points="494,196 524,214 524,430 494,414" fill="none" stroke="#c9aa6f" stroke-width="0.8"/>
+                <line x1="434" y1="248" x2="494" y2="248" stroke="#c9aa6f" stroke-width="0.7"/>
+                <line x1="434" y1="302" x2="494" y2="302" stroke="#c9aa6f" stroke-width="0.7"/>
+                <line x1="434" y1="356" x2="494" y2="356" stroke="#c9aa6f" stroke-width="0.7"/>
                 <!-- Rug -->
-                <polygon points="120,390 340,340 380,362 160,412" fill="none" stroke="#c8b898" stroke-width="0.7" stroke-dasharray="6,3"/>
-                <!-- Annotation -->
-                <line x1="120" y1="450" x2="380" y2="450" stroke="#c8b898" stroke-width="0.5" stroke-dasharray="4,5"/>
-                <line x1="120" y1="445" x2="120" y2="455" stroke="#c8b898" stroke-width="0.7"/>
-                <line x1="380" y1="445" x2="380" y2="455" stroke="#c8b898" stroke-width="0.7"/>
+                <polygon points="100,374 320,314 362,338 142,398" fill="none" stroke="#c9aa6f" stroke-width="0.7" stroke-dasharray="7,4"/>
+                <!-- Dimension annotations -->
+                <line x1="98" y1="472" x2="362" y2="472" stroke="#c9aa6f" stroke-width="0.5" stroke-dasharray="4,5" opacity="0.60"/>
+                <line x1="98" y1="466" x2="98" y2="478" stroke="#c9aa6f" stroke-width="0.7" opacity="0.60"/>
+                <line x1="362" y1="466" x2="362" y2="478" stroke="#c9aa6f" stroke-width="0.7" opacity="0.60"/>
+                <line x1="528" y1="196" x2="528" y2="414" stroke="#c9aa6f" stroke-width="0.5" stroke-dasharray="4,5" opacity="0.52"/>
               </g>
             </svg>
           </div>
@@ -2162,8 +2254,8 @@ app.get('/home', (c) => {
         <div class="wc-info">
           <span class="wc-tag">Residential</span>
           <h3>Maison Nero</h3>
-          <p>Private residence — Milan, IT</p>
-          <a href="#contact" class="wc-cta">View Project →</a>
+          <p>Private penthouse — Milan, IT</p>
+          <a href="#contact" class="wc-cta">View Project</a>
         </div>
       </article>
 
@@ -2171,36 +2263,51 @@ app.get('/home', (c) => {
       <article class="work-card reveal-up" data-delay="2">
         <div class="wc-image">
           <div class="wc-svg-placeholder">
-            <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg">
-              <rect width="420" height="340" fill="#181614"/>
-              <g opacity="0.48">
-                <polygon points="40,200 260,128 304,164 84,236" fill="none" stroke="#c8b898" stroke-width="1.1"/>
-                <polygon points="260,128 304,164 304,228 260,192" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <polygon points="40,200 40,264 84,300 84,236" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <polygon points="40,200 52,156 272,88 260,128" fill="none" stroke="#c8b898" stroke-width="1.0"/>
-                <!-- Chairs -->
-                <polygon points="80,216 148,196 164,212 96,232" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="82" y1="214" x2="82" y2="168" stroke="#c8b898" stroke-width="0.8"/>
-                <line x1="96" y1="208" x2="96" y2="164" stroke="#c8b898" stroke-width="0.7"/>
-                <!-- Floor lamp -->
-                <line x1="348" y1="280" x2="348" y2="120" stroke="#c8b898" stroke-width="0.9"/>
-                <path d="M348,120 Q348,98 366,88" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <ellipse cx="374" cy="84" rx="24" ry="8" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="350" y1="84" x2="352" y2="112" stroke="#c8b898" stroke-width="0.8"/>
-                <line x1="398" y1="84" x2="396" y2="112" stroke="#c8b898" stroke-width="0.8"/>
-                <ellipse cx="374" cy="112" rx="18" ry="6" fill="none" stroke="#c8b898" stroke-width="0.7"/>
-                <!-- Shelving -->
-                <rect x="316" y="108" width="50" height="172" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <polygon points="366,108 390,124 390,296 366,280" fill="none" stroke="#c8b898" stroke-width="0.6"/>
-                <line x1="316" y1="152" x2="366" y2="152" stroke="#c8b898" stroke-width="0.7"/>
-                <line x1="316" y1="196" x2="366" y2="196" stroke="#c8b898" stroke-width="0.7"/>
-                <line x1="316" y1="240" x2="366" y2="240" stroke="#c8b898" stroke-width="0.7"/>
-                <!-- Pendant -->
-                <line x1="170" y1="128" x2="170" y2="160" stroke="#c8b898" stroke-width="0.8"/>
-                <ellipse cx="170" cy="174" rx="28" ry="9" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <line x1="142" y1="174" x2="150" y2="204" stroke="#c8b898" stroke-width="0.8"/>
-                <line x1="198" y1="174" x2="190" y2="204" stroke="#c8b898" stroke-width="0.8"/>
-                <ellipse cx="170" cy="204" rx="18" ry="6" fill="none" stroke="#c8b898" stroke-width="0.7"/>
+            <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="wchalk2">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="3" seed="12" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+              </defs>
+              <rect width="460" height="360" fill="#161310"/>
+              <g filter="url(#wchalk2)" opacity="0.58">
+                <!-- Open-plan studio / atelier -->
+                <polygon points="30,220 270,130 326,176 86,266" fill="none" stroke="#c9aa6f" stroke-width="1.3"/>
+                <polygon points="270,130 326,176 326,254 270,208" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <polygon points="30,220 30,298 86,344 86,266" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <!-- Table and chairs -->
+                <polygon points="64,234 216,192 242,212 90,254" fill="none" stroke="#c9aa6f" stroke-width="1.1"/>
+                <polygon points="216,192 242,212 242,262 216,242" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <polygon points="64,234 64,282 90,302 90,254" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <!-- Chair backs -->
+                <line x1="76" y1="236" x2="76" y2="188" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="90" y1="228" x2="90" y2="182" stroke="#c9aa6f" stroke-width="0.8"/>
+                <line x1="76" y1="188" x2="90" y2="182" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="218" y1="192" x2="218" y2="146" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="236" y1="210" x2="236" y2="164" stroke="#c9aa6f" stroke-width="0.8"/>
+                <line x1="218" y1="146" x2="236" y2="164" stroke="#c9aa6f" stroke-width="0.9"/>
+                <!-- Pendant industrial trio -->
+                <line x1="140" y1="130" x2="140" y2="164" stroke="#c9aa6f" stroke-width="0.9"/>
+                <polygon points="118,164 162,164 154,194 128,194" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <ellipse cx="140" cy="194" rx="18" ry="6" fill="none" stroke="#c9aa6f" stroke-width="0.8"/>
+                <line x1="176" y1="130" x2="176" y2="158" stroke="#c9aa6f" stroke-width="0.8"/>
+                <polygon points="158,158 194,158 188,184 164,184" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <!-- Arc floor lamp -->
+                <ellipse cx="366" cy="302" rx="20" ry="7" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="366" y1="295" x2="364" y2="142" stroke="#c9aa6f" stroke-width="1.3"/>
+                <path d="M364,142 Q364,122 382,112" fill="none" stroke="#c9aa6f" stroke-width="1.1"/>
+                <ellipse cx="392" cy="108" rx="26" ry="8" fill="none" stroke="#c9aa6f" stroke-width="1.1"/>
+                <line x1="366" y1="108" x2="368" y2="136" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="418" y1="108" x2="416" y2="136" stroke="#c9aa6f" stroke-width="0.9"/>
+                <ellipse cx="392" cy="136" rx="20" ry="6" fill="none" stroke="#c9aa6f" stroke-width="0.8"/>
+                <!-- Shelving unit wall -->
+                <rect x="294" y="120" width="56" height="188" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <polygon points="350,120 378,136 378,320 350,308" fill="none" stroke="#c9aa6f" stroke-width="0.7"/>
+                <line x1="294" y1="162" x2="350" y2="162" stroke="#c9aa6f" stroke-width="0.6"/>
+                <line x1="294" y1="206" x2="350" y2="206" stroke="#c9aa6f" stroke-width="0.6"/>
+                <line x1="294" y1="252" x2="350" y2="252" stroke="#c9aa6f" stroke-width="0.6"/>
+                <line x1="294" y1="296" x2="350" y2="296" stroke="#c9aa6f" stroke-width="0.6"/>
               </g>
             </svg>
           </div>
@@ -2210,7 +2317,7 @@ app.get('/home', (c) => {
           <span class="wc-tag">Commercial</span>
           <h3>Atelier Brut</h3>
           <p>Creative studio — Paris, FR</p>
-          <a href="#contact" class="wc-cta">View Project →</a>
+          <a href="#contact" class="wc-cta">View Project</a>
         </div>
       </article>
 
@@ -2218,44 +2325,57 @@ app.get('/home', (c) => {
       <article class="work-card reveal-up" data-delay="3">
         <div class="wc-image">
           <div class="wc-svg-placeholder">
-            <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg">
-              <rect width="420" height="340" fill="#1a1714"/>
-              <g opacity="0.46">
-                <!-- Circular room / rotunda-ish space -->
-                <ellipse cx="210" cy="180" rx="140" ry="50" fill="none" stroke="#c8b898" stroke-width="1.0"/>
-                <ellipse cx="210" cy="240" rx="120" ry="42" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <line x1="70" y1="180" x2="90" y2="240" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="350" y1="180" x2="330" y2="240" stroke="#c8b898" stroke-width="0.9"/>
-                <!-- Central chandelier drop -->
-                <line x1="210" y1="60" x2="210" y2="120" stroke="#c8b898" stroke-width="1.0"/>
-                <ellipse cx="210" cy="140" rx="44" ry="14" fill="none" stroke="#c8b898" stroke-width="1.1"/>
+            <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="wchalk3">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.90" numOctaves="3" seed="17" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="1.3" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+              </defs>
+              <rect width="460" height="360" fill="#191511"/>
+              <g filter="url(#wchalk3)" opacity="0.56">
+                <!-- Boutique suite — circular rotunda feel -->
+                <ellipse cx="230" cy="196" rx="152" ry="52" fill="none" stroke="#c9aa6f" stroke-width="1.2"/>
+                <ellipse cx="230" cy="264" rx="130" ry="44" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <line x1="78" y1="196" x2="100" y2="264" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="382" y1="196" x2="360" y2="264" stroke="#c9aa6f" stroke-width="1.0"/>
+                <!-- Chandelier drop -->
+                <line x1="230" y1="60" x2="230" y2="128" stroke="#c9aa6f" stroke-width="1.2"/>
+                <ellipse cx="230" cy="150" rx="50" ry="16" fill="none" stroke="#c9aa6f" stroke-width="1.4"/>
+                <ellipse cx="230" cy="150" rx="36" ry="11" fill="none" stroke="#c9aa6f" stroke-width="0.6" stroke-dasharray="3,4" opacity="0.55"/>
                 <!-- Chandelier arms -->
-                <line x1="166" y1="140" x2="152" y2="176" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="188" y1="128" x2="180" y2="164" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="210" y1="126" x2="210" y2="162" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="232" y1="128" x2="240" y2="164" stroke="#c8b898" stroke-width="0.9"/>
-                <line x1="254" y1="140" x2="268" y2="176" stroke="#c8b898" stroke-width="0.9"/>
-                <!-- Candles/bulbs -->
-                <circle cx="152" cy="178" r="3" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <circle cx="180" cy="166" r="3" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <circle cx="210" cy="164" r="3" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <circle cx="240" cy="166" r="3" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <circle cx="268" cy="178" r="3" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <!-- Seating around the room -->
-                <polygon points="80,200 140,182 158,196 98,214" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <polygon points="260,182 320,200 300,216 240,198" fill="none" stroke="#c8b898" stroke-width="0.9"/>
-                <!-- Armchairs side -->
-                <polygon points="90,230 130,220 142,232 102,242" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <polygon points="270,220 310,230 298,242 258,232" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <!-- Tall vases flanking -->
-                <line x1="50" y1="260" x2="50" y2="190" stroke="#c8b898" stroke-width="0.9"/>
-                <ellipse cx="50" cy="265" rx="12" ry="4" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <ellipse cx="50" cy="190" rx="9" ry="3" fill="none" stroke="#c8b898" stroke-width="0.7"/>
-                <line x1="370" y1="260" x2="370" y2="190" stroke="#c8b898" stroke-width="0.9"/>
-                <ellipse cx="370" cy="265" rx="12" ry="4" fill="none" stroke="#c8b898" stroke-width="0.8"/>
-                <ellipse cx="370" cy="190" rx="9" ry="3" fill="none" stroke="#c8b898" stroke-width="0.7"/>
-                <!-- Floor rug -->
-                <ellipse cx="210" cy="240" rx="88" ry="32" fill="none" stroke="#c8b898" stroke-width="0.6" stroke-dasharray="5,4"/>
+                <line x1="180" y1="150" x2="164" y2="192" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="204" y1="136" x2="194" y2="178" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="230" y1="134" x2="230" y2="176" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="256" y1="136" x2="266" y2="178" stroke="#c9aa6f" stroke-width="1.0"/>
+                <line x1="280" y1="150" x2="296" y2="192" stroke="#c9aa6f" stroke-width="1.0"/>
+                <!-- Candle bulbs -->
+                <circle cx="164" cy="194" r="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <circle cx="194" cy="180" r="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <circle cx="230" cy="178" r="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <circle cx="266" cy="180" r="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <circle cx="296" cy="194" r="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <!-- Seating arrangement -->
+                <polygon points="72,218 148,196 166,212 90,234" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <polygon points="288,196 364,218 342,234 266,212" fill="none" stroke="#c9aa6f" stroke-width="1.0"/>
+                <!-- Armchairs -->
+                <polygon points="88,248 136,236 150,250 102,262" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <polygon points="280,236 328,248 314,262 266,250" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <!-- Tall statement vases flanking -->
+                <line x1="44" y1="284" x2="44" y2="196" stroke="#c9aa6f" stroke-width="1.0"/>
+                <ellipse cx="44" cy="290" rx="14" ry="5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <ellipse cx="44" cy="194" rx="10" ry="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.8"/>
+                <line x1="416" y1="284" x2="416" y2="196" stroke="#c9aa6f" stroke-width="1.0"/>
+                <ellipse cx="416" cy="290" rx="14" ry="5" fill="none" stroke="#c9aa6f" stroke-width="0.9"/>
+                <ellipse cx="416" cy="194" rx="10" ry="3.5" fill="none" stroke="#c9aa6f" stroke-width="0.8"/>
+                <!-- Stem &amp; leaves on vases -->
+                <line x1="44" y1="236" x2="28" y2="208" stroke="#c9aa6f" stroke-width="0.7"/>
+                <line x1="44" y1="220" x2="58" y2="196" stroke="#c9aa6f" stroke-width="0.7"/>
+                <circle cx="27" cy="206" r="3" fill="none" stroke="#c9aa6f" stroke-width="0.7"/>
+                <circle cx="59" cy="194" r="3" fill="none" stroke="#c9aa6f" stroke-width="0.7"/>
+                <!-- Floor rug centre -->
+                <ellipse cx="230" cy="262" rx="96" ry="34" fill="none" stroke="#c9aa6f" stroke-width="0.8" stroke-dasharray="6,4"/>
+                <ellipse cx="230" cy="262" rx="76" ry="26" fill="none" stroke="#c9aa6f" stroke-width="0.5" stroke-dasharray="4,5" opacity="0.55"/>
               </g>
             </svg>
           </div>
@@ -2265,7 +2385,7 @@ app.get('/home', (c) => {
           <span class="wc-tag">Hospitality</span>
           <h3>Villa Chimera</h3>
           <p>Boutique suite — Ibiza, ES</p>
-          <a href="#contact" class="wc-cta">View Project →</a>
+          <a href="#contact" class="wc-cta">View Project</a>
         </div>
       </article>
     </div>
@@ -2287,63 +2407,93 @@ app.get('/home', (c) => {
         <p class="reveal-up" data-delay="3">
           From Milanese penthouse apartments to London boutique hotels and New York creative studios, every project begins with listening — to the space, to the client, and to the invisible life a room is waiting to live.
         </p>
-        <a href="#contact" class="btn-primary reveal-up" data-delay="4">Work with Alby</a>
+        <div class="studio-creds reveal-up" data-delay="4">
+          <div class="cred-item">
+            <span class="cred-num">12+</span>
+            <span class="cred-label">Years of Practice</span>
+          </div>
+          <div class="cred-item">
+            <span class="cred-num">140+</span>
+            <span class="cred-label">Completed Projects</span>
+          </div>
+          <div class="cred-item">
+            <span class="cred-num">18</span>
+            <span class="cred-label">Countries</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary reveal-up" data-delay="5">Work with Alby</a>
       </div>
       <div class="studio-visual reveal-up" data-delay="1" aria-hidden="true">
-        <svg viewBox="0 0 500 540" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="achalk">
-              <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" seed="9" result="n"/>
-              <feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+              <feTurbulence type="fractalNoise" baseFrequency="0.70" numOctaves="4" seed="9" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            <filter id="aglow">
+              <feGaussianBlur stdDeviation="4.0" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-          <g filter="url(#achalk)" opacity="0.72">
-            <!-- Armchair isometric -->
-            <polygon points="82,292 268,240 308,272 122,324" fill="none" stroke="#d4c8b0" stroke-width="1.7"/>
-            <polygon points="268,240 308,272 308,334 268,302" fill="none" stroke="#d4c8b0" stroke-width="1.4"/>
-            <polygon points="82,292 82,354 122,386 122,324" fill="none" stroke="#d4c8b0" stroke-width="1.4"/>
-            <polygon points="82,292 92,242 278,198 268,240" fill="none" stroke="#d4c8b0" stroke-width="1.6"/>
-            <polygon points="268,240 278,198 318,226 308,272" fill="none" stroke="#d4c8b0" stroke-width="1.3"/>
+          <g filter="url(#achalk)" opacity="0.82">
+            <!-- Armchair — bold statement centre piece -->
+            <polygon points="94,304 292,248 334,282 136,338" fill="none" stroke="#d4c8b0" stroke-width="1.9"/>
+            <polygon points="292,248 334,282 334,350 292,316" fill="none" stroke="#d4c8b0" stroke-width="1.6"/>
+            <polygon points="94,304 94,372 136,406 136,338" fill="none" stroke="#d4c8b0" stroke-width="1.6"/>
+            <!-- Backrest -->
+            <polygon points="94,304 106,252 298,204 292,248" fill="none" stroke="#d4c8b0" stroke-width="1.8"/>
+            <polygon points="292,248 298,204 340,232 334,282" fill="none" stroke="#d4c8b0" stroke-width="1.4"/>
             <!-- Armrests -->
-            <polygon points="82,292 66,280 66,342 82,354" fill="none" stroke="#d4c8b0" stroke-width="1.3"/>
-            <polygon points="268,240 282,232 282,294 268,302" fill="none" stroke="#d4c8b0" stroke-width="1.2"/>
-            <ellipse cx="74" cy="280" rx="10" ry="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
-            <ellipse cx="275" cy="232" rx="10" ry="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
-            <!-- Cushion seam -->
-            <line x1="98" y1="300" x2="296" y2="248" stroke="#d4c8b0" stroke-width="0.6" opacity="0.5"/>
+            <polygon points="94,304 76,290 76,358 94,372" fill="none" stroke="#d4c8b0" stroke-width="1.5"/>
+            <polygon points="292,248 308,238 308,306 292,316" fill="none" stroke="#d4c8b0" stroke-width="1.4"/>
+            <ellipse cx="85" cy="290" rx="11" ry="4" fill="none" stroke="#d4c8b0" stroke-width="1.0"/>
+            <ellipse cx="300" cy="238" rx="11" ry="4" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
+            <!-- Cushion tufts & seam -->
+            <line x1="112" y1="312" x2="308" y2="256" stroke="#d4c8b0" stroke-width="0.7" opacity="0.55"/>
+            <circle cx="158" cy="288" r="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.7" opacity="0.45"/>
+            <circle cx="234" cy="268" r="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.7" opacity="0.40"/>
             <!-- Legs -->
-            <line x1="82" y1="352" x2="82" y2="394" stroke="#d4c8b0" stroke-width="1.5"/>
-            <line x1="120" y1="384" x2="120" y2="426" stroke="#d4c8b0" stroke-width="1.4"/>
-            <line x1="282" y1="292" x2="282" y2="334" stroke="#d4c8b0" stroke-width="1.4"/>
-            <line x1="306" y1="332" x2="306" y2="374" stroke="#d4c8b0" stroke-width="1.3"/>
+            <line x1="96" y1="370" x2="96" y2="416" stroke="#d4c8b0" stroke-width="1.8"/>
+            <line x1="134" y1="404" x2="134" y2="450" stroke="#d4c8b0" stroke-width="1.6"/>
+            <line x1="306" y1="304" x2="306" y2="350" stroke="#d4c8b0" stroke-width="1.6"/>
+            <line x1="332" y1="348" x2="332" y2="394" stroke="#d4c8b0" stroke-width="1.5"/>
             <!-- Floor lamp -->
-            <ellipse cx="388" cy="446" rx="24" ry="8" fill="none" stroke="#d4c8b0" stroke-width="1.4"/>
-            <ellipse cx="388" cy="453" rx="18" ry="6" fill="none" stroke="#d4c8b0" stroke-width="0.8"/>
-            <line x1="388" y1="438" x2="388" y2="196" stroke="#d4c8b0" stroke-width="1.7"/>
-            <path d="M388,196 Q388,166 414,152" fill="none" stroke="#d4c8b0" stroke-width="1.5"/>
-            <ellipse cx="426" cy="144" rx="30" ry="10" fill="none" stroke="#d4c8b0" stroke-width="1.5"/>
-            <line x1="396" y1="144" x2="398" y2="178" stroke="#d4c8b0" stroke-width="1.4"/>
-            <line x1="456" y1="144" x2="454" y2="178" stroke="#d4c8b0" stroke-width="1.4"/>
-            <ellipse cx="426" cy="178" rx="24" ry="8" fill="none" stroke="#d4c8b0" stroke-width="1.3"/>
+            <ellipse cx="420" cy="458" rx="26" ry="9" fill="none" stroke="#d4c8b0" stroke-width="1.6"/>
+            <ellipse cx="420" cy="466" rx="20" ry="7" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
+            <line x1="420" y1="450" x2="418" y2="194" stroke="#d4c8b0" stroke-width="2.0"/>
+            <path d="M418,194 Q418,162 446,148" fill="none" stroke="#d4c8b0" stroke-width="1.7"/>
+            <ellipse cx="460" cy="140" rx="34" ry="11" fill="none" stroke="#d4c8b0" stroke-width="1.7"/>
+            <line x1="426" y1="140" x2="428" y2="176" stroke="#d4c8b0" stroke-width="1.5"/>
+            <line x1="494" y1="140" x2="492" y2="176" stroke="#d4c8b0" stroke-width="1.5"/>
+            <ellipse cx="460" cy="176" rx="26" ry="8" fill="none" stroke="#d4c8b0" stroke-width="1.4"/>
+            <!-- Lamp bulb glow -->
+            <circle cx="460" cy="174" r="6" fill="none" stroke="#d4c8b0" stroke-width="1.0" filter="url(#aglow)"/>
             <!-- Side table -->
-            <ellipse cx="64" cy="388" rx="40" ry="13" fill="none" stroke="#d4c8b0" stroke-width="1.3"/>
-            <line x1="24" y1="388" x2="24" y2="452" stroke="#d4c8b0" stroke-width="1.2"/>
-            <line x1="104" y1="388" x2="104" y2="452" stroke="#d4c8b0" stroke-width="1.1"/>
-            <ellipse cx="64" cy="452" rx="40" ry="13" fill="none" stroke="#d4c8b0" stroke-width="1.1"/>
-            <!-- Book on table -->
-            <rect x="36" y="382" width="30" height="8" fill="none" stroke="#d4c8b0" stroke-width="0.7" transform="skewX(-12)"/>
+            <ellipse cx="70" cy="402" rx="44" ry="15" fill="none" stroke="#d4c8b0" stroke-width="1.5"/>
+            <line x1="26" y1="402" x2="26" y2="470" stroke="#d4c8b0" stroke-width="1.4"/>
+            <line x1="114" y1="402" x2="114" y2="470" stroke="#d4c8b0" stroke-width="1.3"/>
+            <ellipse cx="70" cy="470" rx="44" ry="15" fill="none" stroke="#d4c8b0" stroke-width="1.3"/>
+            <!-- Decor on table: book + small vase -->
+            <rect x="40" y="394" width="34" height="9" fill="none" stroke="#d4c8b0" stroke-width="0.8" transform="skewX(-12)"/>
+            <line x1="60" y1="394" x2="60" y2="372" stroke="#d4c8b0" stroke-width="1.4"/>
+            <ellipse cx="60" cy="370" rx="8" ry="3" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
             <!-- Tall plant beside -->
-            <line x1="28" y1="382" x2="24" y2="290" stroke="#d4c8b0" stroke-width="1.3"/>
-            <ellipse cx="26" cy="288" rx="10" ry="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
-            <line x1="26" y1="322" x2="6" y2="294" stroke="#d4c8b0" stroke-width="0.9"/>
-            <line x1="26" y1="310" x2="42" y2="286" stroke="#d4c8b0" stroke-width="0.8"/>
-            <circle cx="6" cy="292" r="4" fill="none" stroke="#d4c8b0" stroke-width="0.8"/>
-            <circle cx="42" cy="284" r="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.8"/>
-            <!-- Construction annotation -->
-            <line x1="82" y1="488" x2="306" y2="488" stroke="#d4c8b0" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.55"/>
-            <line x1="82" y1="483" x2="82" y2="493" stroke="#d4c8b0" stroke-width="0.7" opacity="0.55"/>
-            <line x1="306" y1="483" x2="306" y2="493" stroke="#d4c8b0" stroke-width="0.7" opacity="0.55"/>
-            <line x1="322" y1="144" x2="322" y2="272" stroke="#d4c8b0" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.45"/>
+            <line x1="36" y1="398" x2="30" y2="294" stroke="#d4c8b0" stroke-width="1.5"/>
+            <ellipse cx="32" cy="292" rx="11" ry="4" fill="none" stroke="#d4c8b0" stroke-width="1.0"/>
+            <line x1="32" y1="338" x2="8" y2="308" stroke="#d4c8b0" stroke-width="1.1"/>
+            <line x1="32" y1="322" x2="52" y2="294" stroke="#d4c8b0" stroke-width="1.0"/>
+            <line x1="32" y1="310" x2="10" y2="284" stroke="#d4c8b0" stroke-width="0.9"/>
+            <circle cx="7" cy="282" r="5" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
+            <circle cx="53" cy="292" r="4.5" fill="none" stroke="#d4c8b0" stroke-width="0.9"/>
+            <circle cx="10" cy="306" r="3.5" fill="none" stroke="#d4c8b0" stroke-width="0.8"/>
+            <!-- Throw pillow -->
+            <polygon points="152,272 196,258 210,272 166,286" fill="none" stroke="#d4c8b0" stroke-width="1.0"/>
+            <line x1="181" y1="263" x2="181" y2="280" stroke="#d4c8b0" stroke-width="0.5" opacity="0.5"/>
+            <!-- Construction annotations -->
+            <line x1="96" y1="498" x2="332" y2="498" stroke="#d4c8b0" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.50"/>
+            <line x1="96" y1="492" x2="96" y2="504" stroke="#d4c8b0" stroke-width="0.7" opacity="0.50"/>
+            <line x1="332" y1="492" x2="332" y2="504" stroke="#d4c8b0" stroke-width="0.7" opacity="0.50"/>
+            <line x1="352" y1="140" x2="352" y2="282" stroke="#d4c8b0" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.42"/>
           </g>
         </svg>
       </div>
@@ -2359,46 +2509,52 @@ app.get('/home', (c) => {
       </div>
       <div class="services-grid">
         <div class="service-card reveal-up" data-delay="1">
+          <span class="sc-num">01</span>
           <div class="sc-icon">
-            <svg viewBox="0 0 48 48"><polygon points="6,34 24,24 42,34 24,44" fill="none" stroke="currentColor" stroke-width="1.2"/><polygon points="6,24 24,14 42,24 24,34" fill="none" stroke="currentColor" stroke-width="1.0" opacity="0.6"/><polygon points="6,14 24,4 42,14 24,24" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/></svg>
+            <svg viewBox="0 0 48 48"><polygon points="6,34 24,24 42,34 24,44" fill="none" stroke="currentColor" stroke-width="1.3"/><polygon points="6,24 24,14 42,24 24,34" fill="none" stroke="currentColor" stroke-width="1.0" opacity="0.6"/><polygon points="6,14 24,4 42,14 24,24" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/></svg>
           </div>
           <h3>Residential Design</h3>
-          <p>Private homes, apartments, and villas — entirely bespoke, entirely yours.</p>
+          <p>Private homes, apartments, and villas — entirely bespoke, entirely yours. From minimal cozy elegance to bold transformations.</p>
         </div>
         <div class="service-card reveal-up" data-delay="2">
+          <span class="sc-num">02</span>
           <div class="sc-icon">
-            <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" fill="none" stroke="currentColor" stroke-width="1.2"/><polygon points="36,10 44,16 44,38 36,38" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.6"/><polygon points="6,10 36,10 44,16 14,16" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.6"/><line x1="14" y1="20" x2="28" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.5"/><line x1="14" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="14" y1="32" x2="22" y2="32" stroke="currentColor" stroke-width="0.7" opacity="0.4"/></svg>
+            <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" fill="none" stroke="currentColor" stroke-width="1.3"/><polygon points="36,10 44,16 44,38 36,38" fill="none" stroke="currentColor" stroke-width="1.0" opacity="0.6"/><polygon points="6,10 36,10 44,16 14,16" fill="none" stroke="currentColor" stroke-width="1.0" opacity="0.6"/><line x1="14" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.5"/><line x1="14" y1="26" x2="30" y2="26" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="14" y1="32" x2="22" y2="32" stroke="currentColor" stroke-width="0.7" opacity="0.4"/></svg>
           </div>
           <h3>Commercial Spaces</h3>
-          <p>Offices, showrooms, and retail environments that amplify brand identity.</p>
+          <p>Offices, showrooms, and retail environments that amplify brand identity and feel grand yet welcoming.</p>
         </div>
         <div class="service-card reveal-up" data-delay="3">
+          <span class="sc-num">03</span>
           <div class="sc-icon">
-            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.6"/><line x1="24" y1="7" x2="24" y2="41" stroke="currentColor" stroke-width="0.6" opacity="0.4"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="0.6" opacity="0.4"/></svg>
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="1.0" opacity="0.6"/><line x1="24" y1="7" x2="24" y2="41" stroke="currentColor" stroke-width="0.6" opacity="0.4"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="0.6" opacity="0.4"/></svg>
           </div>
           <h3>Hospitality &amp; Hotels</h3>
-          <p>Immersive environments that become the destination rather than the container.</p>
+          <p>Immersive environments that become the destination rather than the container — a symphony of style and personality.</p>
         </div>
         <div class="service-card reveal-up" data-delay="4">
+          <span class="sc-num">04</span>
           <div class="sc-icon">
-            <svg viewBox="0 0 48 48"><line x1="24" y1="6" x2="24" y2="42" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="24" x2="42" y2="24" stroke="currentColor" stroke-width="1.2"/><line x1="24" y1="6" x2="42" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/><line x1="6" y1="24" x2="24" y2="42" stroke="currentColor" stroke-width="0.8" opacity="0.5"/><circle cx="24" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="1.0"/></svg>
+            <svg viewBox="0 0 48 48"><line x1="24" y1="6" x2="24" y2="42" stroke="currentColor" stroke-width="1.3"/><line x1="6" y1="24" x2="42" y2="24" stroke="currentColor" stroke-width="1.3"/><line x1="24" y1="6" x2="42" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/><line x1="6" y1="24" x2="24" y2="42" stroke="currentColor" stroke-width="0.8" opacity="0.5"/><circle cx="24" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="1.0"/></svg>
           </div>
           <h3>Concept &amp; Art Direction</h3>
-          <p>Mood, narrative, and spatial concept from blank canvas to living vision.</p>
+          <p>Mood, narrative, and spatial concept from blank canvas to living vision. Designing to feel grand yet welcoming.</p>
         </div>
         <div class="service-card reveal-up" data-delay="5">
+          <span class="sc-num">05</span>
           <div class="sc-icon">
-            <svg viewBox="0 0 48 48"><polygon points="8,40 24,8 40,40" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="14" y1="32" x2="34" y2="32" stroke="currentColor" stroke-width="0.8" opacity="0.5"/><line x1="18" y1="24" x2="30" y2="24" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><circle cx="24" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.0"/></svg>
+            <svg viewBox="0 0 48 48"><polygon points="8,40 24,8 40,40" fill="none" stroke="currentColor" stroke-width="1.3"/><line x1="14" y1="32" x2="34" y2="32" stroke="currentColor" stroke-width="0.8" opacity="0.5"/><line x1="18" y1="24" x2="30" y2="24" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><circle cx="24" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.0"/></svg>
           </div>
           <h3>Furniture &amp; Procurement</h3>
-          <p>Custom pieces and curated sourcing — from artisan workshops to global makers.</p>
+          <p>Custom pieces and curated sourcing — from artisan workshops to global makers. Layout, texture, material.</p>
         </div>
         <div class="service-card reveal-up" data-delay="6">
+          <span class="sc-num">06</span>
           <div class="sc-icon">
-            <svg viewBox="0 0 48 48"><polygon points="6,38 24,10 42,38" fill="none" stroke="currentColor" stroke-width="1.2"/><polygon points="14,38 24,22 34,38" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.6"/><polygon points="18,38 24,30 30,38" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.35"/></svg>
+            <svg viewBox="0 0 48 48"><polygon points="6,38 24,10 42,38" fill="none" stroke="currentColor" stroke-width="1.3"/><polygon points="14,38 24,22 34,38" fill="none" stroke="currentColor" stroke-width="1.0" opacity="0.6"/><polygon points="18,38 24,30 30,38" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/></svg>
           </div>
           <h3>Project Management</h3>
-          <p>End-to-end oversight — contractor coordination, timeline, and flawless delivery.</p>
+          <p>End-to-end oversight — contractor coordination, timeline mastery, and flawless delivery worldwide.</p>
         </div>
       </div>
     </div>
@@ -2412,25 +2568,25 @@ app.get('/home', (c) => {
         <div class="proc-step reveal-up" data-delay="1">
           <span class="proc-num">01</span>
           <h4>Listen</h4>
-          <p>Understanding your vision, lifestyle, and the spatial story waiting to be told.</p>
+          <p>Understanding your vision, lifestyle, and the spatial story waiting to be told. Every detail matters.</p>
         </div>
         <div class="proc-arrow reveal-up" data-delay="2">→</div>
         <div class="proc-step reveal-up" data-delay="2">
           <span class="proc-num">02</span>
           <h4>Conceive</h4>
-          <p>From concept boards to detailed spatial drawings and material palettes.</p>
+          <p>From concept boards to detailed spatial drawings and material palettes — the alchemy begins.</p>
         </div>
         <div class="proc-arrow reveal-up" data-delay="3">→</div>
         <div class="proc-step reveal-up" data-delay="3">
           <span class="proc-num">03</span>
           <h4>Craft</h4>
-          <p>Precision execution with trusted artisans and contractors worldwide.</p>
+          <p>Precision execution with trusted artisans and contractors. Durability meets aesthetics.</p>
         </div>
         <div class="proc-arrow reveal-up" data-delay="4">→</div>
         <div class="proc-step reveal-up" data-delay="4">
           <span class="proc-num">04</span>
           <h4>Reveal</h4>
-          <p>The transformation complete — your space, as it was always meant to be.</p>
+          <p>The transformation complete — your space, as it was always meant to be. Before becomes after.</p>
         </div>
       </div>
     </div>
@@ -2440,9 +2596,9 @@ app.get('/home', (c) => {
   <section class="contact-section" id="contact">
     <div class="contact-inner">
       <div class="contact-text reveal-up" data-delay="0">
-        <span class="section-label">Begin</span>
-        <h2>Ready to transform<br/><em>your space?</em></h2>
-        <p>Every project begins with a conversation. Tell Alby about your vision and we'll shape it into reality together.</p>
+        <span class="section-label">Begin the Conversation</span>
+        <h2>Ready to <em>transform</em><br/>your space?</h2>
+        <p>Every project begins with a conversation. Tell Alby about your vision and we'll shape it into reality — together.</p>
         <div class="contact-details">
           <div class="cd-item">
             <span class="cd-label">Studio</span>
@@ -2451,6 +2607,10 @@ app.get('/home', (c) => {
           <div class="cd-item">
             <span class="cd-label">Email</span>
             <span class="cd-value">studio@aimo.design</span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-label">Instagram</span>
+            <span class="cd-value">@studio_aimo</span>
           </div>
         </div>
       </div>
@@ -2473,12 +2633,29 @@ app.get('/home', (c) => {
             <option>Commercial</option>
             <option>Hospitality</option>
             <option>Concept Direction</option>
+            <option>Furniture Procurement</option>
             <option>Other</option>
           </select>
         </div>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label>Location</label>
+            <input type="text" placeholder="City, Country"/>
+          </div>
+          <div class="cf-field">
+            <label>Budget Range</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Under €50K</option>
+              <option>€50K – €150K</option>
+              <option>€150K – €500K</option>
+              <option>€500K+</option>
+            </select>
+          </div>
+        </div>
         <div class="cf-field">
           <label>Tell us about your space</label>
-          <textarea rows="5" placeholder="Describe your project, timeline, and aspirations..."></textarea>
+          <textarea rows="5" placeholder="Describe your project, timeline, and aspirations — the more you share, the better we can conjure..."></textarea>
         </div>
         <button type="submit" class="btn-primary cf-submit">
           <span>Send Enquiry</span>
@@ -2502,7 +2679,7 @@ app.get('/home', (c) => {
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-social">
-        <a href="#" aria-label="Instagram">IG</a>
+        <a href="https://www.instagram.com/studio_aimo/" target="_blank" rel="noopener" aria-label="Instagram">@studio_aimo</a>
         <a href="#" aria-label="Pinterest">PT</a>
         <a href="#" aria-label="LinkedIn">LI</a>
       </div>
