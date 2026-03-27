@@ -1,153 +1,120 @@
-/* ===================================================
-   INTRO SCREEN — INTERACTIVE JAVASCRIPT
-   Particle system + cursor parallax + arrow logic
-   =================================================== */
-
+/* ═══════════════════════════════════════════════════
+   STUDIO AIMO — INTRO SCREEN JAVASCRIPT
+   Particles · Parallax · Stroke normalisation · Arrow
+═══════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* ─── PARTICLE SYSTEM ──────────────────────── */
+  /* ── PARTICLE DUST SYSTEM ───────────────────── */
   const canvas = document.getElementById('particle-canvas');
   const ctx    = canvas.getContext('2d');
-  let W, H, particles = [], animFrame;
+  let W, H, pts = [], raf;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
 
-  class Particle {
-    constructor() { this.reset(true); }
-    reset(init) {
-      this.x    = Math.random() * W;
-      this.y    = init ? Math.random() * H : H + 6;
-      this.size = Math.random() * 1.4 + 0.3;
-      this.vy   = -(Math.random() * 0.3 + 0.1);
-      this.vx   = (Math.random() - 0.5) * 0.15;
-      this.alpha = Math.random() * 0.28 + 0.06;
-      this.life  = 0;
-      this.maxLife = Math.random() * 400 + 200;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      this.life++;
-      if (this.y < -10 || this.life > this.maxLife) this.reset(false);
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(240,240,225,${this.alpha})`;
-      ctx.fill();
-    }
+  function Particle() { this.init(true); }
+  Particle.prototype.init = function (rand) {
+    this.x    = Math.random() * W;
+    this.y    = rand ? Math.random() * H : H + 4;
+    this.r    = Math.random() * 1.2 + 0.25;
+    this.vy   = -(Math.random() * 0.22 + 0.08);
+    this.vx   = (Math.random() - 0.5) * 0.12;
+    this.life = 0;
+    this.max  = Math.random() * 500 + 250;
+    this.a    = Math.random() * 0.22 + 0.05;
+  };
+  Particle.prototype.tick = function () {
+    this.x += this.vx; this.y += this.vy; this.life++;
+    if (this.y < -6 || this.life > this.max) this.init(false);
+  };
+  Particle.prototype.draw = function () {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(238,234,218,' + this.a + ')';
+    ctx.fill();
+  };
+
+  function initPts() {
+    pts = [];
+    const n = Math.min(Math.floor((W * H) / 8500), 100);
+    for (let i = 0; i < n; i++) pts.push(new Particle());
   }
 
-  function initParticles() {
-    particles = [];
-    const count = Math.min(Math.floor((W * H) / 9000), 90);
-    for (let i = 0; i < count; i++) particles.push(new Particle());
-  }
-
-  function tickParticles() {
+  function loop() {
     ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => { p.update(); p.draw(); });
-    animFrame = requestAnimationFrame(tickParticles);
+    pts.forEach(p => { p.tick(); p.draw(); });
+    raf = requestAnimationFrame(loop);
   }
 
-  window.addEventListener('resize', () => { resize(); initParticles(); });
-  resize();
-  initParticles();
-  tickParticles();
+  window.addEventListener('resize', () => { resize(); initPts(); });
+  resize(); initPts(); loop();
 
-  /* ─── CURSOR PARALLAX ──────────────────────── */
-  const scene  = document.getElementById('main-scene');
-  const items  = scene ? Array.from(scene.querySelectorAll('.furniture-item')) : [];
-  let mouseX   = window.innerWidth  / 2;
-  let mouseY   = window.innerHeight / 2;
-  let targetX  = mouseX;
-  let targetY  = mouseY;
-  let currentX = 0;
-  let currentY = 0;
+  /* ── MOUSE PARALLAX ─────────────────────────── */
+  const scene     = document.getElementById('main-scene');
+  const items     = scene ? Array.from(scene.querySelectorAll('.fi')) : [];
+  let mx = W / 2, my = H / 2;
+  let cx = 0, cy = 0;
 
-  document.addEventListener('mousemove', e => {
-    targetX = e.clientX;
-    targetY = e.clientY;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+  // Varying parallax strength per element index
+  const strengths = items.map((_, i) => {
+    const base = [0.007, 0.012, 0.005, 0.010, 0.009, 0.013, 0.006, 0.011,
+                  0.008, 0.014, 0.007, 0.010, 0.006, 0.009, 0.012, 0.008];
+    return base[i % base.length];
   });
 
-  // Parallax depths — different for each piece
-  const depths = [0.008, 0.012, 0.006, 0.010, 0.009, 0.007, 0.011, 0.013,
-                  0.005, 0.014, 0.008, 0.010, 0.007, 0.006, 0.009, 0.012,
-                  0.010, 0.008, 0.011];
-
-  function animateParallax() {
-    currentX += (targetX - currentX) * 0.05;
-    currentY += (targetY - currentY) * 0.05;
-
-    const cx = window.innerWidth  / 2;
-    const cy = window.innerHeight / 2;
-    const dx = currentX - cx;
-    const dy = currentY - cy;
-
-    items.forEach((item, i) => {
-      const d   = depths[i % depths.length];
-      const tx  = dx * d;
-      const ty  = dy * d;
-      // preserve existing transform (rotate etc.) via CSS var trick
-      const base = item.dataset.baseTransform || item.getAttribute('transform') || '';
-      if (!item.dataset.baseTransform) item.dataset.baseTransform = base;
-      item.style.transform = `translate(${tx}px, ${ty}px)`;
+  function parallax() {
+    cx += (mx - cx) * 0.045;
+    cy += (my - cy) * 0.045;
+    const ox = cx - W / 2;
+    const oy = cy - H / 2;
+    items.forEach((el, i) => {
+      const s = strengths[i];
+      el.style.transform = 'translate(' + (ox * s).toFixed(2) + 'px,' + (oy * s).toFixed(2) + 'px)';
     });
-
-    requestAnimationFrame(animateParallax);
+    requestAnimationFrame(parallax);
   }
-  animateParallax();
+  parallax();
 
-  /* ─── ARROW PULSE ACTIVATION ───────────────── */
-  const arrow = document.getElementById('enter-arrow');
-  if (arrow) {
-    setTimeout(() => {
-      arrow.classList.add('pulse-active');
-    }, 4500);
-
-    /* ─── PAGE TRANSITION ON CLICK ─────────── */
-    arrow.addEventListener('click', function (e) {
-      e.preventDefault();
-      const href = this.getAttribute('href');
-      const intro = document.getElementById('intro-screen');
-      cancelAnimationFrame(animFrame);
-
-      intro.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = href;
-      }, 880);
-    });
-  }
-
-  /* ─── KEYBOARD ENTER ────────────────────────── */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === 'ArrowRight') {
-      if (arrow) arrow.click();
-    }
-  });
-
-  /* ─── SVG PATH LENGTH CORRECTION ───────────── */
-  // After elements become visible, reset stroke-dasharray to actual length
-  // so the drawing effect is smooth even for short paths
+  /* ── SVG STROKE PATH-LENGTH NORMALISATION ───── */
+  // Run after first paint so getTotalLength is accurate
   function normaliseStrokes() {
-    const strokes = scene.querySelectorAll(
-      'line, path, polygon, polyline, ellipse, circle, rect'
-    );
-    strokes.forEach(el => {
+    const els = scene ? scene.querySelectorAll('line,path,polygon,polyline,ellipse,circle,rect') : [];
+    els.forEach(el => {
       try {
         const len = el.getTotalLength ? el.getTotalLength() : 0;
-        if (len > 0) {
+        if (len > 2) {
           el.style.strokeDasharray  = len;
           el.style.strokeDashoffset = len;
         }
-      } catch (_) { /* non-renderable elements */ }
+      } catch (e) { /* skip */ }
     });
   }
-  // Run once DOM is fully painted
   requestAnimationFrame(() => requestAnimationFrame(normaliseStrokes));
 
+  /* ── ARROW ──────────────────────────────────── */
+  const arrow = document.getElementById('enter-arrow');
+
+  if (arrow) {
+    // Start pulsing 1.8s after it appears (~5.4s from load)
+    setTimeout(() => arrow.classList.add('pulsing'), 5500);
+
+    // Click → fade out page, then navigate
+    arrow.addEventListener('click', function (e) {
+      e.preventDefault();
+      const dest = this.getAttribute('href');
+      cancelAnimationFrame(raf);
+      document.getElementById('intro-screen').classList.add('exit');
+      setTimeout(() => { window.location.href = dest; }, 820);
+    });
+
+    // Keyboard shortcut
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === 'ArrowRight' || e.key === ' ') arrow.click();
+    });
+  }
 })();

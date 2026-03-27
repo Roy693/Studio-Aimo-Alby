@@ -1,247 +1,399 @@
-/* ===================================================
-   INTERIOR DESIGN INTRO SCREEN — PREMIUM STYLESHEET
-   =================================================== */
+/* ═══════════════════════════════════════════════════
+   STUDIO AIMO — INTRO SCREEN
+   Deep anthracite · Chalk-white 3D blueprint world
+═══════════════════════════════════════════════════ */
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --anthracite-deep:   #141414;
-  --anthracite-mid:    #1a1a1a;
-  --anthracite-light:  #222222;
-  --chalk:             #f0f0e6;
-  --chalk-dim:         rgba(240, 240, 230, 0.65);
-  --chalk-faint:       rgba(240, 240, 230, 0.25);
+  --bg:    #131210;
+  --chalk: rgba(238,235,220,1);
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   overflow: hidden;
-  background: var(--anthracite-deep);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ─── INTRO SCREEN ────────────────────────────── */
+/* ── INTRO WRAP ── */
 #intro-screen {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw; height: 100vh;
   background:
-    radial-gradient(ellipse 80% 70% at 30% 40%, rgba(50, 50, 46, 0.55) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 70% 70%, rgba(38, 38, 35, 0.45) 0%, transparent 65%),
-    var(--anthracite-deep);
+    radial-gradient(ellipse 100% 90% at 50% 50%, rgba(28,26,22,0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 85% 75% at 20% 42%, rgba(42,40,35,0.55) 0%, transparent 62%),
+    radial-gradient(ellipse 65% 55% at 78% 62%, rgba(32,30,26,0.48) 0%, transparent 58%),
+    radial-gradient(ellipse 45% 38% at 55% 18%, rgba(38,36,30,0.32) 0%, transparent 52%),
+    var(--bg);
   overflow: hidden;
-  cursor: default;
 }
 
-/* ─── PARTICLE CANVAS ─────────────────────────── */
+/* ── PARTICLE CANVAS ── */
 #particle-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   pointer-events: none;
   z-index: 1;
 }
 
-/* ─── SCENE WRAPPER ───────────────────────────── */
+/* ── SVG SCENE ── */
 .scene-wrapper {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   z-index: 2;
 }
 
 #main-scene {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   display: block;
 }
 
-/* ─── FURNITURE ITEMS — STAGGERED FADE IN ─────── */
-.furniture-item {
+/* ── FURNITURE ITEMS — base hidden state ── */
+.fi {
   opacity: 0;
-  transform-origin: center;
-  animation: drawIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   will-change: opacity, transform;
+  transform-origin: center center;
 }
 
-.furniture-item path,
-.furniture-item line,
-.furniture-item polygon,
-.furniture-item ellipse,
-.furniture-item circle,
-.furniture-item rect,
-.furniture-item polyline {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: dashDraw 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+/* All child elements start dashed (for draw-on stroke animation) */
+.fi line, .fi polygon, .fi polyline, .fi path,
+.fi ellipse, .fi circle, .fi rect {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: strokeOn 1.8s ease forwards;
+  animation-delay: inherit;
 }
 
-/* Individual timing for each furniture piece */
-#lounge-chair        { animation-delay: 0.2s; }
-#lounge-chair *      { animation-delay: 0.2s; }
-
-#pendant-lamp        { animation-delay: 0.5s; }
-#pendant-lamp *      { animation-delay: 0.5s; }
-
-#modular-sofa        { animation-delay: 0.8s; }
-#modular-sofa *      { animation-delay: 0.8s; }
-
-#dining-table        { animation-delay: 1.1s; }
-#dining-table *      { animation-delay: 1.1s; }
-
-#chair-a             { animation-delay: 1.3s; }
-#chair-a *           { animation-delay: 1.3s; }
-
-#chair-b             { animation-delay: 1.4s; }
-#chair-b *           { animation-delay: 1.4s; }
-
-#kitchen-module      { animation-delay: 1.6s; }
-#kitchen-module *    { animation-delay: 1.6s; }
-
-#floor-lamp          { animation-delay: 0.6s; }
-#floor-lamp *        { animation-delay: 0.6s; }
-
-#armchair            { animation-delay: 1.8s; }
-#armchair *          { animation-delay: 1.8s; }
-
-#bookshelf           { animation-delay: 0.9s; }
-#bookshelf *         { animation-delay: 0.9s; }
-
-#coffee-table        { animation-delay: 1.5s; }
-#coffee-table *      { animation-delay: 1.5s; }
-
-#wall-sconce         { animation-delay: 0.7s; }
-#wall-sconce *       { animation-delay: 0.7s; }
-
-#side-table          { animation-delay: 2.0s; }
-#side-table *        { animation-delay: 2.0s; }
-
-#rug                 { animation-delay: 1.9s; }
-#rug *               { animation-delay: 1.9s; }
-
-#door-frame          { animation-delay: 0.3s; }
-#door-frame *        { animation-delay: 0.3s; }
-
-#wall-art            { animation-delay: 0.4s; }
-#wall-art *          { animation-delay: 0.4s; }
-
-#stool               { animation-delay: 2.1s; }
-#stool *             { animation-delay: 2.1s; }
-
-#vase-standalone     { animation-delay: 2.2s; }
-#vase-standalone *   { animation-delay: 2.2s; }
-
-#kitchen-island      { animation-delay: 2.0s; }
-#kitchen-island *    { animation-delay: 2.0s; }
-
-.annotation-lines    { animation: fadeInSlow 3.5s ease forwards; animation-delay: 2.5s; opacity: 0; }
-.connection-dots     { animation: fadeInSlow 4.0s ease forwards; animation-delay: 3.0s; opacity: 0; }
-
-/* ─── KEYFRAMES ───────────────────────────────── */
-@keyframes drawIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96) translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+/* ── DRAW-IN KEYFRAMES ── */
+@keyframes drawFade {
+  0%   { opacity: 0; }
+  12%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 
-@keyframes dashDraw {
-  from {
-    stroke-dashoffset: 1200;
-    opacity: 0.5;
-  }
-  to {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
+@keyframes strokeOn {
+  0%   { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
 }
 
-@keyframes fadeInSlow {
+@keyframes annotFade {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-/* ─── SUBTLE FLOAT ANIMATION ──────────────────── */
+/* ── FLOATING KEYFRAMES ── */
 @keyframes floatA {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-7px) rotate(0.4deg); }
+  0%, 100% { transform: translateY(0px)  rotate(0deg); }
+  33%       { transform: translateY(-9px)  rotate(0.35deg); }
+  66%       { transform: translateY(-4px)  rotate(-0.20deg); }
 }
 @keyframes floatB {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-5px) rotate(-0.3deg); }
+  0%, 100% { transform: translateY(0px)   rotate(0deg); }
+  40%       { transform: translateY(-7px)  rotate(-0.45deg); }
+  70%       { transform: translateY(-12px) rotate(0.25deg); }
 }
 @keyframes floatC {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-9px) rotate(0.5deg); }
+  0%, 100% { transform: translateY(0px)   rotate(0deg); }
+  25%       { transform: translateY(-13px) rotate(0.55deg); }
+  75%       { transform: translateY(-6px)  rotate(-0.30deg); }
+}
+@keyframes floatD {
+  0%, 100% { transform: translateY(0px)  rotate(0deg); }
+  50%       { transform: translateY(-8px)  rotate(0.40deg); }
+}
+@keyframes floatE {
+  0%, 100% { transform: translateY(0px)  translateX(0px); }
+  30%       { transform: translateY(-10px) translateX(4px); }
+  70%       { transform: translateY(-5px)  translateX(-3px); }
 }
 
-/* Apply float after initial draw */
-#lounge-chair     { animation: drawIn 1.8s 0.2s cubic-bezier(0.22,1,0.36,1) forwards, floatA 8s 2.5s ease-in-out infinite; }
-#pendant-lamp     { animation: drawIn 1.8s 0.5s cubic-bezier(0.22,1,0.36,1) forwards, floatB 10s 3.0s ease-in-out infinite; }
-#modular-sofa     { animation: drawIn 1.8s 0.8s cubic-bezier(0.22,1,0.36,1) forwards, floatC 9s 3.5s ease-in-out infinite; }
-#dining-table     { animation: drawIn 1.8s 1.1s cubic-bezier(0.22,1,0.36,1) forwards, floatA 11s 4.0s ease-in-out infinite; }
-#floor-lamp       { animation: drawIn 1.8s 0.6s cubic-bezier(0.22,1,0.36,1) forwards, floatB 7s 3.0s ease-in-out infinite; }
-#armchair         { animation: drawIn 1.8s 1.8s cubic-bezier(0.22,1,0.36,1) forwards, floatC 9.5s 4.5s ease-in-out infinite; }
-#bookshelf        { animation: drawIn 1.8s 0.9s cubic-bezier(0.22,1,0.36,1) forwards, floatA 12s 3.2s ease-in-out infinite; }
-#kitchen-module   { animation: drawIn 1.8s 1.6s cubic-bezier(0.22,1,0.36,1) forwards, floatB 10.5s 4.2s ease-in-out infinite; }
-#stool            { animation: drawIn 1.8s 2.1s cubic-bezier(0.22,1,0.36,1) forwards, floatC 8.5s 5.0s ease-in-out infinite; }
-#coffee-table     { animation: drawIn 1.8s 1.5s cubic-bezier(0.22,1,0.36,1) forwards, floatA 9.8s 4.0s ease-in-out infinite; }
-#vase-standalone  { animation: drawIn 1.8s 2.2s cubic-bezier(0.22,1,0.36,1) forwards, floatB 8s 5.2s ease-in-out infinite; }
-#side-table       { animation: drawIn 1.8s 2.0s cubic-bezier(0.22,1,0.36,1) forwards, floatA 10s 4.8s ease-in-out infinite; }
-#kitchen-island   { animation: drawIn 1.8s 2.0s cubic-bezier(0.22,1,0.36,1) forwards, floatC 11s 4.5s ease-in-out infinite; }
+/* ═══════════════════════════════════════════════════
+   PER-ELEMENT ANIMATION — draw-in then float loop
+═══════════════════════════════════════════════════ */
 
-/* ─── ENTER ARROW ─────────────────────────────── */
+/* Sectional sofa */
+#sectional {
+  animation: drawFade 2.2s 0.15s ease forwards, floatC 12s 3.5s ease-in-out infinite;
+}
+#sectional line, #sectional polygon, #sectional polyline,
+#sectional path, #sectional ellipse, #sectional circle, #sectional rect {
+  animation: strokeOn 2.6s 0.15s ease forwards;
+}
+
+/* Coffee table */
+#ct-main {
+  animation: drawFade 1.9s 0.55s ease forwards, floatA 10s 3.8s ease-in-out infinite;
+}
+#ct-main line, #ct-main polygon, #ct-main ellipse,
+#ct-main rect, #ct-main path, #ct-main circle {
+  animation: strokeOn 2.3s 0.55s ease forwards;
+}
+
+/* Rug */
+#rug-a {
+  animation: drawFade 2.4s 1.0s ease forwards, floatD 14s 4.5s ease-in-out infinite;
+}
+#rug-a polygon, #rug-a line {
+  animation: strokeOn 2.8s 1.0s ease forwards;
+}
+
+/* Pendants */
+#pendants {
+  animation: drawFade 1.8s 0.35s ease forwards, floatB 11s 3.2s ease-in-out infinite;
+}
+#pendants line, #pendants ellipse, #pendants circle,
+#pendants polygon, #pendants path, #pendants rect {
+  animation: strokeOn 2.2s 0.35s ease forwards;
+}
+
+/* Tall plant */
+#plant-tall {
+  animation: drawFade 2.0s 0.28s ease forwards, floatE 13s 3.4s ease-in-out infinite;
+}
+#plant-tall line, #plant-tall polygon, #plant-tall ellipse,
+#plant-tall circle, #plant-tall rect {
+  animation: strokeOn 2.4s 0.28s ease forwards;
+}
+
+/* Wall art A */
+#wall-art-a {
+  animation: drawFade 1.7s 0.25s ease forwards, floatA 13s 3.0s ease-in-out infinite;
+}
+#wall-art-a rect, #wall-art-a polygon, #wall-art-a line,
+#wall-art-a circle, #wall-art-a ellipse {
+  animation: strokeOn 2.1s 0.25s ease forwards;
+}
+
+/* Wall art B */
+#wall-art-b {
+  animation: drawFade 1.7s 0.45s ease forwards, floatD 11s 3.5s ease-in-out infinite;
+}
+#wall-art-b rect, #wall-art-b polygon, #wall-art-b line, #wall-art-b ellipse {
+  animation: strokeOn 2.1s 0.45s ease forwards;
+}
+
+/* Chandelier */
+#chandelier {
+  animation: drawFade 2.2s 0.8s ease forwards, floatB 9s 4.0s ease-in-out infinite;
+}
+#chandelier line, #chandelier ellipse, #chandelier circle,
+#chandelier polygon, #chandelier rect, #chandelier path {
+  animation: strokeOn 2.6s 0.8s ease forwards;
+}
+
+/* Dining table */
+#dining-tbl {
+  animation: drawFade 2.1s 1.3s ease forwards, floatA 12s 4.2s ease-in-out infinite;
+}
+#dining-tbl line, #dining-tbl polygon, #dining-tbl ellipse,
+#dining-tbl circle, #dining-tbl path {
+  animation: strokeOn 2.5s 1.3s ease forwards;
+}
+
+/* Dining chair 1 */
+#dc-1 {
+  animation: drawFade 1.7s 1.55s ease forwards, floatB 10s 4.5s ease-in-out infinite;
+}
+#dc-1 polygon, #dc-1 line, #dc-1 circle {
+  animation: strokeOn 2.1s 1.55s ease forwards;
+}
+
+/* Dining chair 2 */
+#dc-2 {
+  animation: drawFade 1.7s 1.65s ease forwards, floatC 9s 4.8s ease-in-out infinite;
+}
+#dc-2 polygon, #dc-2 line, #dc-2 circle {
+  animation: strokeOn 2.1s 1.65s ease forwards;
+}
+
+/* Dining chair 3 */
+#dc-3 {
+  animation: drawFade 1.7s 1.75s ease forwards, floatA 11s 5.0s ease-in-out infinite;
+}
+#dc-3 polygon, #dc-3 line {
+  animation: strokeOn 2.1s 1.75s ease forwards;
+}
+
+/* Dining chair 4 */
+#dc-4 {
+  animation: drawFade 1.6s 1.85s ease forwards, floatD 10.5s 5.2s ease-in-out infinite;
+}
+#dc-4 polygon, #dc-4 line {
+  animation: strokeOn 2.0s 1.85s ease forwards;
+}
+
+/* Kitchen run */
+#kitchen-run {
+  animation: drawFade 2.3s 1.9s ease forwards, floatD 13s 4.8s ease-in-out infinite;
+}
+#kitchen-run polygon, #kitchen-run line, #kitchen-run rect,
+#kitchen-run ellipse, #kitchen-run path, #kitchen-run circle {
+  animation: strokeOn 2.7s 1.9s ease forwards;
+}
+
+/* Bar stool 1 */
+#bst-1 {
+  animation: drawFade 1.7s 2.2s ease forwards, floatB 9.5s 5.2s ease-in-out infinite;
+}
+#bst-1 ellipse, #bst-1 line, #bst-1 path, #bst-1 circle {
+  animation: strokeOn 2.1s 2.2s ease forwards;
+}
+
+/* Bar stool 2 */
+#bst-2 {
+  animation: drawFade 1.7s 2.3s ease forwards, floatC 10s 5.4s ease-in-out infinite;
+}
+#bst-2 ellipse, #bst-2 line, #bst-2 path {
+  animation: strokeOn 2.1s 2.3s ease forwards;
+}
+
+/* Bar stool 3 */
+#bst-3 {
+  animation: drawFade 1.6s 2.4s ease forwards, floatA 9s 5.6s ease-in-out infinite;
+}
+#bst-3 ellipse, #bst-3 line, #bst-3 path {
+  animation: strokeOn 2.0s 2.4s ease forwards;
+}
+
+/* Shelving */
+#shelving {
+  animation: drawFade 2.1s 1.1s ease forwards, floatA 14s 3.8s ease-in-out infinite;
+}
+#shelving rect, #shelving polygon, #shelving line, #shelving ellipse, #shelving circle {
+  animation: strokeOn 2.5s 1.1s ease forwards;
+}
+
+/* Reading armchair */
+#armchair-r {
+  animation: drawFade 2.1s 2.1s ease forwards, floatB 11s 5.0s ease-in-out infinite;
+}
+#armchair-r polygon, #armchair-r line, #armchair-r ellipse,
+#armchair-r circle, #armchair-r path {
+  animation: strokeOn 2.5s 2.1s ease forwards;
+}
+
+/* Floor lamp right */
+#floor-lamp-r {
+  animation: drawFade 1.9s 0.65s ease forwards, floatC 8.5s 3.5s ease-in-out infinite;
+}
+#floor-lamp-r ellipse, #floor-lamp-r line, #floor-lamp-r path, #floor-lamp-r circle {
+  animation: strokeOn 2.3s 0.65s ease forwards;
+}
+
+/* Side table right */
+#side-tbl-r {
+  animation: drawFade 1.9s 2.35s ease forwards, floatD 10.5s 5.5s ease-in-out infinite;
+}
+#side-tbl-r ellipse, #side-tbl-r line, #side-tbl-r polygon, #side-tbl-r rect {
+  animation: strokeOn 2.3s 2.35s ease forwards;
+}
+
+/* Console table */
+#console {
+  animation: drawFade 2.1s 2.5s ease forwards, floatA 12s 5.2s ease-in-out infinite;
+}
+#console polygon, #console line, #console ellipse, #console circle, #console path {
+  animation: strokeOn 2.5s 2.5s ease forwards;
+}
+
+/* Plinth */
+#plinth {
+  animation: drawFade 1.9s 2.7s ease forwards, floatB 9.5s 5.8s ease-in-out infinite;
+}
+#plinth polygon, #plinth line, #plinth ellipse, #plinth circle, #plinth rect {
+  animation: strokeOn 2.3s 2.7s ease forwards;
+}
+
+/* Sconce pair */
+#sconce-pair {
+  animation: drawFade 1.7s 0.92s ease forwards, floatD 12s 4.0s ease-in-out infinite;
+}
+#sconce-pair line, #sconce-pair polygon, #sconce-pair ellipse,
+#sconce-pair path, #sconce-pair circle {
+  animation: strokeOn 2.1s 0.92s ease forwards;
+}
+
+/* Lounge chair mid-left */
+#lounge-ch {
+  animation: drawFade 2.1s 1.45s ease forwards, floatC 10.5s 4.5s ease-in-out infinite;
+}
+#lounge-ch polygon, #lounge-ch line, #lounge-ch ellipse, #lounge-ch path {
+  animation: strokeOn 2.5s 1.45s ease forwards;
+}
+
+/* Vase cluster */
+#vase-cluster {
+  animation: drawFade 1.9s 2.62s ease forwards, floatE 11s 5.6s ease-in-out infinite;
+}
+#vase-cluster ellipse, #vase-cluster line, #vase-cluster circle {
+  animation: strokeOn 2.3s 2.62s ease forwards;
+}
+
+/* Annotations — last to appear */
+.annot {
+  opacity: 0;
+  animation: annotFade 4.0s 3.2s ease forwards;
+}
+.conn {
+  opacity: 0;
+  animation: annotFade 5.0s 3.8s ease forwards;
+}
+
+/* ── VIGNETTE OVERLAY ── */
+#intro-screen::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 108% 108% at 50% 50%,
+    transparent 38%,
+    rgba(7,7,6,0.50) 72%,
+    rgba(4,4,3,0.80) 100%
+  );
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ── ENTER ARROW ── */
 #enter-arrow {
   position: fixed;
-  bottom: 44px;
+  bottom: 46px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 80px; height: 80px;
   text-decoration: none;
   opacity: 0;
-  animation: arrowAppear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 3.2s forwards;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+  animation: arrowIn 1.4s cubic-bezier(0.22,1,0.36,1) 3.8s forwards;
+  transition: transform 0.50s cubic-bezier(0.22,1,0.36,1);
 }
 
 #enter-arrow:hover {
-  transform: translateX(-50%) scale(1.12);
-}
-
-#enter-arrow:hover .arrow-svg circle:first-child {
-  stroke: rgba(240, 240, 230, 0.85);
-  transition: stroke 0.3s ease;
+  transform: translateX(-50%) scale(1.18);
 }
 
 .arrow-svg {
-  width: 64px;
-  height: 64px;
-  filter: drop-shadow(0 0 12px rgba(240, 240, 230, 0.18));
-  transition: filter 0.4s ease;
+  width: 80px; height: 80px;
+  filter: drop-shadow(0 0 18px rgba(238,235,220,0.18));
+  transition: filter 0.50s ease;
 }
 
 #enter-arrow:hover .arrow-svg {
-  filter: drop-shadow(0 0 20px rgba(240, 240, 230, 0.38));
+  filter: drop-shadow(0 0 30px rgba(238,235,220,0.48));
 }
 
-@keyframes arrowAppear {
+#enter-arrow:hover .arrow-svg circle:first-child {
+  stroke: rgba(238,235,220,0.90);
+  transition: stroke 0.35s ease;
+}
+
+@keyframes arrowIn {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(14px);
+    transform: translateX(-50%) translateY(22px);
   }
   to {
     opacity: 1;
@@ -251,52 +403,36 @@ html, body {
 
 @keyframes arrowPulse {
   0%, 100% {
-    transform: translateX(-50%) translateY(0px);
-    filter: drop-shadow(0 0 10px rgba(240, 240, 230, 0.15));
+    transform: translateX(-50%) translateY(0);
+    filter: drop-shadow(0 0 14px rgba(238,235,220,0.15));
   }
   50% {
-    transform: translateX(-50%) translateY(-5px);
-    filter: drop-shadow(0 0 20px rgba(240, 240, 230, 0.28));
+    transform: translateX(-50%) translateY(-8px);
+    filter: drop-shadow(0 0 28px rgba(238,235,220,0.36));
   }
 }
 
-/* After appearing, gently pulse */
-#enter-arrow.pulse-active {
-  animation: arrowPulse 3s ease-in-out infinite;
+#enter-arrow.pulsing {
+  animation: arrowPulse 3.4s ease-in-out infinite;
 }
 
-/* ─── PAGE TRANSITION ─────────────────────────── */
-#intro-screen.fade-out {
-  animation: pageOut 0.9s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+/* ── PAGE OUT TRANSITION ── */
+#intro-screen.exit {
+  animation: pageExit 0.90s cubic-bezier(0.55,0,1,0.45) forwards;
 }
 
-@keyframes pageOut {
+@keyframes pageExit {
   0%   { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 0; transform: scale(1.06); }
 }
 
-/* ─── SUBTLE VIGNETTE OVERLAY ─────────────────── */
-#intro-screen::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 100% 100% at 50% 50%,
-    transparent 55%,
-    rgba(10, 10, 10, 0.55) 100%
-  );
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* ─── RESPONSIVE ──────────────────────────────── */
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  #enter-arrow {
-    bottom: 32px;
-    width: 54px;
-    height: 54px;
-  }
-  .arrow-svg {
-    width: 54px;
-    height: 54px;
-  }
+  #enter-arrow { bottom: 32px; width: 66px; height: 66px; }
+  .arrow-svg   { width: 66px; height: 66px; }
+}
+
+@media (max-width: 480px) {
+  #enter-arrow { bottom: 26px; width: 58px; height: 58px; }
+  .arrow-svg   { width: 58px; height: 58px; }
 }
