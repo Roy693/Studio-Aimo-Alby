@@ -331,6 +331,138 @@ html, body {
   animation: strokeOn 2.3s 2.62s ease forwards;
 }
 
+/* ── CENTRAL GRAND COMPOSITION ── */
+
+/* Central room box */
+#central-room {
+  animation: drawFade 3.0s 0.08s ease forwards;
+  animation-fill-mode: forwards;
+}
+#central-room polygon, #central-room line {
+  animation: strokeOn 3.4s 0.08s ease forwards;
+}
+
+/* Central sofa — hero piece, drawn first */
+#central-sofa {
+  animation: drawFade 2.6s 0.10s ease forwards, floatB 14s 4.0s ease-in-out infinite;
+}
+#central-sofa polygon, #central-sofa line, #central-sofa ellipse,
+#central-sofa circle, #central-sofa path {
+  animation: strokeOn 3.0s 0.10s ease forwards;
+}
+
+/* Central armchair */
+#central-armchair {
+  animation: drawFade 2.2s 0.42s ease forwards, floatC 12s 4.2s ease-in-out infinite;
+}
+#central-armchair polygon, #central-armchair line, #central-armchair ellipse, #central-armchair circle {
+  animation: strokeOn 2.6s 0.42s ease forwards;
+}
+
+/* Central coffee table */
+#central-ct {
+  animation: drawFade 2.0s 0.30s ease forwards, floatA 11s 4.0s ease-in-out infinite;
+}
+#central-ct polygon, #central-ct line, #central-ct ellipse,
+#central-ct circle, #central-ct rect, #central-ct path {
+  animation: strokeOn 2.4s 0.30s ease forwards;
+}
+
+/* Central chandelier — large statement piece */
+#central-chandelier {
+  animation: drawFade 2.4s 0.20s ease forwards, floatB 10s 3.8s ease-in-out infinite;
+}
+#central-chandelier line, #central-chandelier ellipse, #central-chandelier circle,
+#central-chandelier polygon, #central-chandelier rect, #central-chandelier path {
+  animation: strokeOn 2.8s 0.20s ease forwards;
+}
+
+/* Central rug */
+#central-rug {
+  animation: drawFade 2.8s 0.60s ease forwards, floatD 16s 4.6s ease-in-out infinite;
+}
+#central-rug polygon, #central-rug line, #central-rug ellipse {
+  animation: strokeOn 3.2s 0.60s ease forwards;
+}
+
+/* ── NEW ADDITIONAL FURNITURE ── */
+
+/* Fireplace */
+#fireplace {
+  animation: drawFade 2.0s 1.0s ease forwards, floatA 13s 4.5s ease-in-out infinite;
+}
+#fireplace polygon, #fireplace line, #fireplace ellipse,
+#fireplace circle, #fireplace path, #fireplace rect {
+  animation: strokeOn 2.4s 1.0s ease forwards;
+}
+
+/* Loveseat */
+#loveseat {
+  animation: drawFade 2.1s 1.6s ease forwards, floatE 12s 5.0s ease-in-out infinite;
+}
+#loveseat polygon, #loveseat line, #loveseat ellipse, #loveseat circle {
+  animation: strokeOn 2.5s 1.6s ease forwards;
+}
+
+/* Staircase */
+#staircase {
+  animation: drawFade 2.3s 0.50s ease forwards, floatD 15s 4.0s ease-in-out infinite;
+}
+#staircase polygon, #staircase line {
+  animation: strokeOn 2.7s 0.50s ease forwards;
+}
+
+/* Window frame */
+#window-frame {
+  animation: drawFade 1.8s 0.38s ease forwards, floatA 12s 3.6s ease-in-out infinite;
+}
+#window-frame rect, #window-frame polygon, #window-frame line,
+#window-frame path, #window-frame circle, #window-frame ellipse {
+  animation: strokeOn 2.2s 0.38s ease forwards;
+}
+
+/* Radiator */
+#radiator {
+  animation: drawFade 1.9s 1.8s ease forwards, floatD 13s 5.4s ease-in-out infinite;
+}
+#radiator polygon, #radiator line, #radiator ellipse, #radiator circle {
+  animation: strokeOn 2.3s 1.8s ease forwards;
+}
+
+/* Bedside table */
+#bedside-tbl {
+  animation: drawFade 2.0s 2.0s ease forwards, floatB 10s 5.2s ease-in-out infinite;
+}
+#bedside-tbl polygon, #bedside-tbl line, #bedside-tbl ellipse,
+#bedside-tbl circle, #bedside-tbl rect, #bedside-tbl path {
+  animation: strokeOn 2.4s 2.0s ease forwards;
+}
+
+/* Ottoman */
+#ottoman {
+  animation: drawFade 1.8s 0.70s ease forwards, floatC 9s 4.0s ease-in-out infinite;
+}
+#ottoman ellipse, #ottoman line, #ottoman circle {
+  animation: strokeOn 2.2s 0.70s ease forwards;
+}
+
+/* Narrow cabinet */
+#narrow-cabinet {
+  animation: drawFade 2.0s 1.4s ease forwards, floatA 14s 4.4s ease-in-out infinite;
+}
+#narrow-cabinet rect, #narrow-cabinet polygon, #narrow-cabinet line,
+#narrow-cabinet circle, #narrow-cabinet ellipse {
+  animation: strokeOn 2.4s 1.4s ease forwards;
+}
+
+/* Accent chair right */
+#accent-chair-r {
+  animation: drawFade 1.8s 1.72s ease forwards, floatC 10s 5.0s ease-in-out infinite;
+}
+#accent-chair-r polygon, #accent-chair-r line {
+  animation: strokeOn 2.2s 1.72s ease forwards;
+}
+
 /* Annotations — last to appear */
 .annot {
   opacity: 0;
