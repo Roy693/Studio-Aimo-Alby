@@ -2407,6 +2407,97 @@ app.get('/', (c) => {
   </svg>
   </div>
 
+  <!-- HOME PREVIEW — visible before clicking the arrow -->
+  <div id="home-preview" aria-hidden="true">
+    <div class="hp-inner">
+      <!-- mini SVG room sketch -->
+      <svg class="hp-svg" viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="hpChalk" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.70" numOctaves="3" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.7" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <radialGradient id="hpGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(200,169,110,0.12)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+          </radialGradient>
+        </defs>
+        <!-- Background glow -->
+        <rect width="260" height="160" fill="url(#hpGlow)"/>
+        <!-- Floor plane -->
+        <polygon points="30,120 130,90 230,120 130,150" fill="none" stroke="rgba(238,235,220,0.10)" stroke-width="0.6"/>
+        <!-- Back wall left -->
+        <polygon points="30,40 130,10 130,90 30,120" fill="none" stroke="rgba(238,235,220,0.08)" stroke-width="0.5"/>
+        <!-- Back wall right -->
+        <polygon points="130,10 230,40 230,120 130,90" fill="none" stroke="rgba(238,235,220,0.08)" stroke-width="0.5"/>
+
+        <!-- Grand sofa (centre) -->
+        <g filter="url(#hpChalk)" stroke-linecap="round" stroke-linejoin="round">
+          <!-- sofa base -->
+          <polygon points="85,105 175,88 175,100 85,117" fill="none" stroke="rgba(200,169,110,0.70)" stroke-width="1.1"/>
+          <!-- sofa back -->
+          <polygon points="85,105 85,93 175,76 175,88" fill="none" stroke="rgba(200,169,110,0.60)" stroke-width="0.9"/>
+          <!-- arm left -->
+          <polygon points="85,117 85,93 78,96 78,120" fill="none" stroke="rgba(200,169,110,0.55)" stroke-width="0.8"/>
+          <!-- arm right -->
+          <polygon points="175,100 175,76 182,73 182,97" fill="none" stroke="rgba(200,169,110,0.55)" stroke-width="0.8"/>
+          <!-- cushion dividers -->
+          <line x1="108" y1="88" x2="108" y2="100" stroke="rgba(200,169,110,0.38)" stroke-width="0.6"/>
+          <line x1="130" y1="83" x2="130" y2="95" stroke="rgba(200,169,110,0.38)" stroke-width="0.6"/>
+          <line x1="152" y1="78" x2="152" y2="90" stroke="rgba(200,169,110,0.38)" stroke-width="0.6"/>
+
+          <!-- coffee table -->
+          <polygon points="100,118 160,105 160,112 100,125" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="0.8"/>
+          <ellipse cx="130" cy="113" rx="18" ry="5" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+
+          <!-- floor lamp -->
+          <line x1="195" y1="120" x2="195" y2="68" stroke="rgba(238,235,220,0.55)" stroke-width="0.7"/>
+          <ellipse cx="195" cy="120" rx="5" ry="2" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.6"/>
+          <line x1="195" y1="68" x2="208" y2="58" stroke="rgba(238,235,220,0.55)" stroke-width="0.7"/>
+          <ellipse cx="210" cy="56" rx="8" ry="3" fill="none" stroke="rgba(200,169,110,0.65)" stroke-width="0.8"/>
+
+          <!-- chandelier hanging -->
+          <line x1="130" y1="10" x2="130" y2="38" stroke="rgba(200,169,110,0.45)" stroke-width="0.6" stroke-dasharray="2,3"/>
+          <ellipse cx="130" cy="40" rx="14" ry="5" fill="none" stroke="rgba(200,169,110,0.60)" stroke-width="0.9"/>
+          <line x1="116" y1="40" x2="116" y2="50" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+          <line x1="123" y1="38" x2="123" y2="50" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+          <line x1="130" y1="36" x2="130" y2="48" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+          <line x1="137" y1="38" x2="137" y2="50" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+          <line x1="144" y1="40" x2="144" y2="50" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+
+          <!-- shelving unit left wall -->
+          <rect x="32" y="55" width="22" height="52" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.7"/>
+          <line x1="32" y1="68" x2="54" y2="68" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+          <line x1="32" y1="80" x2="54" y2="80" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+          <line x1="32" y1="92" x2="54" y2="92" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+          <!-- books on shelves -->
+          <rect x="34" y="58" width="3" height="9" fill="none" stroke="rgba(200,169,110,0.50)" stroke-width="0.6"/>
+          <rect x="38" y="60" width="3" height="7" fill="none" stroke="rgba(200,169,110,0.38)" stroke-width="0.5"/>
+          <rect x="34" y="70" width="3" height="9" fill="none" stroke="rgba(200,169,110,0.45)" stroke-width="0.5"/>
+
+          <!-- rug outline -->
+          <ellipse cx="130" cy="118" rx="42" ry="14" fill="none" stroke="rgba(238,235,220,0.18)" stroke-width="0.6" stroke-dasharray="3,4"/>
+          <!-- inner rug pattern -->
+          <ellipse cx="130" cy="118" rx="30" ry="10" fill="none" stroke="rgba(238,235,220,0.10)" stroke-width="0.4" stroke-dasharray="2,5"/>
+
+          <!-- dimension annotation lines -->
+          <line x1="30" y1="135" x2="230" y2="135" stroke="rgba(200,169,110,0.20)" stroke-width="0.4" stroke-dasharray="1,6"/>
+          <line x1="30" y1="132" x2="30" y2="138" stroke="rgba(200,169,110,0.20)" stroke-width="0.4"/>
+          <line x1="230" y1="132" x2="230" y2="138" stroke="rgba(200,169,110,0.20)" stroke-width="0.4"/>
+        </g>
+      </svg>
+
+      <!-- text block -->
+      <div class="hp-text">
+        <span class="hp-eyebrow">Interior Sorcery</span>
+        <h2 class="hp-title">STUDIO<br/>AIMO</h2>
+        <p class="hp-sub">Bespoke spaces<br/>crafted with intention</p>
+        <span class="hp-cta">Enter Studio →</span>
+      </div>
+    </div>
+    <div class="hp-hint">click arrow to enter</div>
+  </div>
+
   <!-- Enter arrow — sole interactive element -->
   <a href="/home" id="enter-arrow" aria-label="Enter Studio Aimo">
     <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="arrow-svg">

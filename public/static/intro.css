@@ -684,6 +684,158 @@ html, body {
   animation: arrowPulse 3.8s ease-in-out infinite;
 }
 
+/* ══════════════════════════════════════════════════════
+   HOME PREVIEW CARD — visible on intro before arrow click
+══════════════════════════════════════════════════════ */
+
+#home-preview {
+  position: fixed;
+  bottom: 130px;           /* sits above the arrow */
+  left: 50%;
+  transform: translateX(-50%) translateY(24px);
+  z-index: 9;
+  width: 320px;
+  opacity: 0;
+  pointer-events: none;   /* non-clickable: the arrow below handles navigation */
+  animation: previewIn 1.2s cubic-bezier(0.22,1,0.36,1) 5.2s forwards;
+}
+
+@keyframes previewIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Glass card inner */
+.hp-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: rgba(14,13,11,0.72);
+  border: 0.5px solid rgba(200,169,110,0.22);
+  border-radius: 3px;
+  overflow: hidden;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow:
+    0 0 0 0.5px rgba(200,169,110,0.08),
+    0 8px 48px rgba(0,0,0,0.65),
+    0 0 80px rgba(200,169,110,0.04);
+}
+
+/* SVG illustration panel */
+.hp-svg {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 110px;
+  display: block;
+  border-right: 0.5px solid rgba(200,169,110,0.12);
+}
+
+/* Text panel */
+.hp-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px 16px;
+}
+
+.hp-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(200,169,110,0.75);
+}
+
+.hp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.05;
+  color: rgba(238,235,220,0.92);
+  letter-spacing: 0.08em;
+}
+
+.hp-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 200;
+  line-height: 1.5;
+  color: rgba(238,235,220,0.45);
+  letter-spacing: 0.08em;
+}
+
+.hp-cta {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(200,169,110,0.80);
+}
+
+/* Hint label below the card */
+.hp-hint {
+  margin-top: 8px;
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 200;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(238,235,220,0.22);
+}
+
+/* Subtle idle float */
+#home-preview.preview-visible {
+  animation: previewFloat 6s ease-in-out infinite;
+}
+
+@keyframes previewFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Fade out when arrow is clicked */
+#home-preview.preview-exit {
+  animation: previewOut 0.5s ease forwards;
+}
+
+@keyframes previewOut {
+  to { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  #home-preview {
+    width: 280px;
+    bottom: 116px;
+  }
+  .hp-svg { width: 150px; height: 92px; }
+  .hp-title { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  #home-preview {
+    width: 240px;
+    bottom: 100px;
+  }
+  .hp-svg { width: 120px; height: 76px; }
+  .hp-title { font-size: 15px; }
+  .hp-sub { display: none; }
+}
+
 /* ── PAGE OUT TRANSITION ── */
 #intro-screen.exit {
   animation: pageExit 1.0s cubic-bezier(0.55,0,1,0.45) forwards;

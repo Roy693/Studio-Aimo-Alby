@@ -116,6 +116,16 @@
   // Run after first two paint frames for accuracy
   requestAnimationFrame(() => requestAnimationFrame(normaliseStrokes));
 
+  /* ── HOME PREVIEW CARD ──────────────────────── */
+  const preview = document.getElementById('home-preview');
+
+  if (preview) {
+    // After preview fades in (CSS anim at 5.2s), switch to idle float
+    setTimeout(() => {
+      preview.classList.add('preview-visible');
+    }, 6600); // 5.2s delay + 1.2s anim duration + buffer
+  }
+
   /* ── ENTER ARROW ────────────────────────────── */
   const arrow = document.getElementById('enter-arrow');
 
@@ -128,6 +138,11 @@
       e.preventDefault();
       const dest = this.getAttribute('href');
       arrow.classList.remove('pulsing');
+      // Fade out preview card
+      if (preview) {
+        preview.classList.remove('preview-visible');
+        preview.classList.add('preview-exit');
+      }
       cancelAnimationFrame(raf);
       const screen = document.getElementById('intro-screen');
       if (screen) screen.classList.add('exit');
