@@ -5,7 +5,357 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>STUDIO AIMO</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
-  
+  <style>
+/* ═══════════════════════════════════════════════════
+   STUDIO AIMO — INTRO SCREEN
+   Anthracite noir · Chalk-white architectural sorcery
+   Inspired by @STUDIO_AIMO — dark, transformative, bold
+═══════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #0e0d0b;
+  --bg-warm:     #111009;
+  --chalk:       rgba(238,235,220,1);
+  --chalk-dim:   rgba(238,235,220,0.55);
+  --gold:        rgba(200,169,110,1);
+  --gold-glow:   rgba(200,169,110,0.18);
+  --ease-silk:   cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── INTRO WRAP ── */
+#intro-screen {
+  position: relative;
+  width: 100vw; height: 100vh;
+  background:
+    /* Deep warm centre pool — theatrical spotlight */
+    radial-gradient(ellipse 55% 50% at 50% 52%, rgba(26,22,16,0.72) 0%, transparent 65%),
+    /* Left shadow density */
+    radial-gradient(ellipse 80% 70% at 8% 50%, rgba(8,7,5,0.90) 0%, transparent 55%),
+    /* Right shadow density */
+    radial-gradient(ellipse 80% 70% at 92% 50%, rgba(8,7,5,0.85) 0%, transparent 55%),
+    /* Top fade */
+    radial-gradient(ellipse 100% 40% at 50% 0%, rgba(5,5,4,0.95) 0%, transparent 55%),
+    /* Bottom fade */
+    radial-gradient(ellipse 100% 35% at 50% 100%, rgba(5,5,4,0.92) 0%, transparent 50%),
+    var(--bg);
+  overflow: hidden;
+}
+
+/* ── ATMOSPHERIC GRAIN TEXTURE ── */
+#intro-screen::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='0.038'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── PARTICLE CANVAS ── */
+#particle-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── SVG SCENE ── */
+.scene-wrapper {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+}
+
+#main-scene {
+  width: 100%; height: 100%;
+  display: block;
+}
+
+/* ── FURNITURE ITEMS — hidden by default, JS sequencer controls visibility ── */
+.fi {
+  opacity: 0;
+  will-change: opacity, transform;
+  transform-origin: center center;
+}
+
+/* Child strokes are set up by JS (stroke-dasharray / dashoffset) */
+.fi line, .fi polygon, .fi polyline, .fi path,
+.fi ellipse, .fi circle, .fi rect {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+@keyframes annotFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── VIGNETTE OVERLAY — dramatic dark edges ── */
+#intro-screen::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 110% 110% at 50% 50%,
+      transparent 30%,
+      rgba(6,5,4,0.40) 58%,
+      rgba(4,3,2,0.75) 80%,
+      rgba(2,2,1,0.92) 100%
+    );
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ── ENTER ARROW — refined minimal ── */
+#enter-arrow {
+  position: fixed;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px; height: 72px;
+  text-decoration: none;
+  opacity: 0;
+  animation: arrowIn 1.6s cubic-bezier(0.22,1,0.36,1) 4.0s forwards;
+  transition: transform 0.60s cubic-bezier(0.22,1,0.36,1);
+}
+
+#enter-arrow:hover {
+  transform: translateX(-50%) scale(1.14);
+}
+
+.arrow-svg {
+  width: 72px; height: 72px;
+  filter:
+    drop-shadow(0 0 20px rgba(238,235,220,0.14))
+    drop-shadow(0 0 50px rgba(200,169,110,0.06));
+  transition: filter 0.55s ease;
+}
+
+#enter-arrow:hover .arrow-svg {
+  filter:
+    drop-shadow(0 0 32px rgba(238,235,220,0.52))
+    drop-shadow(0 0 70px rgba(200,169,110,0.18));
+}
+
+#enter-arrow:hover .arrow-svg circle:first-child {
+  stroke: rgba(200,169,110,0.80);
+  transition: stroke 0.40s ease;
+}
+
+@keyframes arrowIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    filter: drop-shadow(0 0 16px rgba(238,235,220,0.12)) drop-shadow(0 0 40px rgba(200,169,110,0.05));
+  }
+  50% {
+    transform: translateX(-50%) translateY(-9px);
+    filter: drop-shadow(0 0 30px rgba(238,235,220,0.38)) drop-shadow(0 0 70px rgba(200,169,110,0.14));
+  }
+}
+
+#enter-arrow.pulsing {
+  animation: arrowPulse 3.8s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════════
+   HOME PREVIEW CARD — visible on intro before arrow click
+══════════════════════════════════════════════════════ */
+
+#home-preview {
+  position: fixed;
+  bottom: 130px;           /* sits above the arrow */
+  left: 50%;
+  transform: translateX(-50%) translateY(24px);
+  z-index: 9;
+  width: 320px;
+  opacity: 0;
+  pointer-events: none;   /* non-clickable: the arrow below handles navigation */
+  animation: previewIn 1.2s cubic-bezier(0.22,1,0.36,1) 5.2s forwards;
+}
+
+@keyframes previewIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Glass card inner */
+.hp-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: rgba(14,13,11,0.72);
+  border: 0.5px solid rgba(200,169,110,0.22);
+  border-radius: 3px;
+  overflow: hidden;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow:
+    0 0 0 0.5px rgba(200,169,110,0.08),
+    0 8px 48px rgba(0,0,0,0.65),
+    0 0 80px rgba(200,169,110,0.04);
+}
+
+/* SVG illustration panel */
+.hp-svg {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 110px;
+  display: block;
+  border-right: 0.5px solid rgba(200,169,110,0.12);
+}
+
+/* Text panel */
+.hp-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px 16px;
+}
+
+.hp-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(200,169,110,0.75);
+}
+
+.hp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.05;
+  color: rgba(238,235,220,0.92);
+  letter-spacing: 0.08em;
+}
+
+.hp-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 200;
+  line-height: 1.5;
+  color: rgba(238,235,220,0.45);
+  letter-spacing: 0.08em;
+}
+
+.hp-cta {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(200,169,110,0.80);
+}
+
+/* Hint label below the card */
+.hp-hint {
+  margin-top: 8px;
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 200;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(238,235,220,0.22);
+}
+
+/* Subtle idle float */
+#home-preview.preview-visible {
+  animation: previewFloat 6s ease-in-out infinite;
+}
+
+@keyframes previewFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Fade out when arrow is clicked */
+#home-preview.preview-exit {
+  animation: previewOut 0.5s ease forwards;
+}
+
+@keyframes previewOut {
+  to { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  #home-preview {
+    width: 280px;
+    bottom: 116px;
+  }
+  .hp-svg { width: 150px; height: 92px; }
+  .hp-title { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  #home-preview {
+    width: 240px;
+    bottom: 100px;
+  }
+  .hp-svg { width: 120px; height: 76px; }
+  .hp-title { font-size: 15px; }
+  .hp-sub { display: none; }
+}
+
+/* ── PAGE OUT TRANSITION ── */
+#intro-screen.exit {
+  animation: pageExit 1.0s cubic-bezier(0.55,0,1,0.45) forwards;
+}
+
+@keyframes pageExit {
+  0%   { opacity: 1; transform: scale(1); filter: brightness(1); }
+  100% { opacity: 0; transform: scale(1.04); filter: brightness(0.2); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  #enter-arrow { bottom: 30px; width: 60px; height: 60px; }
+  .arrow-svg   { width: 60px; height: 60px; }
+}
+
+@media (max-width: 480px) {
+  #enter-arrow { bottom: 22px; width: 52px; height: 52px; }
+  .arrow-svg   { width: 52px; height: 52px; }
+}
+
+  </style>
 </head>
 <body>
 <div id="intro-screen">
