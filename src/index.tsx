@@ -1787,8 +1787,522 @@ app.get('/', (c) => {
     </g>
 
     <!-- ══════════════════════════════════════════════
-         BLUEPRINT ANNOTATIONS — dimension lines, axes
+         ZONE CENTRAL — GRAND INTERIOR COMPOSITION
+         Wardrobe · Kitchen · Grand Armoire · Walk-in
     ══════════════════════════════════════════════ -->
+
+    <!-- ─── MONUMENTAL WALK-IN WARDROBE / ARMADIO ─── -->
+    <!-- Positioned centre-left, dominant vertical element -->
+    <g class="fi" id="wardrobe-main" transform="translate(390,160) rotate(-2)" filter="url(#chalk)">
+      <!-- Outer frame — tall 3D box -->
+      <polygon points="0,18 260,0 302,22 42,40" fill="none" stroke="rgba(238,235,220,0.94)" stroke-width="2.2"/>
+      <!-- Front face left panel -->
+      <polygon points="0,18 0,380 42,400 42,40" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.9"/>
+      <!-- Right face receding -->
+      <polygon points="42,40 42,400 302,380 302,22" fill="none" stroke="rgba(238,235,220,0.65)" stroke-width="1.5"/>
+      <!-- ─ DOOR PANELING — 4 doors, 2 on front, 2 on right face ─ -->
+      <!-- Front left door -->
+      <rect x="4" y="26" width="34" height="356" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <!-- Door inset moulding left -->
+      <rect x="7" y="32" width="28" height="160" fill="none" stroke="rgba(238,235,220,0.26)" stroke-width="0.5"/>
+      <rect x="7" y="200" width="28" height="166" fill="none" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <!-- Horizontal rail split front door -->
+      <line x1="4" y1="196" x2="38" y2="196" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <!-- Handle front left door -->
+      <ellipse cx="36" cy="202" rx="2.5" ry="6" fill="none" stroke="rgba(238,235,220,0.68)" stroke-width="1.3"/>
+      <!-- RIGHT FACE — 3 doors -->
+      <!-- Door dividers on right face -->
+      <line x1="122" y1="40" x2="122" y2="398" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+      <line x1="202" y1="32" x2="202" y2="390" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <!-- Door insets right face -->
+      <rect x="48" y="46" width="68" height="166" fill="none" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <rect x="48" y="220" width="68" height="156" fill="none" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <rect x="128" y="38" width="68" height="164" fill="none" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <rect x="128" y="210" width="68" height="154" fill="none" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <rect x="208" y="30" width="88" height="160" fill="none" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <rect x="208" y="198" width="88" height="152" fill="none" stroke="rgba(238,235,220,0.16)" stroke-width="0.4"/>
+      <!-- Handles right face doors -->
+      <ellipse cx="118" cy="220" rx="2" ry="5" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <ellipse cx="198" cy="212" rx="2" ry="5" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <ellipse cx="288" cy="204" rx="2" ry="5" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <!-- ─ INSIDE GLIMPSE — open left door reveals interior ─ -->
+      <!-- Hanging clothes bar at top -->
+      <line x1="46" y1="56" x2="116" y2="50" stroke="rgba(238,235,220,0.36)" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <!-- Hanging clothes silhouettes (triangular coat hangers) -->
+      <line x1="55" y1="56" x2="55" y2="90" stroke="rgba(238,235,220,0.28)" stroke-width="0.6"/>
+      <line x1="55" y1="56" x2="48" y2="76" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <line x1="55" y1="56" x2="62" y2="76" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <line x1="70" y1="53" x2="70" y2="92" stroke="rgba(238,235,220,0.26)" stroke-width="0.6"/>
+      <line x1="70" y1="53" x2="63" y2="72" stroke="rgba(238,235,220,0.20)" stroke-width="0.5"/>
+      <line x1="70" y1="53" x2="77" y2="72" stroke="rgba(238,235,220,0.20)" stroke-width="0.5"/>
+      <line x1="85" y1="51" x2="85" y2="94" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <!-- Shelf inside bottom half -->
+      <line x1="46" y1="220" x2="116" y2="214" stroke="rgba(238,235,220,0.26)" stroke-width="0.6"/>
+      <line x1="46" y1="280" x2="116" y2="274" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <!-- Shoe shelf hint -->
+      <rect x="48" y="342" width="66" height="10" fill="none" stroke="rgba(238,235,220,0.20)" stroke-width="0.4" transform="skewX(-6)"/>
+      <!-- ─ TOP MOULDING ─ -->
+      <!-- Cornice detail line -->
+      <polygon points="0,10 260,-6 302,16 42,32" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.2"/>
+      <!-- Base skirting -->
+      <polygon points="0,378 42,398 302,378 260,358" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.1"/>
+      <!-- Base step/plinth -->
+      <polygon points="0,380 0,396 42,416 42,400" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <polygon points="42,400 42,416 302,396 302,380" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.8"/>
+    </g>
+
+    <!-- ─── LUXURY OPEN-PLAN KITCHEN — CENTRAL ZONE ─── -->
+    <!-- Positioned centre-right, elaborate professional kitchen -->
+    <g class="fi" id="kitchen-pro" transform="translate(680,550) rotate(1)" filter="url(#chalk)">
+      <!-- ── ISLAND COUNTERTOP — statement piece ── -->
+      <polygon points="0,32 340,0 384,24 44,56" fill="none" stroke="rgba(238,235,220,0.96)" stroke-width="2.3"/>
+      <!-- Island front face -->
+      <polygon points="0,32 0,122 44,140 44,56" fill="none" stroke="rgba(238,235,220,0.76)" stroke-width="1.7"/>
+      <!-- Island right face -->
+      <polygon points="44,56 44,140 384,116 384,24" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.4"/>
+      <!-- Waterfall edge detail -->
+      <line x1="2" y1="32" x2="2" y2="118" stroke="rgba(238,235,220,0.72)" stroke-width="1.6"/>
+      <!-- Overhang seating side -->
+      <line x1="14" y1="28" x2="356" y2="2" stroke="rgba(238,235,220,0.28)" stroke-width="0.6" stroke-dasharray="6,4"/>
+      <!-- ── PANEL DETAILING ── -->
+      <!-- Fluted panel lines on island front -->
+      <line x1="2" y1="34" x2="2" y2="118" stroke="rgba(238,235,220,0.38)" stroke-width="0.8"/>
+      <line x1="8" y1="33" x2="8" y2="117" stroke="rgba(238,235,220,0.30)" stroke-width="0.6"/>
+      <line x1="14" y1="33" x2="14" y2="117" stroke="rgba(238,235,220,0.26)" stroke-width="0.5"/>
+      <line x1="20" y1="32" x2="20" y2="116" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <line x1="26" y1="32" x2="26" y2="116" stroke="rgba(238,235,220,0.22)" stroke-width="0.4"/>
+      <line x1="32" y1="32" x2="32" y2="116" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <!-- Fluted panels right face (deeper perspective) -->
+      <line x1="100" y1="57" x2="100" y2="138" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <line x1="170" y1="48" x2="170" y2="130" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <line x1="240" y1="40" x2="240" y2="122" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <line x1="310" y1="33" x2="310" y2="115" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <!-- ── COUNTERTOP ITEMS ── -->
+      <!-- Professional induction range / hob -->
+      <rect x="60" y="6" width="100" height="22" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.1" transform="skewX(-14)"/>
+      <!-- Burner rings -->
+      <ellipse cx="80" cy="14" rx="7" ry="2.5" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9" transform="skewX(-12)"/>
+      <ellipse cx="100" cy="11" rx="7" ry="2.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8" transform="skewX(-12)"/>
+      <ellipse cx="120" cy="8" rx="7" ry="2.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8" transform="skewX(-12)"/>
+      <ellipse cx="140" cy="5" rx="6" ry="2" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.7" transform="skewX(-12)"/>
+      <!-- Sink basin -->
+      <ellipse cx="248" cy="18" rx="36" ry="12" fill="none" stroke="rgba(238,235,220,0.68)" stroke-width="1.3" transform="skewX(-12)"/>
+      <ellipse cx="248" cy="14" rx="26" ry="8" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8" transform="skewX(-12)"/>
+      <!-- Tap — gooseneck style -->
+      <line x1="280" y1="18" x2="280" y2="-8" stroke="rgba(238,235,220,0.74)" stroke-width="1.6"/>
+      <path d="M280,-8 Q292,-8 298,4 Q302,10 298,18" fill="none" stroke="rgba(238,235,220,0.68)" stroke-width="1.4"/>
+      <ellipse cx="298" cy="18" rx="4" ry="1.5" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="0.9"/>
+      <!-- Cutting board + food prep items -->
+      <rect x="180" y="6" width="48" height="18" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0" transform="skewX(-14)"/>
+      <!-- Vase with herbs/plant -->
+      <ellipse cx="356" cy="14" rx="12" ry="4" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.1" transform="skewX(-12)"/>
+      <line x1="348" y1="14" x2="346" y2="-14" stroke="rgba(238,235,220,0.56)" stroke-width="1.1"/>
+      <line x1="364" y1="14" x2="366" y2="-14" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <ellipse cx="356" cy="-14" rx="9" ry="3" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="0.9"/>
+      <!-- Herb stems -->
+      <line x1="356" y1="-14" x2="348" y2="-38" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <line x1="356" y1="-20" x2="366" y2="-44" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <circle cx="348" cy="-40" r="3" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.6"/>
+      <circle cx="366" cy="-46" r="3" fill="none" stroke="rgba(238,235,220,0.34)" stroke-width="0.6"/>
+      <!-- ── BAR STOOLS beneath overhang — 3 stools ── -->
+      <!-- Stool 1 -->
+      <ellipse cx="52" cy="-8" rx="22" ry="7" fill="none" stroke="rgba(238,235,220,0.80)" stroke-width="1.6"/>
+      <line x1="52" y1="-1" x2="52" y2="38" stroke="rgba(238,235,220,0.72)" stroke-width="2.0"/>
+      <ellipse cx="52" cy="42" rx="14" ry="4.5" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.2"/>
+      <!-- Back of stool 1 -->
+      <line x1="36" y1="-6" x2="32" y2="-30" stroke="rgba(238,235,220,0.56)" stroke-width="1.1"/>
+      <line x1="68" y1="-6" x2="72" y2="-30" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <line x1="32" y1="-30" x2="72" y2="-30" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- Stool 2 -->
+      <ellipse cx="150" cy="-18" rx="22" ry="7" fill="none" stroke="rgba(238,235,220,0.76)" stroke-width="1.5"/>
+      <line x1="150" y1="-11" x2="150" y2="28" stroke="rgba(238,235,220,0.68)" stroke-width="1.9"/>
+      <ellipse cx="150" cy="32" rx="14" ry="4.5" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.1"/>
+      <line x1="134" y1="-16" x2="130" y2="-40" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <line x1="166" y1="-16" x2="170" y2="-40" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <line x1="130" y1="-40" x2="170" y2="-40" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <!-- Stool 3 -->
+      <ellipse cx="248" cy="-28" rx="22" ry="7" fill="none" stroke="rgba(238,235,220,0.72)" stroke-width="1.4"/>
+      <line x1="248" y1="-21" x2="248" y2="18" stroke="rgba(238,235,220,0.64)" stroke-width="1.8"/>
+      <ellipse cx="248" cy="22" rx="14" ry="4.5" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <line x1="232" y1="-26" x2="228" y2="-50" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <line x1="264" y1="-26" x2="268" y2="-50" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
+      <line x1="228" y1="-50" x2="268" y2="-50" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
+      <!-- ── UPPER CABINETS — floating wall units above ── -->
+      <polygon points="30,-100 352,-148 386,-128 64,-80" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.7"/>
+      <!-- Upper cabinet right face -->
+      <polygon points="352,-148 386,-128 386,-68 352,-88" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.3"/>
+      <!-- Upper cabinet front face -->
+      <polygon points="30,-100 30,-40 64,-20 64,-80" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <!-- Upper cabinet door dividers -->
+      <line x1="114" y1="-132" x2="114" y2="-68" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <line x1="200" y1="-140" x2="200" y2="-76" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <line x1="284" y1="-146" x2="284" y2="-82" stroke="rgba(238,235,220,0.38)" stroke-width="0.8"/>
+      <!-- Upper cabinet handles -->
+      <line x1="68" y1="-94" x2="76" y2="-94" stroke="rgba(238,235,220,0.56)" stroke-width="1.2"/>
+      <line x1="154" y1="-100" x2="162" y2="-100" stroke="rgba(238,235,220,0.52)" stroke-width="1.1"/>
+      <line x1="240" y1="-106" x2="248" y2="-106" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <line x1="318" y1="-112" x2="326" y2="-112" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+      <!-- ── PENDANT LIGHTS above island — 3 drop lights ── -->
+      <!-- Pendant 1 -->
+      <line x1="120" y1="-200" x2="120" y2="-156" stroke="rgba(238,235,220,0.62)" stroke-width="1.2"/>
+      <ellipse cx="120" cy="-150" rx="26" ry="8" fill="none" stroke="rgba(238,235,220,0.86)" stroke-width="1.7"/>
+      <line x1="94" y1="-150" x2="98" y2="-120" stroke="rgba(238,235,220,0.76)" stroke-width="1.4"/>
+      <line x1="146" y1="-150" x2="142" y2="-120" stroke="rgba(238,235,220,0.74)" stroke-width="1.4"/>
+      <ellipse cx="120" cy="-120" rx="20" ry="6" fill="none" stroke="rgba(238,235,220,0.68)" stroke-width="1.3"/>
+      <circle cx="120" cy="-122" r="4" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="0.9" filter="url(#glow-micro)"/>
+      <!-- Pendant 2 -->
+      <line x1="200" y1="-200" x2="200" y2="-158" stroke="rgba(238,235,220,0.58)" stroke-width="1.1"/>
+      <ellipse cx="200" cy="-152" rx="24" ry="7.5" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.6"/>
+      <line x1="176" y1="-152" x2="180" y2="-124" stroke="rgba(238,235,220,0.72)" stroke-width="1.3"/>
+      <line x1="224" y1="-152" x2="220" y2="-124" stroke="rgba(238,235,220,0.70)" stroke-width="1.3"/>
+      <ellipse cx="200" cy="-124" rx="18" ry="5.5" fill="none" stroke="rgba(238,235,220,0.64)" stroke-width="1.2"/>
+      <circle cx="200" cy="-126" r="3.5" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.8" filter="url(#glow-micro)"/>
+      <!-- Pendant 3 -->
+      <line x1="280" y1="-200" x2="280" y2="-162" stroke="rgba(238,235,220,0.54)" stroke-width="1.0"/>
+      <ellipse cx="280" cy="-156" rx="22" ry="7" fill="none" stroke="rgba(238,235,220,0.78)" stroke-width="1.5"/>
+      <line x1="258" y1="-156" x2="262" y2="-130" stroke="rgba(238,235,220,0.68)" stroke-width="1.2"/>
+      <line x1="302" y1="-156" x2="298" y2="-130" stroke="rgba(238,235,220,0.66)" stroke-width="1.2"/>
+      <ellipse cx="280" cy="-130" rx="16" ry="5" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.1"/>
+      <circle cx="280" cy="-132" r="3" fill="none" stroke="rgba(238,235,220,0.46)" stroke-width="0.8" filter="url(#glow-micro)"/>
+      <!-- Light cones from pendants -->
+      <line x1="98" y1="-120" x2="72" y2="-72" stroke="rgba(238,235,220,0.06)" stroke-width="0.5" stroke-dasharray="3,6"/>
+      <line x1="142" y1="-120" x2="168" y2="-72" stroke="rgba(238,235,220,0.06)" stroke-width="0.5" stroke-dasharray="3,6"/>
+      <line x1="178" y1="-124" x2="152" y2="-76" stroke="rgba(238,235,220,0.05)" stroke-width="0.5" stroke-dasharray="3,6"/>
+      <line x1="222" y1="-124" x2="248" y2="-76" stroke="rgba(238,235,220,0.05)" stroke-width="0.5" stroke-dasharray="3,6"/>
+    </g>
+
+    <!-- ─── GRAND CENTRAL BOOKCASE WALL ─── -->
+    <!-- Full-height library wall — dramatic central backdrop -->
+    <g class="fi" id="library-wall" transform="translate(656,100) rotate(-1)" filter="url(#chalk-fine)">
+      <!-- Outer architectural frame -->
+      <rect x="0" y="0" width="200" height="440" fill="none" stroke="rgba(238,235,220,0.86)" stroke-width="2.0"/>
+      <!-- ISO right depth panel -->
+      <polygon points="200,0 232,18 232,458 200,440" fill="none" stroke="rgba(238,235,220,0.64)" stroke-width="1.4"/>
+      <!-- ISO top panel -->
+      <polygon points="0,0 200,0 232,18 32,18" fill="none" stroke="rgba(238,235,220,0.72)" stroke-width="1.6"/>
+      <!-- ── ARCHITECTURAL PILASTERS ── -->
+      <!-- Left pilaster -->
+      <rect x="0" y="0" width="16" height="440" fill="none" stroke="rgba(238,235,220,0.54)" stroke-width="1.0"/>
+      <rect x="0" y="18" width="16" height="14" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <rect x="0" y="408" width="16" height="14" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <!-- Right pilaster -->
+      <rect x="184" y="0" width="16" height="440" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="0.9"/>
+      <!-- ── SHELF DIVISIONS — 6 bays, 5 shelves ── -->
+      <line x1="16" y1="72" x2="184" y2="72" stroke="rgba(238,235,220,0.70)" stroke-width="1.4"/>
+      <line x1="16" y1="146" x2="184" y2="146" stroke="rgba(238,235,220,0.68)" stroke-width="1.4"/>
+      <line x1="16" y1="220" x2="184" y2="220" stroke="rgba(238,235,220,0.66)" stroke-width="1.3"/>
+      <line x1="16" y1="294" x2="184" y2="294" stroke="rgba(238,235,220,0.64)" stroke-width="1.3"/>
+      <line x1="16" y1="368" x2="184" y2="368" stroke="rgba(238,235,220,0.62)" stroke-width="1.2"/>
+      <!-- Vertical divider column centre -->
+      <line x1="100" y1="0" x2="100" y2="440" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
+      <!-- ── BOOKS — rich varied heights and widths ── -->
+      <!-- Shelf 1 left bay -->
+      <line x1="20" y1="6" x2="20" y2="70" stroke="rgba(238,235,220,0.52)" stroke-width="2.8"/>
+      <line x1="28" y1="6" x2="28" y2="70" stroke="rgba(238,235,220,0.46)" stroke-width="2.2"/>
+      <line x1="34" y1="8" x2="34" y2="70" stroke="rgba(238,235,220,0.54)" stroke-width="3.2"/>
+      <line x1="42" y1="6" x2="42" y2="70" stroke="rgba(238,235,220,0.42)" stroke-width="2.0"/>
+      <line x1="48" y1="4" x2="48" y2="70" stroke="rgba(238,235,220,0.50)" stroke-width="2.6"/>
+      <line x1="56" y1="8" x2="56" y2="70" stroke="rgba(238,235,220,0.44)" stroke-width="1.8"/>
+      <line x1="62" y1="6" x2="62" y2="70" stroke="rgba(238,235,220,0.48)" stroke-width="3.0"/>
+      <line x1="70" y1="6" x2="68" y2="70" stroke="rgba(238,235,220,0.40)" stroke-width="2.4" transform="rotate(5,70,70)"/>
+      <line x1="80" y1="8" x2="80" y2="70" stroke="rgba(238,235,220,0.46)" stroke-width="2.2"/>
+      <line x1="88" y1="6" x2="88" y2="70" stroke="rgba(238,235,220,0.42)" stroke-width="1.9"/>
+      <!-- Shelf 1 right bay -->
+      <line x1="104" y1="6" x2="104" y2="70" stroke="rgba(238,235,220,0.50)" stroke-width="2.6"/>
+      <line x1="112" y1="8" x2="112" y2="70" stroke="rgba(238,235,220,0.44)" stroke-width="2.0"/>
+      <line x1="118" y1="6" x2="118" y2="70" stroke="rgba(238,235,220,0.52)" stroke-width="3.2"/>
+      <line x1="126" y1="6" x2="126" y2="70" stroke="rgba(238,235,220,0.40)" stroke-width="1.8"/>
+      <line x1="132" y1="8" x2="132" y2="70" stroke="rgba(238,235,220,0.48)" stroke-width="2.8"/>
+      <line x1="140" y1="6" x2="140" y2="70" stroke="rgba(238,235,220,0.44)" stroke-width="2.2"/>
+      <line x1="148" y1="8" x2="148" y2="70" stroke="rgba(238,235,220,0.46)" stroke-width="2.0"/>
+      <line x1="156" y1="6" x2="156" y2="70" stroke="rgba(238,235,220,0.42)" stroke-width="3.0"/>
+      <line x1="164" y1="4" x2="164" y2="70" stroke="rgba(238,235,220,0.40)" stroke-width="1.8"/>
+      <line x1="172" y1="6" x2="172" y2="70" stroke="rgba(238,235,220,0.44)" stroke-width="2.4"/>
+      <line x1="180" y1="8" x2="180" y2="70" stroke="rgba(238,235,220,0.38)" stroke-width="2.0"/>
+      <!-- Shelf 2 — left bay books -->
+      <line x1="20" y1="78" x2="20" y2="144" stroke="rgba(238,235,220,0.48)" stroke-width="2.6"/>
+      <line x1="28" y1="80" x2="28" y2="144" stroke="rgba(238,235,220,0.42)" stroke-width="2.0"/>
+      <line x1="36" y1="78" x2="36" y2="144" stroke="rgba(238,235,220,0.50)" stroke-width="3.0"/>
+      <line x1="44" y1="82" x2="44" y2="144" stroke="rgba(238,235,220,0.38)" stroke-width="1.8"/>
+      <line x1="52" y1="78" x2="52" y2="144" stroke="rgba(238,235,220,0.46)" stroke-width="2.4"/>
+      <line x1="60" y1="80" x2="60" y2="144" stroke="rgba(238,235,220,0.42)" stroke-width="2.0"/>
+      <line x1="68" y1="78" x2="68" y2="144" stroke="rgba(238,235,220,0.44)" stroke-width="2.8"/>
+      <line x1="76" y1="80" x2="76" y2="144" stroke="rgba(238,235,220,0.38)" stroke-width="1.8"/>
+      <line x1="84" y1="78" x2="84" y2="144" stroke="rgba(238,235,220,0.42)" stroke-width="2.2"/>
+      <!-- Shelf 2 right bay — decorative items + books -->
+      <line x1="104" y1="78" x2="104" y2="144" stroke="rgba(238,235,220,0.44)" stroke-width="2.4"/>
+      <line x1="112" y1="80" x2="112" y2="144" stroke="rgba(238,235,220,0.40)" stroke-width="1.9"/>
+      <line x1="120" y1="78" x2="120" y2="144" stroke="rgba(238,235,220,0.48)" stroke-width="2.8"/>
+      <!-- Small vase on shelf 2 right -->
+      <ellipse cx="142" cy="144" rx="9" ry="3" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="0.9"/>
+      <line x1="133" y1="144" x2="131" y2="116" stroke="rgba(238,235,220,0.46)" stroke-width="1.0"/>
+      <line x1="151" y1="144" x2="153" y2="116" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <ellipse cx="142" cy="116" rx="7" ry="2.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <line x1="142" y1="113" x2="138" y2="92" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <circle cx="137" cy="90" r="3" fill="none" stroke="rgba(238,235,220,0.34)" stroke-width="0.6"/>
+      <line x1="142" y1="102" x2="152" y2="86" stroke="rgba(238,235,220,0.32)" stroke-width="0.6"/>
+      <circle cx="153" cy="84" r="2.5" fill="none" stroke="rgba(238,235,220,0.30)" stroke-width="0.6"/>
+      <line x1="158" y1="78" x2="158" y2="144" stroke="rgba(238,235,220,0.36)" stroke-width="2.0"/>
+      <line x1="166" y1="80" x2="166" y2="144" stroke="rgba(238,235,220,0.40)" stroke-width="2.6"/>
+      <line x1="174" y1="78" x2="174" y2="144" stroke="rgba(238,235,220,0.38)" stroke-width="1.8"/>
+      <!-- Shelf 3 — left bay: decorative arrangement -->
+      <!-- Bust/sculpture -->
+      <line x1="28" y1="152" x2="26" y2="200" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+      <ellipse cx="26" cy="208" rx="8" ry="12" fill="none" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
+      <circle cx="26" cy="196" r="7" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <ellipse cx="26" cy="218" rx="10" ry="3.5" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.7"/>
+      <!-- Books beside bust -->
+      <line x1="38" y1="150" x2="38" y2="218" stroke="rgba(238,235,220,0.44)" stroke-width="2.6"/>
+      <line x1="46" y1="152" x2="46" y2="218" stroke="rgba(238,235,220,0.40)" stroke-width="2.0"/>
+      <line x1="54" y1="150" x2="54" y2="218" stroke="rgba(238,235,220,0.46)" stroke-width="2.8"/>
+      <line x1="62" y1="152" x2="62" y2="218" stroke="rgba(238,235,220,0.38)" stroke-width="1.8"/>
+      <line x1="70" y1="150" x2="70" y2="218" stroke="rgba(238,235,220,0.42)" stroke-width="2.2"/>
+      <line x1="78" y1="150" x2="78" y2="218" stroke="rgba(238,235,220,0.40)" stroke-width="2.0"/>
+      <!-- Shelf 3 right bay: candles + art object -->
+      <line x1="104" y1="150" x2="104" y2="218" stroke="rgba(238,235,220,0.42)" stroke-width="2.4"/>
+      <line x1="112" y1="152" x2="112" y2="218" stroke="rgba(238,235,220,0.38)" stroke-width="1.9"/>
+      <!-- Tall art candle -->
+      <rect x="124" y="150" width="8" height="54" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8" transform="skewX(-6)"/>
+      <circle cx="128" cy="149" r="2" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.7" filter="url(#glow-micro)"/>
+      <rect x="136" y="156" width="7" height="46" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.8" transform="skewX(-6)"/>
+      <circle cx="139" cy="155" r="2" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7" filter="url(#glow-micro)"/>
+      <!-- More books right -->
+      <line x1="148" y1="150" x2="148" y2="218" stroke="rgba(238,235,220,0.40)" stroke-width="2.6"/>
+      <line x1="156" y1="152" x2="156" y2="218" stroke="rgba(238,235,220,0.36)" stroke-width="2.0"/>
+      <line x1="164" y1="150" x2="164" y2="218" stroke="rgba(238,235,220,0.42)" stroke-width="2.8"/>
+      <line x1="172" y1="152" x2="172" y2="218" stroke="rgba(238,235,220,0.36)" stroke-width="1.8"/>
+      <!-- Shelf 4 — mixed books -->
+      <line x1="20" y1="226" x2="20" y2="292" stroke="rgba(238,235,220,0.44)" stroke-width="2.4"/>
+      <line x1="28" y1="228" x2="28" y2="292" stroke="rgba(238,235,220,0.40)" stroke-width="1.9"/>
+      <line x1="36" y1="226" x2="36" y2="292" stroke="rgba(238,235,220,0.46)" stroke-width="2.8"/>
+      <line x1="44" y1="228" x2="44" y2="292" stroke="rgba(238,235,220,0.36)" stroke-width="1.7"/>
+      <line x1="52" y1="226" x2="52" y2="292" stroke="rgba(238,235,220,0.42)" stroke-width="2.4"/>
+      <line x1="60" y1="228" x2="60" y2="292" stroke="rgba(238,235,220,0.38)" stroke-width="2.0"/>
+      <line x1="68" y1="226" x2="68" y2="292" stroke="rgba(238,235,220,0.44)" stroke-width="2.6"/>
+      <line x1="76" y1="230" x2="76" y2="292" stroke="rgba(238,235,220,0.36)" stroke-width="1.8"/>
+      <line x1="84" y1="226" x2="84" y2="292" stroke="rgba(238,235,220,0.40)" stroke-width="2.2"/>
+      <line x1="104" y1="226" x2="104" y2="292" stroke="rgba(238,235,220,0.42)" stroke-width="2.4"/>
+      <line x1="112" y1="228" x2="112" y2="292" stroke="rgba(238,235,220,0.36)" stroke-width="1.8"/>
+      <line x1="120" y1="226" x2="120" y2="292" stroke="rgba(238,235,220,0.44)" stroke-width="2.8"/>
+      <line x1="128" y1="230" x2="128" y2="292" stroke="rgba(238,235,220,0.36)" stroke-width="1.6"/>
+      <line x1="136" y1="226" x2="136" y2="292" stroke="rgba(238,235,220,0.40)" stroke-width="2.0"/>
+      <!-- Shelf 5 — art + books -->
+      <line x1="20" y1="300" x2="20" y2="366" stroke="rgba(238,235,220,0.40)" stroke-width="2.2"/>
+      <line x1="28" y1="302" x2="28" y2="366" stroke="rgba(238,235,220,0.36)" stroke-width="1.8"/>
+      <line x1="36" y1="300" x2="36" y2="366" stroke="rgba(238,235,220,0.42)" stroke-width="2.6"/>
+      <line x1="44" y1="302" x2="44" y2="366" stroke="rgba(238,235,220,0.34)" stroke-width="1.6"/>
+      <line x1="52" y1="300" x2="52" y2="366" stroke="rgba(238,235,220,0.38)" stroke-width="2.0"/>
+      <line x1="60" y1="302" x2="60" y2="366" stroke="rgba(238,235,220,0.36)" stroke-width="2.4"/>
+      <!-- Small framed print on shelf 5 -->
+      <rect x="70" y="300" width="24" height="36" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <rect x="73" y="303" width="18" height="30" fill="none" stroke="rgba(238,235,220,0.24)" stroke-width="0.4"/>
+      <line x1="73" y1="303" x2="91" y2="333" stroke="rgba(238,235,220,0.14)" stroke-width="0.4"/>
+      <line x1="91" y1="303" x2="73" y2="333" stroke="rgba(238,235,220,0.12)" stroke-width="0.4"/>
+      <line x1="104" y1="300" x2="104" y2="366" stroke="rgba(238,235,220,0.38)" stroke-width="2.2"/>
+      <line x1="112" y1="302" x2="112" y2="366" stroke="rgba(238,235,220,0.34)" stroke-width="1.8"/>
+      <line x1="120" y1="300" x2="120" y2="366" stroke="rgba(238,235,220,0.40)" stroke-width="2.6"/>
+      <line x1="128" y1="302" x2="128" y2="366" stroke="rgba(238,235,220,0.34)" stroke-width="1.6"/>
+      <line x1="136" y1="300" x2="136" y2="366" stroke="rgba(238,235,220,0.36)" stroke-width="2.0"/>
+      <line x1="144" y1="302" x2="144" y2="366" stroke="rgba(238,235,220,0.32)" stroke-width="2.4"/>
+      <line x1="152" y1="300" x2="152" y2="366" stroke="rgba(238,235,220,0.34)" stroke-width="1.8"/>
+      <line x1="160" y1="302" x2="160" y2="366" stroke="rgba(238,235,220,0.30)" stroke-width="2.2"/>
+      <line x1="168" y1="300" x2="168" y2="366" stroke="rgba(238,235,220,0.32)" stroke-width="1.6"/>
+      <line x1="176" y1="302" x2="176" y2="366" stroke="rgba(238,235,220,0.30)" stroke-width="2.0"/>
+      <!-- Shelf 6 — bottom curated shelf -->
+      <!-- Sculptural book ends + oversize volumes -->
+      <line x1="20" y1="374" x2="20" y2="440" stroke="rgba(238,235,220,0.38)" stroke-width="3.2"/>
+      <line x1="32" y1="374" x2="32" y2="440" stroke="rgba(238,235,220,0.34)" stroke-width="2.4"/>
+      <line x1="42" y1="374" x2="42" y2="440" stroke="rgba(238,235,220,0.38)" stroke-width="3.6"/>
+      <line x1="54" y1="376" x2="54" y2="440" stroke="rgba(238,235,220,0.30)" stroke-width="2.0"/>
+      <!-- Horizontal stacked books -->
+      <rect x="64" y="408" width="28" height="10" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.7" transform="skewX(-8)"/>
+      <rect x="64" y="418" width="24" height="10" fill="none" stroke="rgba(238,235,220,0.30)" stroke-width="0.6" transform="skewX(-8)"/>
+      <rect x="64" y="428" width="32" height="10" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.6" transform="skewX(-8)"/>
+      <!-- Right bottom bay books -->
+      <line x1="104" y1="374" x2="104" y2="440" stroke="rgba(238,235,220,0.36)" stroke-width="2.8"/>
+      <line x1="114" y1="376" x2="114" y2="440" stroke="rgba(238,235,220,0.30)" stroke-width="2.0"/>
+      <line x1="122" y1="374" x2="122" y2="440" stroke="rgba(238,235,220,0.34)" stroke-width="3.2"/>
+      <line x1="132" y1="376" x2="132" y2="440" stroke="rgba(238,235,220,0.28)" stroke-width="1.8"/>
+      <line x1="140" y1="374" x2="140" y2="440" stroke="rgba(238,235,220,0.32)" stroke-width="2.4"/>
+      <line x1="150" y1="374" x2="150" y2="440" stroke="rgba(238,235,220,0.28)" stroke-width="2.0"/>
+      <line x1="158" y1="376" x2="158" y2="440" stroke="rgba(238,235,220,0.30)" stroke-width="3.0"/>
+      <line x1="168" y1="374" x2="168" y2="440" stroke="rgba(238,235,220,0.26)" stroke-width="1.8"/>
+      <line x1="176" y1="376" x2="176" y2="440" stroke="rgba(238,235,220,0.28)" stroke-width="2.2"/>
+      <!-- ── LADDER — rolling library ladder ── -->
+      <!-- Ladder rails -->
+      <line x1="186" y1="60" x2="196" y2="420" stroke="rgba(238,235,220,0.58)" stroke-width="1.3"/>
+      <line x1="198" y1="56" x2="208" y2="416" stroke="rgba(238,235,220,0.52)" stroke-width="1.2"/>
+      <!-- Ladder rungs -->
+      <line x1="188" y1="100" x2="200" y2="98" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <line x1="189" y1="140" x2="201" y2="138" stroke="rgba(238,235,220,0.42)" stroke-width="0.8"/>
+      <line x1="190" y1="180" x2="202" y2="178" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <line x1="191" y1="220" x2="203" y2="218" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <line x1="192" y1="260" x2="204" y2="258" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <line x1="193" y1="300" x2="205" y2="298" stroke="rgba(238,235,220,0.34)" stroke-width="0.7"/>
+      <line x1="194" y1="340" x2="206" y2="338" stroke="rgba(238,235,220,0.32)" stroke-width="0.6"/>
+      <!-- Ladder floor track -->
+      <line x1="186" y1="440" x2="214" y2="440" stroke="rgba(238,235,220,0.50)" stroke-width="1.1"/>
+      <!-- Ladder top hook -->
+      <path d="M192,60 Q192,44 200,40" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+    </g>
+
+    <!-- ─── VELVET CHAISE LONGUE — elegant horizontal statement ─── -->
+    <!-- Centre-bottom composition piece -->
+    <g class="fi" id="chaise-longue" transform="translate(480,740) rotate(-3)" filter="url(#chalk)">
+      <!-- Reclined back + main body top -->
+      <polygon points="0,48 400,0 444,28 44,76" fill="none" stroke="rgba(238,235,220,0.94)" stroke-width="2.1"/>
+      <!-- Front face -->
+      <polygon points="0,48 0,108 44,130 44,76" fill="none" stroke="rgba(238,235,220,0.74)" stroke-width="1.6"/>
+      <!-- Right face -->
+      <polygon points="44,76 44,130 444,102 444,28" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.4"/>
+      <!-- Reclined headrest end — raised left side -->
+      <polygon points="0,48 -8,2 4,-14 12,28" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.7"/>
+      <ellipse cx="-4" cy="2" rx="10" ry="3.5" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.1"/>
+      <!-- Rolled open end right -->
+      <polygon points="400,0 420,-10 420,46 400,56" fill="none" stroke="rgba(238,235,220,0.66)" stroke-width="1.4"/>
+      <ellipse cx="410" cy="-10" rx="10" ry="3.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <!-- Cushion seams lengthwise -->
+      <line x1="16" y1="56" x2="416" y2="8" stroke="rgba(238,235,220,0.26)" stroke-width="0.6"/>
+      <line x1="8" y1="64" x2="408" y2="16" stroke="rgba(238,235,220,0.18)" stroke-width="0.5"/>
+      <!-- Button tufts -->
+      <circle cx="72" cy="42" r="3.5" fill="none" stroke="rgba(238,235,220,0.32)" stroke-width="0.7"/>
+      <circle cx="164" cy="28" r="3.5" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.7"/>
+      <circle cx="256" cy="20" r="3.5" fill="none" stroke="rgba(238,235,220,0.26)" stroke-width="0.6"/>
+      <circle cx="348" cy="12" r="3" fill="none" stroke="rgba(238,235,220,0.24)" stroke-width="0.6"/>
+      <!-- Fringe/tassel detail along base -->
+      <line x1="4" y1="106" x2="4" y2="118" stroke="rgba(238,235,220,0.38)" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <line x1="16" y1="108" x2="16" y2="120" stroke="rgba(238,235,220,0.36)" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <line x1="28" y1="110" x2="28" y2="122" stroke="rgba(238,235,220,0.36)" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <!-- Cabriole legs — decorative curved -->
+      <path d="M6,106 Q2,120 6,134" fill="none" stroke="rgba(238,235,220,0.68)" stroke-width="1.4"/>
+      <path d="M42,128 Q38,142 42,156" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <path d="M400,56 Q404,70 400,84" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.3"/>
+      <path d="M440,30 Q444,44 440,58" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.2"/>
+      <!-- Foot pads -->
+      <ellipse cx="6" cy="134" rx="6" ry="2" fill="none" stroke="rgba(238,235,220,0.46)" stroke-width="0.8"/>
+      <ellipse cx="42" cy="156" rx="6" ry="2" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <!-- Throw cushion / pillow on headrest end -->
+      <polygon points="-4,8 36,-4 42,10 2,22" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.1"/>
+      <line x1="18" y1="0" x2="22" y2="18" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+    </g>
+
+    <!-- ─── DRESSING TABLE / VANITY ─── -->
+    <!-- Elegant makeup/dressing station — upper right zone -->
+    <g class="fi" id="dressing-table" transform="translate(1046,230) rotate(2)" filter="url(#chalk)">
+      <!-- Table top -->
+      <polygon points="0,22 180,4 204,18 24,36" fill="none" stroke="rgba(238,235,220,0.86)" stroke-width="1.8"/>
+      <!-- Front face -->
+      <polygon points="0,22 0,82 24,94 24,36" fill="none" stroke="rgba(238,235,220,0.66)" stroke-width="1.4"/>
+      <!-- Right face -->
+      <polygon points="24,36 24,94 204,76 204,18" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.2"/>
+      <!-- Drawer row — 3 drawers on right face -->
+      <line x1="80" y1="38" x2="80" y2="92" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <line x1="140" y1="30" x2="140" y2="84" stroke="rgba(238,235,220,0.38)" stroke-width="0.8"/>
+      <!-- Drawer handles -->
+      <line x1="48" y1="64" x2="56" y2="64" stroke="rgba(238,235,220,0.52)" stroke-width="1.1"/>
+      <line x1="106" y1="58" x2="114" y2="58" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <line x1="164" y1="52" x2="172" y2="52" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+      <!-- Front drawer panel -->
+      <rect x="2" y="26" width="20" height="64" fill="none" stroke="rgba(238,235,220,0.32)" stroke-width="0.6"/>
+      <line x1="8" y1="58" x2="16" y2="58" stroke="rgba(238,235,220,0.46)" stroke-width="1.0"/>
+      <!-- Tapered legs — 4 elegant ones -->
+      <line x1="2" y1="80" x2="0" y2="124" stroke="rgba(238,235,220,0.64)" stroke-width="1.4"/>
+      <line x1="22" y1="92" x2="22" y2="136" stroke="rgba(238,235,220,0.58)" stroke-width="1.3"/>
+      <line x1="188" y1="74" x2="188" y2="118" stroke="rgba(238,235,220,0.58)" stroke-width="1.3"/>
+      <line x1="202" y1="76" x2="204" y2="120" stroke="rgba(238,235,220,0.54)" stroke-width="1.2"/>
+      <!-- ── OVAL MIRROR above ── -->
+      <ellipse cx="102" cy="-52" rx="52" ry="68" fill="none" stroke="rgba(238,235,220,0.76)" stroke-width="1.8"/>
+      <!-- Mirror frame inner -->
+      <ellipse cx="102" cy="-52" rx="44" ry="58" fill="none" stroke="rgba(238,235,220,0.35)" stroke-width="0.7"/>
+      <!-- Mirror highlights / reflections -->
+      <line x1="64" y1="-52" x2="140" y2="-52" stroke="rgba(238,235,220,0.10)" stroke-width="0.4"/>
+      <line x1="102" y1="-120" x2="102" y2="16" stroke="rgba(238,235,220,0.08)" stroke-width="0.4"/>
+      <line x1="68" y1="-90" x2="136" y2="-14" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <!-- Mirror stand posts to table -->
+      <line x1="64" y1="16" x2="60" y2="24" stroke="rgba(238,235,220,0.55)" stroke-width="1.1"/>
+      <line x1="140" y1="16" x2="144" y2="24" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- ── ITEMS ON VANITY TOP ── -->
+      <!-- Perfume bottles -->
+      <rect x="30" y="10" width="10" height="14" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.0" transform="skewX(-8)"/>
+      <rect x="42" y="8" width="8" height="16" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="0.9" transform="skewX(-8)"/>
+      <!-- Bottle tops -->
+      <rect x="32" y="6" width="6" height="4" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.7" transform="skewX(-8)"/>
+      <rect x="43" y="4" width="6" height="4" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.7" transform="skewX(-8)"/>
+      <!-- Small decorative tray -->
+      <polygon points="24,18 80,8 86,14 30,24" fill="none" stroke="rgba(238,235,220,0.34)" stroke-width="0.6"/>
+      <!-- Brush / makeup item -->
+      <line x1="70" y1="14" x2="68" y2="-6" stroke="rgba(238,235,220,0.42)" stroke-width="0.8"/>
+      <ellipse cx="69" cy="-6" rx="3" ry="5" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <!-- Small candle right side -->
+      <rect x="148" y="10" width="8" height="12" fill="none" stroke="rgba(238,235,220,0.46)" stroke-width="0.9" transform="skewX(-8)"/>
+      <circle cx="152" cy="9" r="1.8" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.7" filter="url(#glow-micro)"/>
+      <!-- Stool in front of dressing table -->
+      <ellipse cx="102" cy="108" rx="38" ry="12" fill="none" stroke="rgba(238,235,220,0.78)" stroke-width="1.5"/>
+      <!-- Stool seat cushion upholstery hint -->
+      <ellipse cx="102" cy="112" rx="32" ry="10" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <!-- Stool legs -->
+      <line x1="70" y1="112" x2="64" y2="150" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <line x1="134" y1="112" x2="140" y2="150" stroke="rgba(238,235,220,0.60)" stroke-width="1.2"/>
+      <line x1="102" y1="120" x2="102" y2="158" stroke="rgba(238,235,220,0.56)" stroke-width="1.1"/>
+      <!-- Cross stretcher stool -->
+      <line x1="68" y1="136" x2="136" y2="132" stroke="rgba(238,235,220,0.28)" stroke-width="0.6" stroke-dasharray="3,4"/>
+    </g>
+
+    <!-- ─── MODULAR KITCHEN WALL UNITS — upper right wall ─── -->
+    <g class="fi" id="kitchen-wall-units" transform="translate(1040,100) rotate(2)" filter="url(#chalk)">
+      <!-- Wall cabinets — tall pantry unit left -->
+      <polygon points="0,12 90,0 108,10 18,22" fill="none" stroke="rgba(238,235,220,0.84)" stroke-width="1.7"/>
+      <!-- Front face tall pantry -->
+      <polygon points="0,12 0,280 18,290 18,22" fill="none" stroke="rgba(238,235,220,0.72)" stroke-width="1.5"/>
+      <!-- Right face tall pantry -->
+      <polygon points="18,22 18,290 108,280 108,10" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.2"/>
+      <!-- Pantry door split upper/lower half -->
+      <line x1="0" y1="150" x2="18" y2="150" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <line x1="18" y1="150" x2="108" y2="144" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <!-- Pantry door panels -->
+      <rect x="2" y="18" width="14" height="126" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+      <rect x="2" y="156" width="14" height="120" fill="none" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <!-- Pantry handles -->
+      <line x1="14" y1="82" x2="14" y2="94" stroke="rgba(238,235,220,0.54)" stroke-width="1.1"/>
+      <line x1="14" y1="212" x2="14" y2="224" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- Wide base unit next to pantry -->
+      <polygon points="108,10 262,0 278,8 124,18" fill="none" stroke="rgba(238,235,220,0.80)" stroke-width="1.6"/>
+      <polygon points="108,10 108,90 124,98 124,18" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <polygon points="124,18 124,98 278,88 278,8" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="1.1"/>
+      <!-- Worktop on base unit -->
+      <polygon points="104,6 266,-4 282,4 120,14" fill="none" stroke="rgba(238,235,220,0.72)" stroke-width="1.4"/>
+      <!-- Worktop front -->
+      <polygon points="104,6 104,14 120,22 120,14" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <!-- Base unit door dividers -->
+      <line x1="188" y1="8" x2="188" y2="86" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <!-- Base door panel insets -->
+      <rect x="128" y="20" width="54" height="64" fill="none" stroke="rgba(238,235,220,0.22)" stroke-width="0.4" transform="skewX(-5)"/>
+      <rect x="194" y="14" width="54" height="64" fill="none" stroke="rgba(238,235,220,0.20)" stroke-width="0.4" transform="skewX(-5)"/>
+      <!-- Handles base unit -->
+      <line x1="152" y1="50" x2="152" y2="60" stroke="rgba(238,235,220,0.50)" stroke-width="1.0"/>
+      <line x1="220" y1="44" x2="220" y2="54" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+      <!-- Worktop items — coffee machine, bowl -->
+      <rect x="128" y="6" width="36" height="8" fill="none" stroke="rgba(238,235,220,0.46)" stroke-width="0.9" transform="skewX(-6)"/>
+      <ellipse cx="130" cy="3" rx="6" ry="2" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.7"/>
+      <!-- Coffee mug -->
+      <ellipse cx="174" cy="2" rx="8" ry="2.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <ellipse cx="174" cy="6" rx="6" ry="2" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.6"/>
+      <!-- Upper wall cabinet run above base -->
+      <polygon points="108,-84 262,-92 278,-84 124,-76" fill="none" stroke="rgba(238,235,220,0.70)" stroke-width="1.4"/>
+      <polygon points="108,-84 108,-26 124,-18 124,-76" fill="none" stroke="rgba(238,235,220,0.54)" stroke-width="1.1"/>
+      <polygon points="124,-76 124,-18 278,-28 278,-84" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="1.0"/>
+      <!-- Upper cabinet door split -->
+      <line x1="194" y1="-88" x2="194" y2="-28" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <line x1="124" y1="-48" x2="194" y2="-56" stroke="rgba(238,235,220,0.28)" stroke-width="0.5" stroke-dasharray="3,4"/>
+      <line x1="194" y1="-52" x2="278" y2="-56" stroke="rgba(238,235,220,0.26)" stroke-width="0.5" stroke-dasharray="3,4"/>
+      <!-- Handles upper cabinet -->
+      <line x1="155" y1="-56" x2="163" y2="-56" stroke="rgba(238,235,220,0.48)" stroke-width="1.0"/>
+      <line x1="226" y1="-60" x2="234" y2="-60" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
+    </g>
+
+    <!-- ──────────────────────────────────────────────────────────────
+         BLUEPRINT ANNOTATIONS — dimension lines, axes
+    ─────────────────────────────────────────────────────────────── -->
     <g class="annot">
       <!-- Vertical axis lines -->
       <line x1="380" y1="0" x2="380" y2="900" stroke="rgba(238,235,220,0.042)" stroke-width="0.4" stroke-dasharray="2,12"/>
@@ -2392,6 +2906,672 @@ app.get('/home', (c) => {
 
     <div class="work-cta reveal-up" data-delay="4">
       <a href="#contact" class="btn-ghost">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- ── INSTAGRAM GALLERY ── -->
+  <section class="ig-section" id="instagram">
+    <div class="ig-header reveal-up" data-delay="0">
+      <div class="ig-header-text">
+        <span class="ig-label">Follow the Studio</span>
+        <h2 class="ig-title">As seen on <em>Instagram</em></h2>
+      </div>
+      <a href="https://www.instagram.com/studio_aimo/" target="_blank" rel="noopener" class="ig-follow-link reveal-up" data-delay="1">
+        <span class="ig-at">@studio_aimo</span>
+        <span>Follow on Instagram</span>
+      </a>
+    </div>
+
+    <div class="ig-grid">
+
+      <!-- Tile 01 — wide — Living room composition -->
+      <div class="ig-tile ig-tile--wide reveal-up" data-delay="1">
+        <div class="ig-tile-inner">
+          <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="ig1chalk">
+                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" seed="3" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <filter id="ig1glow">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="ig1bg" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="#1c1812"/>
+                <stop offset="100%" stop-color="#0a0907"/>
+              </radialGradient>
+            </defs>
+            <rect width="800" height="400" fill="url(#ig1bg)"/>
+            <g filter="url(#ig1chalk)">
+              <!-- Floor plane -->
+              <polygon points="60,260 400,140 720,260 380,380" fill="none" stroke="rgba(201,170,111,0.25)" stroke-width="0.8" stroke-dasharray="6,5"/>
+              <!-- Walls suggestion -->
+              <line x1="60" y1="260" x2="60" y2="380" stroke="rgba(201,170,111,0.14)" stroke-width="0.6" stroke-dasharray="4,6"/>
+              <line x1="720" y1="260" x2="720" y2="380" stroke="rgba(201,170,111,0.12)" stroke-width="0.5" stroke-dasharray="4,6"/>
+              <!-- Monumental sofa -->
+              <polygon points="80,298 440,208 504,244 144,334" fill="none" stroke="rgba(201,170,111,0.86)" stroke-width="1.6"/>
+              <polygon points="80,298 80,364 144,396 144,334" fill="none" stroke="rgba(201,170,111,0.64)" stroke-width="1.3"/>
+              <polygon points="144,334 144,396 504,308 504,244" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="1.2"/>
+              <!-- Back cushions -->
+              <polygon points="80,298 92,244 448,158 440,208" fill="none" stroke="rgba(201,170,111,0.80)" stroke-width="1.4"/>
+              <!-- Cushion dividers -->
+              <line x1="196" y1="222" x2="196" y2="320" stroke="rgba(201,170,111,0.38)" stroke-width="0.7"/>
+              <line x1="320" y1="198" x2="320" y2="296" stroke="rgba(201,170,111,0.34)" stroke-width="0.6"/>
+              <!-- Armrests -->
+              <polygon points="80,298 62,284 62,350 80,364" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.3"/>
+              <polygon points="440,208 458,198 458,258 440,268" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.1"/>
+              <!-- Throw pillows -->
+              <polygon points="90,252 148,238 158,254 100,268" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="1.0"/>
+              <polygon points="350,188 408,174 418,190 360,204" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="0.9"/>
+              <!-- Legs -->
+              <line x1="88" y1="360" x2="88" y2="390" stroke="rgba(201,170,111,0.65)" stroke-width="1.5"/>
+              <line x1="142" y1="392" x2="142" y2="422" stroke="rgba(201,170,111,0.58)" stroke-width="1.4"/>
+              <line x1="474" y1="304" x2="474" y2="334" stroke="rgba(201,170,111,0.55)" stroke-width="1.3"/>
+              <!-- Coffee table -->
+              <polygon points="148,346 420,282 454,304 182,368" fill="none" stroke="rgba(201,170,111,0.75)" stroke-width="1.3"/>
+              <polygon points="148,346 148,360 182,378 182,368" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="1.0"/>
+              <!-- Hairpin legs -->
+              <line x1="162" y1="360" x2="158" y2="398" stroke="rgba(201,170,111,0.55)" stroke-width="1.1"/>
+              <line x1="162" y1="360" x2="170" y2="398" stroke="rgba(201,170,111,0.50)" stroke-width="1.0"/>
+              <line x1="438" y1="304" x2="434" y2="342" stroke="rgba(201,170,111,0.50)" stroke-width="1.0"/>
+              <!-- Table items: books + candle -->
+              <rect x="232" y="287" width="40" height="11" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="0.8" transform="skewX(-10) translate(0,4)"/>
+              <rect x="234" y="282" width="36" height="11" fill="none" stroke="rgba(201,170,111,0.40)" stroke-width="0.7" transform="skewX(-10) translate(0,2)"/>
+              <line x1="360" y1="290" x2="360" y2="276" stroke="rgba(201,170,111,0.52)" stroke-width="1.0" transform="skewX(-10)"/>
+              <circle cx="360" cy="275" r="2" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="0.8" filter="url(#ig1glow)"/>
+              <!-- Central chandelier -->
+              <line x1="310" y1="0" x2="310" y2="80" stroke="rgba(201,170,111,0.65)" stroke-width="1.0" stroke-dasharray="4,3"/>
+              <ellipse cx="310" cy="104" rx="70" ry="23" fill="none" stroke="rgba(201,170,111,0.88)" stroke-width="1.6"/>
+              <ellipse cx="310" cy="112" rx="58" ry="18" fill="none" stroke="rgba(201,170,111,0.36)" stroke-width="0.6"/>
+              <line x1="240" y1="104" x2="226" y2="150" stroke="rgba(201,170,111,0.72)" stroke-width="1.3"/>
+              <line x1="274" y1="90" x2="268" y2="136" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+              <line x1="310" y1="82" x2="310" y2="128" stroke="rgba(201,170,111,0.75)" stroke-width="1.3"/>
+              <line x1="346" y1="90" x2="352" y2="136" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+              <line x1="380" y1="104" x2="394" y2="150" stroke="rgba(201,170,111,0.72)" stroke-width="1.3"/>
+              <!-- Candle lights -->
+              <circle cx="226" cy="152" r="3.5" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.0" filter="url(#ig1glow)"/>
+              <circle cx="268" cy="138" r="3" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="0.9" filter="url(#ig1glow)"/>
+              <circle cx="310" cy="130" r="3.5" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.0" filter="url(#ig1glow)"/>
+              <circle cx="352" cy="138" r="3" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="0.9" filter="url(#ig1glow)"/>
+              <circle cx="394" cy="152" r="3.5" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.0" filter="url(#ig1glow)"/>
+              <!-- Right floor lamp -->
+              <ellipse cx="640" cy="356" rx="26" ry="8" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.2"/>
+              <line x1="640" y1="348" x2="637" y2="130" stroke="rgba(201,170,111,0.72)" stroke-width="1.6"/>
+              <path d="M637,130 Q637,105 662,94" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.3"/>
+              <ellipse cx="676" cy="88" rx="34" ry="11" fill="none" stroke="rgba(201,170,111,0.85)" stroke-width="1.5"/>
+              <line x1="642" y1="88" x2="644" y2="122" stroke="rgba(201,170,111,0.75)" stroke-width="1.3"/>
+              <line x1="710" y1="88" x2="708" y2="122" stroke="rgba(201,170,111,0.72)" stroke-width="1.2"/>
+              <ellipse cx="676" cy="122" rx="28" ry="9" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.2"/>
+              <circle cx="676" cy="120" r="5" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="0.9" filter="url(#ig1glow)"/>
+              <!-- Rug -->
+              <polygon points="100,324 436,248 478,274 142,350" fill="none" stroke="rgba(201,170,111,0.30)" stroke-width="0.7" stroke-dasharray="8,4"/>
+              <!-- Architectural annotation -->
+              <line x1="82" y1="410" x2="506" y2="410" stroke="rgba(201,170,111,0.20)" stroke-width="0.5" stroke-dasharray="4,5"/>
+              <line x1="82" y1="404" x2="82" y2="416" stroke="rgba(201,170,111,0.24)" stroke-width="0.7"/>
+              <line x1="506" y1="404" x2="506" y2="416" stroke="rgba(201,170,111,0.24)" stroke-width="0.7"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-badge">
+          <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <rect x="2" y="2" width="18" height="18" rx="5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/>
+            <circle cx="11" cy="11" r="4.5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/>
+            <circle cx="16.5" cy="5.5" r="1" fill="rgba(201,170,111,0.9)"/>
+          </svg>
+        </div>
+        <div class="ig-overlay">
+          <div class="ig-meta">
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12.5S1 8.5 1 4.5C1 2.57 2.57 1 4.5 1c1.05 0 2 .5 2.5 1.3C7.5 1.5 8.45 1 9.5 1 11.43 1 13 2.57 13 4.5c0 4-6 8-6 8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              487
+            </span>
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2h10v8H8l-2 2V10H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              31
+            </span>
+          </div>
+          <p class="ig-caption">Maison Nero — Milan penthouse living room. Every object conjured, not placed. ✦</p>
+        </div>
+      </div>
+
+      <!-- Tile 02 — square — Dressing room / wardrobe -->
+      <div class="ig-tile reveal-up" data-delay="2">
+        <div class="ig-tile-inner">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="ig2chalk">
+                <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" seed="8" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.3" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <radialGradient id="ig2bg" cx="40%" cy="60%" r="65%">
+                <stop offset="0%" stop-color="#1a1612"/>
+                <stop offset="100%" stop-color="#090806"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#ig2bg)"/>
+            <g filter="url(#ig2chalk)">
+              <!-- Walk-in wardrobe -->
+              <polygon points="20,10 260,0 294,20 54,30" fill="none" stroke="rgba(201,170,111,0.90)" stroke-width="1.8"/>
+              <polygon points="20,10 20,380 54,396 54,30" fill="none" stroke="rgba(201,170,111,0.76)" stroke-width="1.6"/>
+              <polygon points="54,30 54,396 294,376 294,20" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="1.3"/>
+              <!-- Door panels — 4 doors -->
+              <line x1="114" y1="28" x2="114" y2="390" stroke="rgba(201,170,111,0.48)" stroke-width="1.0"/>
+              <line x1="174" y1="24" x2="174" y2="384" stroke="rgba(201,170,111,0.44)" stroke-width="0.9"/>
+              <line x1="234" y1="20" x2="234" y2="378" stroke="rgba(201,170,111,0.40)" stroke-width="0.8"/>
+              <!-- Door inset panels -->
+              <rect x="24" y="18" width="84" height="174" fill="none" stroke="rgba(201,170,111,0.26)" stroke-width="0.5"/>
+              <rect x="24" y="200" width="84" height="172" fill="none" stroke="rgba(201,170,111,0.22)" stroke-width="0.4"/>
+              <!-- Handles gold -->
+              <ellipse cx="108" cy="200" rx="2" ry="6" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.4"/>
+              <ellipse cx="168" cy="196" rx="2" ry="6" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.3"/>
+              <ellipse cx="228" cy="192" rx="2" ry="5" fill="none" stroke="rgba(201,170,111,0.64)" stroke-width="1.2"/>
+              <!-- Top cornice -->
+              <polygon points="20,4 260,-8 294,12 54,24" fill="none" stroke="rgba(201,170,111,0.56)" stroke-width="1.1"/>
+              <!-- Hanging clothes glimpse inside -->
+              <line x1="58" y1="44" x2="108" y2="40" stroke="rgba(201,170,111,0.30)" stroke-width="0.6" stroke-dasharray="3,4"/>
+              <line x1="66" y1="44" x2="66" y2="84" stroke="rgba(201,170,111,0.22)" stroke-width="0.5"/>
+              <line x1="66" y1="44" x2="58" y2="66" stroke="rgba(201,170,111,0.18)" stroke-width="0.4"/>
+              <line x1="66" y1="44" x2="74" y2="66" stroke="rgba(201,170,111,0.18)" stroke-width="0.4"/>
+              <line x1="80" y1="42" x2="80" y2="86" stroke="rgba(201,170,111,0.20)" stroke-width="0.5"/>
+              <line x1="94" y1="40" x2="94" y2="88" stroke="rgba(201,170,111,0.18)" stroke-width="0.4"/>
+              <!-- Base plinth -->
+              <polygon points="20,378 20,396 54,412 54,396" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="0.9"/>
+              <polygon points="54,396 54,412 294,392 294,376" fill="none" stroke="rgba(201,170,111,0.38)" stroke-width="0.8"/>
+              <!-- Shoe shelf at bottom right face -->
+              <line x1="58" y1="320" x2="286" y2="306" stroke="rgba(201,170,111,0.26)" stroke-width="0.5"/>
+              <!-- Blueprint annotation left -->
+              <line x1="6" y1="10" x2="6" y2="380" stroke="rgba(201,170,111,0.18)" stroke-width="0.4" stroke-dasharray="4,5"/>
+              <line x1="2" y1="10" x2="10" y2="10" stroke="rgba(201,170,111,0.22)" stroke-width="0.6"/>
+              <line x1="2" y1="380" x2="10" y2="380" stroke="rgba(201,170,111,0.22)" stroke-width="0.6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-badge">
+          <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="2" y="2" width="18" height="18" rx="5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="11" cy="11" r="4.5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="16.5" cy="5.5" r="1" fill="rgba(201,170,111,0.9)"/></svg>
+        </div>
+        <div class="ig-overlay">
+          <div class="ig-meta">
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12.5S1 8.5 1 4.5C1 2.57 2.57 1 4.5 1c1.05 0 2 .5 2.5 1.3C7.5 1.5 8.45 1 9.5 1 11.43 1 13 2.57 13 4.5c0 4-6 8-6 8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              312
+            </span>
+          </div>
+          <p class="ig-caption">Bespoke wardrobe — floor to ceiling. Every door a decision. ✦</p>
+        </div>
+      </div>
+
+      <!-- Tile 03 — square — Kitchen luxury -->
+      <div class="ig-tile reveal-up" data-delay="2">
+        <div class="ig-tile-inner">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="ig3chalk">
+                <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" seed="14" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <filter id="ig3glow">
+                <feGaussianBlur stdDeviation="3.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="ig3bg" cx="60%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#181411"/>
+                <stop offset="100%" stop-color="#080706"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#ig3bg)"/>
+            <g filter="url(#ig3chalk)">
+              <!-- Kitchen island top -->
+              <polygon points="20,180 340,120 374,144 54,204" fill="none" stroke="rgba(201,170,111,0.92)" stroke-width="1.9"/>
+              <!-- Island front face -->
+              <polygon points="20,180 20,280 54,298 54,204" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.5"/>
+              <!-- Island right face -->
+              <polygon points="54,204 54,298 374,244 374,144" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.3"/>
+              <!-- Waterfall edge -->
+              <line x1="22" y1="180" x2="22" y2="278" stroke="rgba(201,170,111,0.68)" stroke-width="1.4"/>
+              <!-- Fluted panel lines front -->
+              <line x1="24" y1="185" x2="24" y2="277" stroke="rgba(201,170,111,0.36)" stroke-width="0.7"/>
+              <line x1="30" y1="184" x2="30" y2="276" stroke="rgba(201,170,111,0.28)" stroke-width="0.5"/>
+              <line x1="36" y1="183" x2="36" y2="275" stroke="rgba(201,170,111,0.24)" stroke-width="0.5"/>
+              <line x1="42" y1="182" x2="42" y2="274" stroke="rgba(201,170,111,0.20)" stroke-width="0.4"/>
+              <!-- Sink on island -->
+              <ellipse cx="240" cy="162" rx="40" ry="13" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.2" transform="skewX(-12)"/>
+              <ellipse cx="240" cy="156" rx="30" ry="9" fill="none" stroke="rgba(201,170,111,0.42)" stroke-width="0.8" transform="skewX(-12)"/>
+              <!-- Gooseneck tap -->
+              <line x1="286" y1="158" x2="286" y2="128" stroke="rgba(201,170,111,0.72)" stroke-width="1.5"/>
+              <path d="M286,128 Q300,128 306,140 Q310,148 306,158" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.3"/>
+              <ellipse cx="306" cy="158" rx="4" ry="1.5" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="0.9"/>
+              <!-- Hob induction -->
+              <rect x="60" y="136" width="100" height="26" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="1.0" transform="skewX(-14)"/>
+              <ellipse cx="80" cy="146" rx="8" ry="3" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.8" transform="skewX(-12)"/>
+              <ellipse cx="100" cy="142" rx="8" ry="3" fill="none" stroke="rgba(201,170,111,0.42)" stroke-width="0.7" transform="skewX(-12)"/>
+              <ellipse cx="120" cy="138" rx="7" ry="2.5" fill="none" stroke="rgba(201,170,111,0.40)" stroke-width="0.7" transform="skewX(-12)"/>
+              <ellipse cx="140" cy="134" rx="7" ry="2.5" fill="none" stroke="rgba(201,170,111,0.38)" stroke-width="0.7" transform="skewX(-12)"/>
+              <!-- 3 pendants above -->
+              <line x1="120" y1="0" x2="120" y2="84" stroke="rgba(201,170,111,0.58)" stroke-width="1.0"/>
+              <ellipse cx="120" cy="96" rx="28" ry="9" fill="none" stroke="rgba(201,170,111,0.85)" stroke-width="1.6"/>
+              <line x1="92" y1="96" x2="96" y2="120" stroke="rgba(201,170,111,0.74)" stroke-width="1.3"/>
+              <line x1="148" y1="96" x2="144" y2="120" stroke="rgba(201,170,111,0.72)" stroke-width="1.3"/>
+              <ellipse cx="120" cy="120" rx="20" ry="6" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.2"/>
+              <circle cx="120" cy="118" r="4" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="0.9" filter="url(#ig3glow)"/>
+              <line x1="210" y1="0" x2="210" y2="88" stroke="rgba(201,170,111,0.54)" stroke-width="0.9"/>
+              <ellipse cx="210" cy="100" rx="26" ry="8" fill="none" stroke="rgba(201,170,111,0.80)" stroke-width="1.5"/>
+              <line x1="184" y1="100" x2="188" y2="122" stroke="rgba(201,170,111,0.70)" stroke-width="1.2"/>
+              <line x1="236" y1="100" x2="232" y2="122" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+              <ellipse cx="210" cy="122" rx="18" ry="5.5" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="1.1"/>
+              <circle cx="210" cy="120" r="3.5" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="0.8" filter="url(#ig3glow)"/>
+              <line x1="300" y1="0" x2="300" y2="92" stroke="rgba(201,170,111,0.50)" stroke-width="0.8"/>
+              <ellipse cx="300" cy="104" rx="24" ry="7.5" fill="none" stroke="rgba(201,170,111,0.75)" stroke-width="1.4"/>
+              <line x1="276" y1="104" x2="280" y2="124" stroke="rgba(201,170,111,0.65)" stroke-width="1.1"/>
+              <line x1="324" y1="104" x2="320" y2="124" stroke="rgba(201,170,111,0.63)" stroke-width="1.1"/>
+              <ellipse cx="300" cy="124" rx="16" ry="5" fill="none" stroke="rgba(201,170,111,0.56)" stroke-width="1.0"/>
+              <!-- Bar stools -->
+              <ellipse cx="56" cy="166" rx="24" ry="8" fill="none" stroke="rgba(201,170,111,0.78)" stroke-width="1.5"/>
+              <line x1="56" y1="174" x2="56" y2="224" stroke="rgba(201,170,111,0.70)" stroke-width="2.0"/>
+              <ellipse cx="56" cy="228" rx="16" ry="5" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.2"/>
+              <ellipse cx="144" cy="152" rx="24" ry="8" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.4"/>
+              <line x1="144" y1="160" x2="144" y2="210" stroke="rgba(201,170,111,0.64)" stroke-width="1.9"/>
+              <ellipse cx="144" cy="214" rx="16" ry="5" fill="none" stroke="rgba(201,170,111,0.54)" stroke-width="1.1"/>
+              <!-- Upper cabinets wall -->
+              <polygon points="20,60 340,20 374,36 54,76" fill="none" stroke="rgba(201,170,111,0.78)" stroke-width="1.5"/>
+              <polygon points="20,60 20,118 54,130 54,76" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.2"/>
+              <polygon points="54,76 54,130 374,100 374,36" fill="none" stroke="rgba(201,170,111,0.46)" stroke-width="1.0"/>
+              <line x1="138" y1="28" x2="138" y2="86" stroke="rgba(201,170,111,0.38)" stroke-width="0.8"/>
+              <line x1="238" y1="22" x2="238" y2="76" stroke="rgba(201,170,111,0.34)" stroke-width="0.7"/>
+              <line x1="68" y1="103" x2="76" y2="103" stroke="rgba(201,170,111,0.54)" stroke-width="1.1"/>
+              <line x1="184" y1="95" x2="192" y2="95" stroke="rgba(201,170,111,0.50)" stroke-width="1.0"/>
+              <line x1="285" y1="88" x2="293" y2="88" stroke="rgba(201,170,111,0.48)" stroke-width="1.0"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-badge">
+          <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="2" y="2" width="18" height="18" rx="5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="11" cy="11" r="4.5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="16.5" cy="5.5" r="1" fill="rgba(201,170,111,0.9)"/></svg>
+        </div>
+        <div class="ig-overlay">
+          <div class="ig-meta">
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12.5S1 8.5 1 4.5C1 2.57 2.57 1 4.5 1c1.05 0 2 .5 2.5 1.3C7.5 1.5 8.45 1 9.5 1 11.43 1 13 2.57 13 4.5c0 4-6 8-6 8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              408
+            </span>
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2h10v8H8l-2 2V10H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              24
+            </span>
+          </div>
+          <p class="ig-caption">Professional kitchen island — fluted marble, gooseneck tap. ✦</p>
+        </div>
+      </div>
+
+      <!-- Tile 04 — tall — Library wall -->
+      <div class="ig-tile ig-tile--tall reveal-up" data-delay="3">
+        <div class="ig-tile-inner">
+          <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="ig4chalk">
+                <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" seed="6" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <filter id="ig4glow">
+                <feGaussianBlur stdDeviation="3.8" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="ig4bg" cx="50%" cy="45%" r="65%">
+                <stop offset="0%" stop-color="#1c1812"/>
+                <stop offset="100%" stop-color="#080707"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="800" fill="url(#ig4bg)"/>
+            <g filter="url(#ig4chalk)">
+              <!-- Library wall frame -->
+              <rect x="20" y="10" width="330" height="760" fill="none" stroke="rgba(201,170,111,0.84)" stroke-width="1.9"/>
+              <!-- ISO depth right -->
+              <polygon points="350,10 386,30 386,790 350,770" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="1.4"/>
+              <!-- ISO top -->
+              <polygon points="20,10 350,10 386,30 56,30" fill="none" stroke="rgba(201,170,111,0.70)" stroke-width="1.5"/>
+              <!-- Left pilaster -->
+              <rect x="20" y="10" width="18" height="760" fill="none" stroke="rgba(201,170,111,0.52)" stroke-width="1.0"/>
+              <rect x="20" y="28" width="18" height="16" fill="none" stroke="rgba(201,170,111,0.36)" stroke-width="0.7"/>
+              <rect x="20" y="736" width="18" height="16" fill="none" stroke="rgba(201,170,111,0.34)" stroke-width="0.6"/>
+              <!-- Right pilaster -->
+              <rect x="332" y="10" width="18" height="760" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="0.9"/>
+              <!-- 6 shelves -->
+              <line x1="38" y1="138" x2="332" y2="138" stroke="rgba(201,170,111,0.68)" stroke-width="1.4"/>
+              <line x1="38" y1="266" x2="332" y2="266" stroke="rgba(201,170,111,0.66)" stroke-width="1.3"/>
+              <line x1="38" y1="394" x2="332" y2="394" stroke="rgba(201,170,111,0.64)" stroke-width="1.3"/>
+              <line x1="38" y1="522" x2="332" y2="522" stroke="rgba(201,170,111,0.62)" stroke-width="1.2"/>
+              <line x1="38" y1="650" x2="332" y2="650" stroke="rgba(201,170,111,0.60)" stroke-width="1.2"/>
+              <!-- Centre vertical divider -->
+              <line x1="185" y1="10" x2="185" y2="760" stroke="rgba(201,170,111,0.44)" stroke-width="0.9"/>
+              <!-- BOOKS — varied widths/heights, all 6 shelves -->
+              <!-- Shelf 1 left -->
+              <line x1="44" y1="18" x2="44" y2="136" stroke="rgba(201,170,111,0.52)" stroke-width="3.0"/>
+              <line x1="54" y1="18" x2="54" y2="136" stroke="rgba(201,170,111,0.44)" stroke-width="2.2"/>
+              <line x1="62" y1="22" x2="62" y2="136" stroke="rgba(201,170,111,0.52)" stroke-width="3.4"/>
+              <line x1="72" y1="18" x2="72" y2="136" stroke="rgba(201,170,111,0.40)" stroke-width="2.0"/>
+              <line x1="80" y1="20" x2="80" y2="136" stroke="rgba(201,170,111,0.48)" stroke-width="2.8"/>
+              <line x1="90" y1="18" x2="90" y2="136" stroke="rgba(201,170,111,0.42)" stroke-width="2.2"/>
+              <line x1="98" y1="22" x2="98" y2="136" stroke="rgba(201,170,111,0.50)" stroke-width="3.2"/>
+              <line x1="108" y1="18" x2="108" y2="136" stroke="rgba(201,170,111,0.38)" stroke-width="1.9"/>
+              <line x1="116" y1="20" x2="116" y2="136" stroke="rgba(201,170,111,0.46)" stroke-width="2.6"/>
+              <line x1="126" y1="22" x2="126" y2="136" stroke="rgba(201,170,111,0.40)" stroke-width="2.0"/>
+              <line x1="134" y1="18" x2="130" y2="136" stroke="rgba(201,170,111,0.44)" stroke-width="2.4" transform="rotate(4,134,136)"/>
+              <line x1="148" y1="22" x2="148" y2="136" stroke="rgba(201,170,111,0.48)" stroke-width="2.8"/>
+              <line x1="158" y1="20" x2="158" y2="136" stroke="rgba(201,170,111,0.38)" stroke-width="1.9"/>
+              <!-- Shelf 1 right -->
+              <line x1="192" y1="20" x2="192" y2="136" stroke="rgba(201,170,111,0.50)" stroke-width="2.8"/>
+              <line x1="202" y1="18" x2="202" y2="136" stroke="rgba(201,170,111,0.44)" stroke-width="2.2"/>
+              <line x1="210" y1="22" x2="210" y2="136" stroke="rgba(201,170,111,0.52)" stroke-width="3.2"/>
+              <line x1="220" y1="18" x2="220" y2="136" stroke="rgba(201,170,111,0.40)" stroke-width="1.8"/>
+              <line x1="228" y1="20" x2="228" y2="136" stroke="rgba(201,170,111,0.48)" stroke-width="2.8"/>
+              <line x1="238" y1="18" x2="238" y2="136" stroke="rgba(201,170,111,0.42)" stroke-width="2.2"/>
+              <line x1="246" y1="22" x2="246" y2="136" stroke="rgba(201,170,111,0.46)" stroke-width="2.0"/>
+              <line x1="256" y1="18" x2="256" y2="136" stroke="rgba(201,170,111,0.44)" stroke-width="3.0"/>
+              <line x1="266" y1="22" x2="266" y2="136" stroke="rgba(201,170,111,0.38)" stroke-width="1.8"/>
+              <line x1="276" y1="20" x2="276" y2="136" stroke="rgba(201,170,111,0.46)" stroke-width="2.4"/>
+              <!-- Shelf 2 — left bay — decorative arrangement -->
+              <!-- Small bust/sculpture -->
+              <line x1="48" y1="148" x2="46" y2="226" stroke="rgba(201,170,111,0.46)" stroke-width="1.0"/>
+              <ellipse cx="46" cy="234" rx="10" ry="14" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.9"/>
+              <circle cx="46" cy="222" r="8" fill="none" stroke="rgba(201,170,111,0.46)" stroke-width="0.9"/>
+              <ellipse cx="46" cy="246" rx="12" ry="4" fill="none" stroke="rgba(201,170,111,0.38)" stroke-width="0.7"/>
+              <!-- Books beside bust -->
+              <line x1="62" y1="146" x2="62" y2="264" stroke="rgba(201,170,111,0.44)" stroke-width="2.6"/>
+              <line x1="72" y1="148" x2="72" y2="264" stroke="rgba(201,170,111,0.40)" stroke-width="2.0"/>
+              <line x1="80" y1="146" x2="80" y2="264" stroke="rgba(201,170,111,0.46)" stroke-width="2.8"/>
+              <line x1="90" y1="148" x2="90" y2="264" stroke="rgba(201,170,111,0.38)" stroke-width="1.8"/>
+              <line x1="100" y1="146" x2="100" y2="264" stroke="rgba(201,170,111,0.44)" stroke-width="2.4"/>
+              <!-- Shelf 2 right — vase + books -->
+              <ellipse cx="210" cy="264" rx="10" ry="3.5" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="0.9"/>
+              <line x1="200" y1="264" x2="198" y2="228" stroke="rgba(201,170,111,0.46)" stroke-width="1.0"/>
+              <line x1="220" y1="264" x2="222" y2="228" stroke="rgba(201,170,111,0.44)" stroke-width="1.0"/>
+              <ellipse cx="210" cy="228" rx="8" ry="2.8" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.8"/>
+              <line x1="210" y1="224" x2="204" y2="196" stroke="rgba(201,170,111,0.36)" stroke-width="0.7"/>
+              <circle cx="204" cy="193" r="3.5" fill="none" stroke="rgba(201,170,111,0.34)" stroke-width="0.6"/>
+              <line x1="228" y1="148" x2="228" y2="264" stroke="rgba(201,170,111,0.40)" stroke-width="2.2"/>
+              <line x1="238" y1="150" x2="238" y2="264" stroke="rgba(201,170,111,0.38)" stroke-width="2.0"/>
+              <line x1="248" y1="148" x2="248" y2="264" stroke="rgba(201,170,111,0.42)" stroke-width="2.6"/>
+              <!-- Shelf 3, 4, 5 left + right — books -->
+              <line x1="44" y1="274" x2="44" y2="392" stroke="rgba(201,170,111,0.44)" stroke-width="2.4"/>
+              <line x1="54" y1="276" x2="54" y2="392" stroke="rgba(201,170,111,0.38)" stroke-width="1.8"/>
+              <line x1="62" y1="274" x2="62" y2="392" stroke="rgba(201,170,111,0.46)" stroke-width="2.8"/>
+              <line x1="72" y1="278" x2="72" y2="392" stroke="rgba(201,170,111,0.36)" stroke-width="1.6"/>
+              <line x1="80" y1="274" x2="80" y2="392" stroke="rgba(201,170,111,0.42)" stroke-width="2.2"/>
+              <line x1="192" y1="274" x2="192" y2="392" stroke="rgba(201,170,111,0.42)" stroke-width="2.4"/>
+              <line x1="202" y1="276" x2="202" y2="392" stroke="rgba(201,170,111,0.36)" stroke-width="1.8"/>
+              <!-- Candle on shelf 3 -->
+              <rect x="100" y="278" width="9" height="56" fill="none" stroke="rgba(201,170,111,0.42)" stroke-width="0.8" transform="skewX(-5)"/>
+              <circle cx="104" cy="276" r="2.2" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.7" filter="url(#ig4glow)"/>
+              <!-- Shelf 4 -->
+              <line x1="44" y1="402" x2="44" y2="520" stroke="rgba(201,170,111,0.42)" stroke-width="2.2"/>
+              <line x1="54" y1="404" x2="54" y2="520" stroke="rgba(201,170,111,0.36)" stroke-width="1.7"/>
+              <line x1="62" y1="402" x2="62" y2="520" stroke="rgba(201,170,111,0.44)" stroke-width="2.6"/>
+              <line x1="72" y1="406" x2="72" y2="520" stroke="rgba(201,170,111,0.34)" stroke-width="1.5"/>
+              <line x1="192" y1="402" x2="192" y2="520" stroke="rgba(201,170,111,0.40)" stroke-width="2.2"/>
+              <!-- Framed print on shelf 4 -->
+              <rect x="100" y="404" width="70" height="100" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.8"/>
+              <rect x="104" y="408" width="62" height="92" fill="none" stroke="rgba(201,170,111,0.24)" stroke-width="0.4"/>
+              <line x1="104" y1="408" x2="166" y2="500" stroke="rgba(201,170,111,0.14)" stroke-width="0.4"/>
+              <!-- Shelf 5 -->
+              <line x1="44" y1="530" x2="44" y2="648" stroke="rgba(201,170,111,0.40)" stroke-width="2.0"/>
+              <line x1="54" y1="532" x2="54" y2="648" stroke="rgba(201,170,111,0.34)" stroke-width="1.6"/>
+              <line x1="62" y1="530" x2="62" y2="648" stroke="rgba(201,170,111,0.42)" stroke-width="2.4"/>
+              <line x1="192" y1="530" x2="192" y2="648" stroke="rgba(201,170,111,0.38)" stroke-width="2.0"/>
+              <!-- Shelf 6 bottom -->
+              <line x1="44" y1="660" x2="44" y2="758" stroke="rgba(201,170,111,0.38)" stroke-width="2.8"/>
+              <line x1="56" y1="660" x2="56" y2="758" stroke="rgba(201,170,111,0.32)" stroke-width="2.0"/>
+              <!-- Horizontal stacked books bottom -->
+              <rect x="72" y="716" width="46" height="12" fill="none" stroke="rgba(201,170,111,0.34)" stroke-width="0.7" transform="skewX(-6)"/>
+              <rect x="72" y="728" width="38" height="12" fill="none" stroke="rgba(201,170,111,0.28)" stroke-width="0.6" transform="skewX(-6)"/>
+              <!-- Rolling library ladder -->
+              <line x1="336" y1="80" x2="348" y2="740" stroke="rgba(201,170,111,0.56)" stroke-width="1.3"/>
+              <line x1="350" y1="76" x2="362" y2="736" stroke="rgba(201,170,111,0.50)" stroke-width="1.2"/>
+              <line x1="337" y1="160" x2="351" y2="158" stroke="rgba(201,170,111,0.42)" stroke-width="0.9"/>
+              <line x1="338" y1="240" x2="352" y2="238" stroke="rgba(201,170,111,0.40)" stroke-width="0.8"/>
+              <line x1="340" y1="320" x2="354" y2="318" stroke="rgba(201,170,111,0.38)" stroke-width="0.8"/>
+              <line x1="341" y1="400" x2="355" y2="398" stroke="rgba(201,170,111,0.36)" stroke-width="0.7"/>
+              <line x1="342" y1="480" x2="356" y2="478" stroke="rgba(201,170,111,0.34)" stroke-width="0.7"/>
+              <line x1="343" y1="560" x2="357" y2="558" stroke="rgba(201,170,111,0.32)" stroke-width="0.6"/>
+              <line x1="344" y1="640" x2="358" y2="638" stroke="rgba(201,170,111,0.30)" stroke-width="0.6"/>
+              <!-- Floor track -->
+              <line x1="336" y1="760" x2="370" y2="760" stroke="rgba(201,170,111,0.48)" stroke-width="1.0"/>
+              <!-- Ladder hook top -->
+              <path d="M342,80 Q342,60 352,56" fill="none" stroke="rgba(201,170,111,0.46)" stroke-width="0.9"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-badge">
+          <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="2" y="2" width="18" height="18" rx="5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="11" cy="11" r="4.5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="16.5" cy="5.5" r="1" fill="rgba(201,170,111,0.9)"/></svg>
+        </div>
+        <div class="ig-overlay">
+          <div class="ig-meta">
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12.5S1 8.5 1 4.5C1 2.57 2.57 1 4.5 1c1.05 0 2 .5 2.5 1.3C7.5 1.5 8.45 1 9.5 1 11.43 1 13 2.57 13 4.5c0 4-6 8-6 8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              621
+            </span>
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2h10v8H8l-2 2V10H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              48
+            </span>
+          </div>
+          <p class="ig-caption">Full-height library wall with rolling ladder. A room within a room. ✦</p>
+        </div>
+      </div>
+
+      <!-- Tile 05 — square — Dining room -->
+      <div class="ig-tile reveal-up" data-delay="3">
+        <div class="ig-tile-inner">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="ig5chalk">
+                <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="3" seed="20" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.3" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <filter id="ig5glow">
+                <feGaussianBlur stdDeviation="3.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="ig5bg" cx="50%" cy="55%" r="68%">
+                <stop offset="0%" stop-color="#1a1510"/>
+                <stop offset="100%" stop-color="#090806"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#ig5bg)"/>
+            <g filter="url(#ig5chalk)">
+              <!-- Room frame suggestion -->
+              <polygon points="40,200 200,120 360,200 200,280" fill="none" stroke="rgba(201,170,111,0.18)" stroke-width="0.7" stroke-dasharray="6,5"/>
+              <!-- Grand dining table -->
+              <polygon points="60,220 296,152 332,172 96,240" fill="none" stroke="rgba(201,170,111,0.90)" stroke-width="1.8"/>
+              <polygon points="60,220 60,238 96,258 96,240" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.4"/>
+              <polygon points="96,240 96,258 332,188 332,172" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.3"/>
+              <!-- Table legs -->
+              <line x1="80" y1="228" x2="80" y2="290" stroke="rgba(201,170,111,0.70)" stroke-width="1.6"/>
+              <line x1="94" y1="252" x2="94" y2="314" stroke="rgba(201,170,111,0.64)" stroke-width="1.5"/>
+              <line x1="314" y1="174" x2="314" y2="236" stroke="rgba(201,170,111,0.62)" stroke-width="1.5"/>
+              <!-- Wood grain on table -->
+              <line x1="102" y1="166" x2="116" y2="234" stroke="rgba(201,170,111,0.11)" stroke-width="0.5"/>
+              <line x1="176" y1="154" x2="190" y2="222" stroke="rgba(201,170,111,0.10)" stroke-width="0.4"/>
+              <line x1="250" y1="152" x2="264" y2="220" stroke="rgba(201,170,111,0.09)" stroke-width="0.4"/>
+              <!-- Table runner -->
+              <polygon points="90,176 278,132 304,148 116,192" fill="none" stroke="rgba(201,170,111,0.25)" stroke-width="0.6" stroke-dasharray="5,3"/>
+              <!-- Centre vase/flowers -->
+              <ellipse cx="200" cy="196" rx="16" ry="5.5" fill="none" stroke="rgba(201,170,111,0.56)" stroke-width="1.1"/>
+              <line x1="184" y1="196" x2="182" y2="166" stroke="rgba(201,170,111,0.52)" stroke-width="1.0"/>
+              <line x1="216" y1="196" x2="218" y2="166" stroke="rgba(201,170,111,0.50)" stroke-width="1.0"/>
+              <ellipse cx="200" cy="166" rx="13" ry="4.5" fill="none" stroke="rgba(201,170,111,0.50)" stroke-width="0.9"/>
+              <line x1="200" y1="162" x2="192" y2="134" stroke="rgba(201,170,111,0.40)" stroke-width="0.8"/>
+              <line x1="200" y1="148" x2="214" y2="124" stroke="rgba(201,170,111,0.38)" stroke-width="0.7"/>
+              <circle cx="192" cy="132" r="3.5" fill="none" stroke="rgba(201,170,111,0.36)" stroke-width="0.6"/>
+              <circle cx="214" cy="122" r="3" fill="none" stroke="rgba(201,170,111,0.34)" stroke-width="0.6"/>
+              <!-- Dining chairs — 4 visible -->
+              <!-- Chair front left -->
+              <polygon points="66,248 140,228 158,240 84,260" fill="none" stroke="rgba(201,170,111,0.82)" stroke-width="1.5"/>
+              <line x1="68" y1="246" x2="68" y2="196" stroke="rgba(201,170,111,0.76)" stroke-width="1.4"/>
+              <line x1="84" y1="240" x2="84" y2="192" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+              <line x1="68" y1="196" x2="84" y2="192" stroke="rgba(201,170,111,0.74)" stroke-width="1.4"/>
+              <line x1="68" y1="218" x2="84" y2="214" stroke="rgba(201,170,111,0.38)" stroke-width="0.7"/>
+              <!-- Chair front right -->
+              <polygon points="210,230 284,210 302,222 228,242" fill="none" stroke="rgba(201,170,111,0.80)" stroke-width="1.5"/>
+              <line x1="212" y1="228" x2="212" y2="178" stroke="rgba(201,170,111,0.74)" stroke-width="1.4"/>
+              <line x1="228" y1="222" x2="228" y2="174" stroke="rgba(201,170,111,0.66)" stroke-width="1.2"/>
+              <line x1="212" y1="178" x2="228" y2="174" stroke="rgba(201,170,111,0.72)" stroke-width="1.4"/>
+              <!-- Chair back left -->
+              <polygon points="66,164 140,144 158,156 84,176" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.3"/>
+              <line x1="68" y1="162" x2="68" y2="116" stroke="rgba(201,170,111,0.66)" stroke-width="1.2"/>
+              <line x1="84" y1="158" x2="84" y2="110" stroke="rgba(201,170,111,0.58)" stroke-width="1.1"/>
+              <line x1="68" y1="116" x2="84" y2="110" stroke="rgba(201,170,111,0.64)" stroke-width="1.2"/>
+              <!-- Chair back right -->
+              <polygon points="210,144 284,124 302,136 228,156" fill="none" stroke="rgba(201,170,111,0.70)" stroke-width="1.3"/>
+              <line x1="212" y1="142" x2="212" y2="96" stroke="rgba(201,170,111,0.64)" stroke-width="1.2"/>
+              <line x1="228" y1="136" x2="228" y2="90" stroke="rgba(201,170,111,0.56)" stroke-width="1.1"/>
+              <line x1="212" y1="96" x2="228" y2="90" stroke="rgba(201,170,111,0.62)" stroke-width="1.2"/>
+              <!-- Chandelier above -->
+              <line x1="200" y1="0" x2="200" y2="54" stroke="rgba(201,170,111,0.62)" stroke-width="1.0" stroke-dasharray="4,3"/>
+              <ellipse cx="200" cy="68" rx="66" ry="22" fill="none" stroke="rgba(201,170,111,0.86)" stroke-width="1.7"/>
+              <ellipse cx="200" cy="76" rx="54" ry="17" fill="none" stroke="rgba(201,170,111,0.36)" stroke-width="0.6"/>
+              <line x1="134" y1="68" x2="120" y2="106" stroke="rgba(201,170,111,0.72)" stroke-width="1.3"/>
+              <line x1="162" y1="54" x2="156" y2="92" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+              <line x1="200" y1="46" x2="200" y2="84" stroke="rgba(201,170,111,0.76)" stroke-width="1.4"/>
+              <line x1="238" y1="54" x2="244" y2="92" stroke="rgba(201,170,111,0.68)" stroke-width="1.2"/>
+              <line x1="266" y1="68" x2="280" y2="106" stroke="rgba(201,170,111,0.72)" stroke-width="1.3"/>
+              <!-- Candle lights on chandelier -->
+              <circle cx="120" cy="108" r="3" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="0.9" filter="url(#ig5glow)"/>
+              <circle cx="156" cy="94" r="2.8" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="0.9" filter="url(#ig5glow)"/>
+              <circle cx="200" cy="86" r="3.2" fill="none" stroke="rgba(201,170,111,0.65)" stroke-width="1.0" filter="url(#ig5glow)"/>
+              <circle cx="244" cy="94" r="2.8" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="0.9" filter="url(#ig5glow)"/>
+              <circle cx="280" cy="108" r="3" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="0.9" filter="url(#ig5glow)"/>
+              <!-- Rug below -->
+              <polygon points="80,234 312,172 344,190 112,252" fill="none" stroke="rgba(201,170,111,0.27)" stroke-width="0.6" stroke-dasharray="7,4"/>
+              <!-- Dimension line -->
+              <line x1="64" y1="380" x2="334" y2="380" stroke="rgba(201,170,111,0.18)" stroke-width="0.5" stroke-dasharray="4,5"/>
+              <line x1="64" y1="374" x2="64" y2="386" stroke="rgba(201,170,111,0.22)" stroke-width="0.6"/>
+              <line x1="334" y1="374" x2="334" y2="386" stroke="rgba(201,170,111,0.22)" stroke-width="0.6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-badge">
+          <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="2" y="2" width="18" height="18" rx="5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="11" cy="11" r="4.5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="16.5" cy="5.5" r="1" fill="rgba(201,170,111,0.9)"/></svg>
+        </div>
+        <div class="ig-overlay">
+          <div class="ig-meta">
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12.5S1 8.5 1 4.5C1 2.57 2.57 1 4.5 1c1.05 0 2 .5 2.5 1.3C7.5 1.5 8.45 1 9.5 1 11.43 1 13 2.57 13 4.5c0 4-6 8-6 8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              539
+            </span>
+          </div>
+          <p class="ig-caption">Dining room — hand-drawn in perspective. The space breathes. ✦</p>
+        </div>
+      </div>
+
+      <!-- Tile 06 — square — Chaise longue / bedroom vibe -->
+      <div class="ig-tile reveal-up" data-delay="4">
+        <div class="ig-tile-inner">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="ig6chalk">
+                <feTurbulence type="fractalNoise" baseFrequency="0.74" numOctaves="4" seed="11" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <filter id="ig6glow">
+                <feGaussianBlur stdDeviation="4.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="ig6bg" cx="55%" cy="50%" r="65%">
+                <stop offset="0%" stop-color="#1c1712"/>
+                <stop offset="100%" stop-color="#080706"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#ig6bg)"/>
+            <g filter="url(#ig6chalk)">
+              <!-- Velvet chaise longue -->
+              <polygon points="14,224 340,174 374,196 48,246" fill="none" stroke="rgba(201,170,111,0.92)" stroke-width="1.9"/>
+              <!-- Front face -->
+              <polygon points="14,224 14,270 48,290 48,246" fill="none" stroke="rgba(201,170,111,0.72)" stroke-width="1.5"/>
+              <!-- Right face -->
+              <polygon points="48,246 48,290 374,242 374,196" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="1.3"/>
+              <!-- Raised headrest end -->
+              <polygon points="14,224 6,182 18,164 26,200" fill="none" stroke="rgba(201,170,111,0.80)" stroke-width="1.6"/>
+              <ellipse cx="10" cy="182" rx="11" ry="3.5" fill="none" stroke="rgba(201,170,111,0.55)" stroke-width="1.1"/>
+              <!-- Rolled open end right -->
+              <polygon points="340,174 360,166 360,210 340,218" fill="none" stroke="rgba(201,170,111,0.64)" stroke-width="1.3"/>
+              <ellipse cx="350" cy="166" rx="11" ry="3.5" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.9"/>
+              <!-- Button tufts row -->
+              <circle cx="72" cy="208" r="3.5" fill="none" stroke="rgba(201,170,111,0.34)" stroke-width="0.7"/>
+              <circle cx="148" cy="196" r="3.5" fill="none" stroke="rgba(201,170,111,0.30)" stroke-width="0.7"/>
+              <circle cx="232" cy="188" r="3.5" fill="none" stroke="rgba(201,170,111,0.28)" stroke-width="0.6"/>
+              <circle cx="312" cy="180" r="3" fill="none" stroke="rgba(201,170,111,0.26)" stroke-width="0.6"/>
+              <!-- Cushion seams -->
+              <line x1="22" y1="232" x2="358" y2="182" stroke="rgba(201,170,111,0.26)" stroke-width="0.6"/>
+              <line x1="16" y1="240" x2="352" y2="190" stroke="rgba(201,170,111,0.18)" stroke-width="0.5"/>
+              <!-- Fringe at base -->
+              <line x1="16" y1="268" x2="16" y2="282" stroke="rgba(201,170,111,0.38)" stroke-width="0.6" stroke-dasharray="2,2"/>
+              <line x1="28" y1="270" x2="28" y2="284" stroke="rgba(201,170,111,0.36)" stroke-width="0.6" stroke-dasharray="2,2"/>
+              <line x1="40" y1="272" x2="40" y2="286" stroke="rgba(201,170,111,0.36)" stroke-width="0.6" stroke-dasharray="2,2"/>
+              <!-- Cabriole legs -->
+              <path d="M18,268 Q14,282 18,296" fill="none" stroke="rgba(201,170,111,0.66)" stroke-width="1.3"/>
+              <path d="M46,288 Q42,302 46,316" fill="none" stroke="rgba(201,170,111,0.60)" stroke-width="1.2"/>
+              <path d="M350,210 Q354,224 350,238" fill="none" stroke="rgba(201,170,111,0.58)" stroke-width="1.2"/>
+              <path d="M370,188 Q374,202 370,216" fill="none" stroke="rgba(201,170,111,0.54)" stroke-width="1.1"/>
+              <!-- Foot pads -->
+              <ellipse cx="18" cy="296" rx="7" ry="2" fill="none" stroke="rgba(201,170,111,0.46)" stroke-width="0.8"/>
+              <ellipse cx="46" cy="316" rx="7" ry="2" fill="none" stroke="rgba(201,170,111,0.44)" stroke-width="0.8"/>
+              <!-- Throw cushion/pillow on headrest -->
+              <polygon points="6,188 44,178 50,192 12,202" fill="none" stroke="rgba(201,170,111,0.54)" stroke-width="1.1"/>
+              <line x1="28" y1="182" x2="30" y2="198" stroke="rgba(201,170,111,0.24)" stroke-width="0.5"/>
+              <!-- Arc floor lamp beside -->
+              <ellipse cx="370" cy="354" rx="22" ry="7" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="1.2"/>
+              <line x1="370" y1="347" x2="368" y2="148" stroke="rgba(201,170,111,0.68)" stroke-width="1.5"/>
+              <path d="M368,148 Q368,124 390,112" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="1.3"/>
+              <ellipse cx="376" cy="108" rx="30" ry="9.5" fill="none" stroke="rgba(201,170,111,0.82)" stroke-width="1.5"/>
+              <line x1="346" y1="108" x2="348" y2="136" stroke="rgba(201,170,111,0.72)" stroke-width="1.2"/>
+              <line x1="406" y1="108" x2="404" y2="136" stroke="rgba(201,170,111,0.68)" stroke-width="1.1"/>
+              <ellipse cx="376" cy="136" rx="24" ry="7.5" fill="none" stroke="rgba(201,170,111,0.62)" stroke-width="1.1"/>
+              <circle cx="376" cy="134" r="5" fill="none" stroke="rgba(201,170,111,0.52)" stroke-width="0.9" filter="url(#ig6glow)"/>
+              <!-- Decorative side table -->
+              <ellipse cx="68" cy="286" rx="38" ry="12" fill="none" stroke="rgba(201,170,111,0.68)" stroke-width="1.3"/>
+              <line x1="30" y1="286" x2="30" y2="342" stroke="rgba(201,170,111,0.56)" stroke-width="1.2"/>
+              <line x1="106" y1="286" x2="106" y2="342" stroke="rgba(201,170,111,0.54)" stroke-width="1.1"/>
+              <ellipse cx="68" cy="342" rx="38" ry="12" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="1.0"/>
+              <!-- Items on table: candle tray -->
+              <polygon points="38,278 98,268 104,274 44,284" fill="none" stroke="rgba(201,170,111,0.36)" stroke-width="0.6"/>
+              <line x1="60" y1="278" x2="60" y2="264" stroke="rgba(201,170,111,0.50)" stroke-width="1.0"/>
+              <circle cx="60" cy="263" r="2" fill="none" stroke="rgba(201,170,111,0.48)" stroke-width="0.7" filter="url(#ig6glow)"/>
+              <line x1="76" y1="276" x2="76" y2="258" stroke="rgba(201,170,111,0.48)" stroke-width="1.0"/>
+              <circle cx="76" cy="257" r="2" fill="none" stroke="rgba(201,170,111,0.46)" stroke-width="0.7" filter="url(#ig6glow)"/>
+              <!-- Rug -->
+              <polygon points="16,252 354,202 384,218 46,268" fill="none" stroke="rgba(201,170,111,0.24)" stroke-width="0.6" stroke-dasharray="8,4"/>
+              <!-- Blueprint annotation -->
+              <line x1="14" y1="370" x2="374" y2="370" stroke="rgba(201,170,111,0.16)" stroke-width="0.4" stroke-dasharray="4,5"/>
+              <line x1="14" y1="364" x2="14" y2="376" stroke="rgba(201,170,111,0.20)" stroke-width="0.6"/>
+              <line x1="374" y1="364" x2="374" y2="376" stroke="rgba(201,170,111,0.20)" stroke-width="0.6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-badge">
+          <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="2" y="2" width="18" height="18" rx="5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="11" cy="11" r="4.5" stroke="rgba(201,170,111,0.9)" stroke-width="1.2"/><circle cx="16.5" cy="5.5" r="1" fill="rgba(201,170,111,0.9)"/></svg>
+        </div>
+        <div class="ig-overlay">
+          <div class="ig-meta">
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12.5S1 8.5 1 4.5C1 2.57 2.57 1 4.5 1c1.05 0 2 .5 2.5 1.3C7.5 1.5 8.45 1 9.5 1 11.43 1 13 2.57 13 4.5c0 4-6 8-6 8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              456
+            </span>
+            <span class="ig-stat">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2h10v8H8l-2 2V10H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              38
+            </span>
+          </div>
+          <p class="ig-caption">Velvet chaise longue — button tufted, fringe detail. Designed to be lived in. ✦</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA row -->
+    <div class="ig-cta-row reveal-up" data-delay="5">
+      <span class="ig-cta-handle">@studio_aimo</span>
+      <a href="https://www.instagram.com/studio_aimo/" target="_blank" rel="noopener" class="btn-ghost">
+        Follow on Instagram
+      </a>
     </div>
   </section>
 
