@@ -140,538 +140,200 @@ html, body {
 }
 
 /* ═══════════════════════════════════════════════════
-   PER-ELEMENT ANIMATION — draw-in then float loop
+   PER-ELEMENT ANIMATION — 9 ZONES, draw-in + float
 ═══════════════════════════════════════════════════ */
 
-/* Sectional sofa */
-#sectional {
-  animation: drawFade 2.2s 0.15s ease forwards, floatC 13s 3.5s ease-in-out infinite;
+/* ── ZONE TL: L-sofa ── */
+#sofa-tl {
+  animation: drawFade 2.4s 0.10s ease forwards, floatC 14s 3.8s ease-in-out infinite;
 }
-#sectional line, #sectional polygon, #sectional polyline,
-#sectional path, #sectional ellipse, #sectional circle, #sectional rect {
-  animation: strokeOn 2.8s 0.15s ease forwards;
+#sofa-tl line, #sofa-tl polygon, #sofa-tl ellipse, #sofa-tl circle, #sofa-tl path, #sofa-tl rect {
+  animation: strokeOn 3.0s 0.10s ease forwards;
 }
 
-/* Coffee table */
-#ct-main {
-  animation: drawFade 1.9s 0.55s ease forwards, floatA 11s 3.8s ease-in-out infinite;
+/* ── ZONE TL: coffee table ── */
+#ct-tl {
+  animation: drawFade 2.0s 0.45s ease forwards, floatA 12s 4.0s ease-in-out infinite;
 }
-#ct-main line, #ct-main polygon, #ct-main ellipse,
-#ct-main rect, #ct-main path, #ct-main circle {
+#ct-tl line, #ct-tl polygon, #ct-tl ellipse, #ct-tl circle, #ct-tl path, #ct-tl rect {
+  animation: strokeOn 2.5s 0.45s ease forwards;
+}
+
+/* ── ZONE TL: pendants ── */
+#pendants-tl {
+  animation: drawFade 1.8s 0.22s ease forwards, floatF 11s 3.5s ease-in-out infinite;
+}
+#pendants-tl line, #pendants-tl polygon, #pendants-tl ellipse, #pendants-tl circle {
+  animation: strokeOn 2.3s 0.22s ease forwards;
+}
+
+/* ── ZONE TC: kitchen island ── */
+#kitchen-tc {
+  animation: drawFade 2.5s 0.35s ease forwards, floatD 16s 4.2s ease-in-out infinite;
+}
+#kitchen-tc line, #kitchen-tc polygon, #kitchen-tc ellipse, #kitchen-tc circle,
+#kitchen-tc path, #kitchen-tc rect {
+  animation: strokeOn 3.0s 0.35s ease forwards;
+}
+
+/* ── ZONE TR: bookcase wall ── */
+#bookcase-tr {
+  animation: drawFade 2.6s 0.18s ease forwards, floatA 18s 3.6s ease-in-out infinite;
+}
+#bookcase-tr line, #bookcase-tr polygon, #bookcase-tr ellipse, #bookcase-tr circle,
+#bookcase-tr path, #bookcase-tr rect {
+  animation: strokeOn 3.2s 0.18s ease forwards;
+}
+
+/* ── ZONE TR: reading armchair ── */
+#armchair-tr {
+  animation: drawFade 2.1s 0.90s ease forwards, floatB 12s 4.5s ease-in-out infinite;
+}
+#armchair-tr line, #armchair-tr polygon, #armchair-tr ellipse, #armchair-tr circle {
+  animation: strokeOn 2.6s 0.90s ease forwards;
+}
+
+/* ── ZONE TR: arc floor lamp ── */
+#lamp-tr {
+  animation: drawFade 1.9s 0.55s ease forwards, floatF 9s 3.8s ease-in-out infinite;
+}
+#lamp-tr line, #lamp-tr polygon, #lamp-tr ellipse, #lamp-tr circle, #lamp-tr path {
   animation: strokeOn 2.4s 0.55s ease forwards;
 }
 
-/* Rug */
-#rug-a {
-  animation: drawFade 2.4s 1.0s ease forwards, floatD 15s 4.5s ease-in-out infinite;
+/* ── ZONE ML: dining table + chairs ── */
+#dining-ml {
+  animation: drawFade 2.3s 0.60s ease forwards, floatA 13s 4.2s ease-in-out infinite;
 }
-#rug-a polygon, #rug-a line {
-  animation: strokeOn 3.0s 1.0s ease forwards;
-}
-
-/* Pendants */
-#pendants {
-  animation: drawFade 1.8s 0.35s ease forwards, floatB 12s 3.2s ease-in-out infinite;
-}
-#pendants line, #pendants ellipse, #pendants circle,
-#pendants polygon, #pendants path, #pendants rect {
-  animation: strokeOn 2.3s 0.35s ease forwards;
+#dining-ml line, #dining-ml polygon, #dining-ml ellipse, #dining-ml circle, #dining-ml path {
+  animation: strokeOn 2.8s 0.60s ease forwards;
 }
 
-/* Tall plant */
-#plant-tall {
-  animation: drawFade 2.0s 0.28s ease forwards, floatE 14s 3.4s ease-in-out infinite;
+/* ── ZONE ML: chandelier ── */
+#chandelier-ml {
+  animation: drawFade 2.2s 0.28s ease forwards, floatF 10s 3.8s ease-in-out infinite;
 }
-#plant-tall line, #plant-tall polygon, #plant-tall ellipse,
-#plant-tall circle, #plant-tall rect {
-  animation: strokeOn 2.5s 0.28s ease forwards;
-}
-
-/* Wall art A */
-#wall-art-a {
-  animation: drawFade 1.7s 0.25s ease forwards, floatA 14s 3.0s ease-in-out infinite;
-}
-#wall-art-a rect, #wall-art-a polygon, #wall-art-a line,
-#wall-art-a circle, #wall-art-a ellipse {
-  animation: strokeOn 2.2s 0.25s ease forwards;
+#chandelier-ml line, #chandelier-ml polygon, #chandelier-ml ellipse, #chandelier-ml circle {
+  animation: strokeOn 2.7s 0.28s ease forwards;
 }
 
-/* Wall art B */
-#wall-art-b {
-  animation: drawFade 1.7s 0.45s ease forwards, floatD 12s 3.5s ease-in-out infinite;
+/* ── ZONE MC: reception desk ── */
+#reception-mc {
+  animation: drawFade 2.8s 0.08s ease forwards, floatA 15s 4.0s ease-in-out infinite;
 }
-#wall-art-b rect, #wall-art-b polygon, #wall-art-b line, #wall-art-b ellipse {
-  animation: strokeOn 2.2s 0.45s ease forwards;
-}
-
-/* Chandelier */
-#chandelier {
-  animation: drawFade 2.2s 0.8s ease forwards, floatF 10s 4.0s ease-in-out infinite;
-}
-#chandelier line, #chandelier ellipse, #chandelier circle,
-#chandelier polygon, #chandelier rect, #chandelier path {
-  animation: strokeOn 2.7s 0.8s ease forwards;
+#reception-mc line, #reception-mc polygon, #reception-mc ellipse, #reception-mc circle,
+#reception-mc path, #reception-mc rect {
+  animation: strokeOn 3.4s 0.08s ease forwards;
 }
 
-/* Dining table */
-#dining-tbl {
-  animation: drawFade 2.1s 1.3s ease forwards, floatA 13s 4.2s ease-in-out infinite;
+/* ── ZONE MC: pod chair left ── */
+#pod-l {
+  animation: drawFade 2.2s 0.52s ease forwards, floatB 13s 4.4s ease-in-out infinite;
 }
-#dining-tbl line, #dining-tbl polygon, #dining-tbl ellipse,
-#dining-tbl circle, #dining-tbl path {
-  animation: strokeOn 2.6s 1.3s ease forwards;
-}
-
-/* Dining chair 1 */
-#dc-1 {
-  animation: drawFade 1.7s 1.55s ease forwards, floatB 11s 4.5s ease-in-out infinite;
-}
-#dc-1 polygon, #dc-1 line, #dc-1 circle {
-  animation: strokeOn 2.2s 1.55s ease forwards;
+#pod-l line, #pod-l polygon, #pod-l ellipse, #pod-l circle, #pod-l path {
+  animation: strokeOn 2.7s 0.52s ease forwards;
 }
 
-/* Dining chair 2 */
-#dc-2 {
-  animation: drawFade 1.7s 1.65s ease forwards, floatC 10s 4.8s ease-in-out infinite;
+/* ── ZONE MC: pod chair right ── */
+#pod-r {
+  animation: drawFade 2.2s 0.70s ease forwards, floatC 12s 4.6s ease-in-out infinite;
 }
-#dc-2 polygon, #dc-2 line, #dc-2 circle {
-  animation: strokeOn 2.2s 1.65s ease forwards;
-}
-
-/* Dining chair 3 */
-#dc-3 {
-  animation: drawFade 1.7s 1.75s ease forwards, floatA 12s 5.0s ease-in-out infinite;
-}
-#dc-3 polygon, #dc-3 line {
-  animation: strokeOn 2.2s 1.75s ease forwards;
+#pod-r line, #pod-r polygon, #pod-r ellipse, #pod-r circle, #pod-r path {
+  animation: strokeOn 2.7s 0.70s ease forwards;
 }
 
-/* Dining chair 4 */
-#dc-4 {
-  animation: drawFade 1.6s 1.85s ease forwards, floatD 11s 5.2s ease-in-out infinite;
+/* ── ZONE MC: pendant cluster ── */
+#pendant-mc {
+  animation: drawFade 2.0s 0.14s ease forwards, floatF 11s 3.6s ease-in-out infinite;
 }
-#dc-4 polygon, #dc-4 line {
-  animation: strokeOn 2.1s 1.85s ease forwards;
-}
-
-/* Kitchen run */
-#kitchen-run {
-  animation: drawFade 2.3s 1.9s ease forwards, floatD 14s 4.8s ease-in-out infinite;
-}
-#kitchen-run polygon, #kitchen-run line, #kitchen-run rect,
-#kitchen-run ellipse, #kitchen-run path, #kitchen-run circle {
-  animation: strokeOn 2.8s 1.9s ease forwards;
+#pendant-mc line, #pendant-mc polygon, #pendant-mc ellipse, #pendant-mc circle {
+  animation: strokeOn 2.5s 0.14s ease forwards;
 }
 
-/* Bar stool 1 */
-#bst-1 {
-  animation: drawFade 1.7s 2.2s ease forwards, floatB 10s 5.2s ease-in-out infinite;
-}
-#bst-1 ellipse, #bst-1 line, #bst-1 path, #bst-1 circle {
-  animation: strokeOn 2.2s 2.2s ease forwards;
-}
-
-/* Bar stool 2 */
-#bst-2 {
-  animation: drawFade 1.7s 2.3s ease forwards, floatC 11s 5.4s ease-in-out infinite;
-}
-#bst-2 ellipse, #bst-2 line, #bst-2 path {
-  animation: strokeOn 2.2s 2.3s ease forwards;
-}
-
-/* Bar stool 3 */
-#bst-3 {
-  animation: drawFade 1.6s 2.4s ease forwards, floatA 10s 5.6s ease-in-out infinite;
-}
-#bst-3 ellipse, #bst-3 line, #bst-3 path {
-  animation: strokeOn 2.1s 2.4s ease forwards;
-}
-
-/* Shelving */
-#shelving {
-  animation: drawFade 2.1s 1.1s ease forwards, floatA 15s 3.8s ease-in-out infinite;
-}
-#shelving rect, #shelving polygon, #shelving line, #shelving ellipse, #shelving circle {
-  animation: strokeOn 2.6s 1.1s ease forwards;
-}
-
-/* Reading armchair */
-#armchair-r {
-  animation: drawFade 2.1s 2.1s ease forwards, floatB 12s 5.0s ease-in-out infinite;
-}
-#armchair-r polygon, #armchair-r line, #armchair-r ellipse,
-#armchair-r circle, #armchair-r path {
-  animation: strokeOn 2.6s 2.1s ease forwards;
-}
-
-/* Floor lamp right */
-#floor-lamp-r {
-  animation: drawFade 1.9s 0.65s ease forwards, floatF 9s 3.5s ease-in-out infinite;
-}
-#floor-lamp-r ellipse, #floor-lamp-r line, #floor-lamp-r path, #floor-lamp-r circle {
-  animation: strokeOn 2.4s 0.65s ease forwards;
-}
-
-/* Side table right */
-#side-tbl-r {
-  animation: drawFade 1.9s 2.35s ease forwards, floatD 11s 5.5s ease-in-out infinite;
-}
-#side-tbl-r ellipse, #side-tbl-r line, #side-tbl-r polygon, #side-tbl-r rect {
-  animation: strokeOn 2.4s 2.35s ease forwards;
-}
-
-/* Console table */
-#console {
-  animation: drawFade 2.1s 2.5s ease forwards, floatA 13s 5.2s ease-in-out infinite;
-}
-#console polygon, #console line, #console ellipse, #console circle, #console path {
-  animation: strokeOn 2.6s 2.5s ease forwards;
-}
-
-/* Plinth */
-#plinth {
-  animation: drawFade 1.9s 2.7s ease forwards, floatB 10s 5.8s ease-in-out infinite;
-}
-#plinth polygon, #plinth line, #plinth ellipse, #plinth circle, #plinth rect {
-  animation: strokeOn 2.4s 2.7s ease forwards;
-}
-
-/* Sconce pair */
-#sconce-pair {
-  animation: drawFade 1.7s 0.92s ease forwards, floatD 13s 4.0s ease-in-out infinite;
-}
-#sconce-pair line, #sconce-pair polygon, #sconce-pair ellipse,
-#sconce-pair path, #sconce-pair circle {
-  animation: strokeOn 2.2s 0.92s ease forwards;
-}
-
-/* Lounge chair mid-left */
-#lounge-ch {
-  animation: drawFade 2.1s 1.45s ease forwards, floatC 11s 4.5s ease-in-out infinite;
-}
-#lounge-ch polygon, #lounge-ch line, #lounge-ch ellipse, #lounge-ch path {
-  animation: strokeOn 2.6s 1.45s ease forwards;
-}
-
-/* Vase cluster */
-#vase-cluster {
-  animation: drawFade 1.9s 2.62s ease forwards, floatE 12s 5.6s ease-in-out infinite;
-}
-#vase-cluster ellipse, #vase-cluster line, #vase-cluster circle {
-  animation: strokeOn 2.4s 2.62s ease forwards;
-}
-
-/* ── CENTRAL GRAND COMPOSITION ── */
-
-/* Central room box */
-#central-room {
-  animation: drawFade 3.0s 0.08s ease forwards;
-  animation-fill-mode: forwards;
-}
-#central-room polygon, #central-room line {
-  animation: strokeOn 3.6s 0.08s ease forwards;
-}
-
-/* Central sofa — hero piece, drawn first */
-#central-sofa {
-  animation: drawFade 2.6s 0.10s ease forwards, floatB 15s 4.0s ease-in-out infinite;
-}
-#central-sofa polygon, #central-sofa line, #central-sofa ellipse,
-#central-sofa circle, #central-sofa path {
-  animation: strokeOn 3.2s 0.10s ease forwards;
-}
-
-/* Central armchair */
-#central-armchair {
-  animation: drawFade 2.2s 0.42s ease forwards, floatC 13s 4.2s ease-in-out infinite;
-}
-#central-armchair polygon, #central-armchair line, #central-armchair ellipse, #central-armchair circle {
-  animation: strokeOn 2.7s 0.42s ease forwards;
-}
-
-/* Central coffee table */
-#central-ct {
-  animation: drawFade 2.0s 0.30s ease forwards, floatA 12s 4.0s ease-in-out infinite;
-}
-#central-ct polygon, #central-ct line, #central-ct ellipse,
-#central-ct circle, #central-ct rect, #central-ct path {
-  animation: strokeOn 2.5s 0.30s ease forwards;
-}
-
-/* Central chandelier — large statement piece */
-#central-chandelier {
-  animation: drawFade 2.4s 0.20s ease forwards, floatF 11s 3.8s ease-in-out infinite;
-}
-#central-chandelier line, #central-chandelier ellipse, #central-chandelier circle,
-#central-chandelier polygon, #central-chandelier rect, #central-chandelier path {
-  animation: strokeOn 2.9s 0.20s ease forwards;
-}
-
-/* Central rug */
-#central-rug {
-  animation: drawFade 2.8s 0.60s ease forwards, floatD 17s 4.6s ease-in-out infinite;
-}
-#central-rug polygon, #central-rug line, #central-rug ellipse {
-  animation: strokeOn 3.3s 0.60s ease forwards;
-}
-
-/* ── ADDITIONAL FURNITURE ── */
-
-/* Fireplace */
-#fireplace {
-  animation: drawFade 2.0s 1.0s ease forwards, floatA 14s 4.5s ease-in-out infinite;
-}
-#fireplace polygon, #fireplace line, #fireplace ellipse,
-#fireplace circle, #fireplace path, #fireplace rect {
-  animation: strokeOn 2.5s 1.0s ease forwards;
-}
-
-/* Loveseat */
-#loveseat {
-  animation: drawFade 2.1s 1.6s ease forwards, floatE 13s 5.0s ease-in-out infinite;
-}
-#loveseat polygon, #loveseat line, #loveseat ellipse, #loveseat circle {
-  animation: strokeOn 2.6s 1.6s ease forwards;
-}
-
-/* Staircase */
-#staircase {
-  animation: drawFade 2.3s 0.50s ease forwards, floatD 16s 4.0s ease-in-out infinite;
-}
-#staircase polygon, #staircase line {
-  animation: strokeOn 2.8s 0.50s ease forwards;
-}
-
-/* Window frame */
-#window-frame {
-  animation: drawFade 1.8s 0.38s ease forwards, floatA 13s 3.6s ease-in-out infinite;
-}
-#window-frame rect, #window-frame polygon, #window-frame line,
-#window-frame path, #window-frame circle, #window-frame ellipse {
-  animation: strokeOn 2.3s 0.38s ease forwards;
-}
-
-/* Radiator */
-#radiator {
-  animation: drawFade 1.9s 1.8s ease forwards, floatD 14s 5.4s ease-in-out infinite;
-}
-#radiator polygon, #radiator line, #radiator ellipse, #radiator circle {
-  animation: strokeOn 2.4s 1.8s ease forwards;
-}
-
-/* Bedside table */
-#bedside-tbl {
-  animation: drawFade 2.0s 2.0s ease forwards, floatB 11s 5.2s ease-in-out infinite;
-}
-#bedside-tbl polygon, #bedside-tbl line, #bedside-tbl ellipse,
-#bedside-tbl circle, #bedside-tbl rect, #bedside-tbl path {
-  animation: strokeOn 2.5s 2.0s ease forwards;
-}
-
-/* Ottoman */
-#ottoman {
-  animation: drawFade 1.8s 0.70s ease forwards, floatC 10s 4.0s ease-in-out infinite;
-}
-#ottoman ellipse, #ottoman line, #ottoman circle {
-  animation: strokeOn 2.3s 0.70s ease forwards;
-}
-
-/* Narrow cabinet */
-#narrow-cabinet {
-  animation: drawFade 2.0s 1.4s ease forwards, floatA 15s 4.4s ease-in-out infinite;
-}
-#narrow-cabinet rect, #narrow-cabinet polygon, #narrow-cabinet line,
-#narrow-cabinet circle, #narrow-cabinet ellipse {
-  animation: strokeOn 2.5s 1.4s ease forwards;
-}
-
-/* Accent chair right */
-#accent-chair-r {
-  animation: drawFade 1.8s 1.72s ease forwards, floatC 11s 5.0s ease-in-out infinite;
-}
-#accent-chair-r polygon, #accent-chair-r line {
-  animation: strokeOn 2.3s 1.72s ease forwards;
-}
-
-/* Chesterfield sofa */
-#chesterfield {
-  animation: drawFade 2.3s 0.95s ease forwards, floatB 14s 4.8s ease-in-out infinite;
-}
-#chesterfield polygon, #chesterfield line, #chesterfield ellipse, #chesterfield circle {
-  animation: strokeOn 2.8s 0.95s ease forwards;
-}
-
-/* Egg chair */
-#egg-chair {
-  animation: drawFade 2.0s 2.15s ease forwards, floatC 10s 5.2s ease-in-out infinite;
-}
-#egg-chair ellipse, #egg-chair line, #egg-chair path, #egg-chair polygon, #egg-chair circle {
-  animation: strokeOn 2.5s 2.15s ease forwards;
-}
-
-/* Kitchen island */
-#kitchen-island {
-  animation: drawFade 2.2s 2.45s ease forwards, floatD 15s 5.6s ease-in-out infinite;
-}
-#kitchen-island polygon, #kitchen-island line, #kitchen-island ellipse,
-#kitchen-island path, #kitchen-island circle, #kitchen-island rect {
-  animation: strokeOn 2.7s 2.45s ease forwards;
-}
-
-/* Bookcase wall */
-#bookcase-wall {
-  animation: drawFade 2.4s 0.18s ease forwards, floatA 17s 3.8s ease-in-out infinite;
-}
-#bookcase-wall rect, #bookcase-wall polygon, #bookcase-wall line,
-#bookcase-wall ellipse, #bookcase-wall circle {
-  animation: strokeOn 2.9s 0.18s ease forwards;
-}
-
-/* Rattan peacock chair */
-#rattan-chair {
-  animation: drawFade 1.9s 0.48s ease forwards, floatE 12s 4.0s ease-in-out infinite;
-}
-#rattan-chair ellipse, #rattan-chair line, #rattan-chair polygon, #rattan-chair circle {
-  animation: strokeOn 2.4s 0.48s ease forwards;
-}
-
-/* Architect desk */
-#arch-desk {
-  animation: drawFade 2.0s 0.82s ease forwards, floatC 13s 4.2s ease-in-out infinite;
-}
-#arch-desk polygon, #arch-desk line, #arch-desk ellipse {
-  animation: strokeOn 2.5s 0.82s ease forwards;
-}
-
-/* Modular sofa */
-#modular-sofa {
-  animation: drawFade 2.3s 2.55s ease forwards, floatA 14s 5.8s ease-in-out infinite;
-}
-#modular-sofa polygon, #modular-sofa line, #modular-sofa ellipse, #modular-sofa circle {
-  animation: strokeOn 2.8s 2.55s ease forwards;
-}
-
-/* Round dining table + chairs */
-#round-dining {
-  animation: drawFade 2.1s 1.25s ease forwards, floatB 12s 4.6s ease-in-out infinite;
-}
-#round-dining ellipse, #round-dining line, #round-dining polygon, #round-dining circle {
-  animation: strokeOn 2.6s 1.25s ease forwards;
-}
-
-/* Arc lamp right */
-#arc-lamp-r {
-  animation: drawFade 1.9s 0.72s ease forwards, floatF 9s 3.8s ease-in-out infinite;
-}
-#arc-lamp-r polygon, #arc-lamp-r line, #arc-lamp-r ellipse,
-#arc-lamp-r path, #arc-lamp-r circle {
-  animation: strokeOn 2.4s 0.72s ease forwards;
-}
-
-/* Room divider / screen */
-#room-divider {
-  animation: drawFade 2.1s 2.28s ease forwards, floatD 14s 5.4s ease-in-out infinite;
-}
-#room-divider polygon, #room-divider line, #room-divider rect {
-  animation: strokeOn 2.6s 2.28s ease forwards;
-}
-
-/* Credenza / sideboard */
-#credenza {
-  animation: drawFade 2.2s 2.72s ease forwards, floatA 13s 6.0s ease-in-out infinite;
-}
-#credenza polygon, #credenza line, #credenza ellipse,
-#credenza circle, #credenza rect {
-  animation: strokeOn 2.7s 2.72s ease forwards;
-}
-
-/* Bathtub */
-#bathtub {
-  animation: drawFade 2.0s 2.88s ease forwards, floatB 11s 6.2s ease-in-out infinite;
-}
-#bathtub ellipse, #bathtub line, #bathtub path, #bathtub circle {
-  animation: strokeOn 2.5s 2.88s ease forwards;
-}
-
-/* ── COMMERCIAL CENTRE ZONE — new elements ── */
-
-/* Reception desk — centrepiece, drawn early */
-#reception-desk {
-  animation: drawFade 2.8s 0.06s ease forwards, floatA 16s 4.0s ease-in-out infinite;
-}
-#reception-desk polygon, #reception-desk line, #reception-desk path,
-#reception-desk ellipse, #reception-desk circle, #reception-desk rect {
-  animation: strokeOn 3.4s 0.06s ease forwards;
-}
-
-/* Concierge chair behind desk */
-#concierge-chair {
-  animation: drawFade 2.2s 0.38s ease forwards, floatC 14s 4.2s ease-in-out infinite;
-}
-#concierge-chair polygon, #concierge-chair line, #concierge-chair ellipse, #concierge-chair circle {
-  animation: strokeOn 2.7s 0.38s ease forwards;
-}
-
-/* Pod chair 1 */
-#pod-chair-1 {
-  animation: drawFade 2.4s 0.65s ease forwards, floatB 13s 4.5s ease-in-out infinite;
-}
-#pod-chair-1 ellipse, #pod-chair-1 line, #pod-chair-1 polygon, #pod-chair-1 circle {
-  animation: strokeOn 2.9s 0.65s ease forwards;
-}
-
-/* Pod chair 2 + side table */
-#pod-chair-2 {
-  animation: drawFade 2.3s 0.80s ease forwards, floatC 12s 4.8s ease-in-out infinite;
-}
-#pod-chair-2 ellipse, #pod-chair-2 line, #pod-chair-2 polygon, #pod-chair-2 circle {
-  animation: strokeOn 2.8s 0.80s ease forwards;
-}
-
-/* Material sample board */
+/* ── ZONE MC: sample board ── */
 #sample-board {
-  animation: drawFade 2.5s 0.22s ease forwards, floatD 18s 3.8s ease-in-out infinite;
+  animation: drawFade 2.5s 0.30s ease forwards, floatD 18s 4.0s ease-in-out infinite;
 }
-#sample-board polygon, #sample-board line, #sample-board rect,
-#sample-board ellipse, #sample-board circle, #sample-board path {
-  animation: strokeOn 3.0s 0.22s ease forwards;
-}
-
-/* Retail display shelving */
-#retail-shelving {
-  animation: drawFade 2.6s 0.15s ease forwards, floatA 20s 3.6s ease-in-out infinite;
-}
-#retail-shelving polygon, #retail-shelving line, #retail-shelving ellipse,
-#retail-shelving circle, #retail-shelving rect, #retail-shelving path {
-  animation: strokeOn 3.1s 0.15s ease forwards;
+#sample-board line, #sample-board polygon, #sample-board ellipse, #sample-board circle,
+#sample-board path, #sample-board rect {
+  animation: strokeOn 3.0s 0.30s ease forwards;
 }
 
-/* Hotel lobby pendant */
-#lobby-pendant {
-  animation: drawFade 2.4s 0.18s ease forwards, floatF 12s 3.8s ease-in-out infinite;
+/* ── ZONE MR: wardrobe/shelving ── */
+#wardrobe-mr {
+  animation: drawFade 2.6s 0.42s ease forwards, floatA 20s 4.2s ease-in-out infinite;
 }
-#lobby-pendant polygon, #lobby-pendant line, #lobby-pendant ellipse,
-#lobby-pendant circle, #lobby-pendant rect, #lobby-pendant path {
-  animation: strokeOn 2.9s 0.18s ease forwards;
-}
-
-/* Design drafting table */
-#design-table {
-  animation: drawFade 2.2s 1.10s ease forwards, floatE 15s 4.8s ease-in-out infinite;
-}
-#design-table polygon, #design-table line, #design-table ellipse,
-#design-table circle, #design-table rect, #design-table path {
-  animation: strokeOn 2.7s 1.10s ease forwards;
+#wardrobe-mr line, #wardrobe-mr polygon, #wardrobe-mr ellipse, #wardrobe-mr circle,
+#wardrobe-mr path, #wardrobe-mr rect {
+  animation: strokeOn 3.2s 0.42s ease forwards;
 }
 
-/* Torchiere tall lamp */
-#torchiere-lamp {
-  animation: drawFade 2.0s 0.55s ease forwards, floatF 10s 3.8s ease-in-out infinite;
+/* ── ZONE MR: chaise longue ── */
+#chaise-mr {
+  animation: drawFade 2.1s 0.85s ease forwards, floatB 14s 4.8s ease-in-out infinite;
 }
-#torchiere-lamp polygon, #torchiere-lamp line, #torchiere-lamp ellipse,
-#torchiere-lamp circle {
-  animation: strokeOn 2.5s 0.55s ease forwards;
+#chaise-mr line, #chaise-mr polygon, #chaise-mr ellipse, #chaise-mr circle, #chaise-mr path {
+  animation: strokeOn 2.6s 0.85s ease forwards;
 }
+
+/* ── ZONE BL: bathtub ── */
+#bathtub-bl {
+  animation: drawFade 2.3s 1.10s ease forwards, floatB 13s 5.0s ease-in-out infinite;
+}
+#bathtub-bl line, #bathtub-bl polygon, #bathtub-bl ellipse, #bathtub-bl circle,
+#bathtub-bl path, #bathtub-bl rect {
+  animation: strokeOn 2.8s 1.10s ease forwards;
+}
+
+/* ── ZONE BL: marble side table ── */
+#sidetable-bl {
+  animation: drawFade 1.9s 1.40s ease forwards, floatD 11s 5.4s ease-in-out infinite;
+}
+#sidetable-bl line, #sidetable-bl ellipse, #sidetable-bl circle, #sidetable-bl rect {
+  animation: strokeOn 2.4s 1.40s ease forwards;
+}
+
+/* ── ZONE BL: wall sconces ── */
+#sconces-bl {
+  animation: drawFade 1.8s 0.72s ease forwards, floatE 12s 4.2s ease-in-out infinite;
+}
+#sconces-bl line, #sconces-bl polygon, #sconces-bl ellipse, #sconces-bl circle {
+  animation: strokeOn 2.3s 0.72s ease forwards;
+}
+
+/* ── ZONE BC: drafting table ── */
+#draft-table {
+  animation: drawFade 2.4s 0.95s ease forwards, floatC 15s 4.6s ease-in-out infinite;
+}
+#draft-table line, #draft-table polygon, #draft-table ellipse, #draft-table circle,
+#draft-table path, #draft-table rect {
+  animation: strokeOn 2.9s 0.95s ease forwards;
+}
+
+/* ── ZONE BC: stool ── */
+#stool-bc {
+  animation: drawFade 1.8s 1.20s ease forwards, floatA 10s 5.0s ease-in-out infinite;
+}
+#stool-bc line, #stool-bc ellipse, #stool-bc circle {
+  animation: strokeOn 2.3s 1.20s ease forwards;
+}
+
+/* ── ZONE BR: bed ── */
+#bed-br {
+  animation: drawFade 2.7s 0.75s ease forwards, floatB 16s 4.5s ease-in-out infinite;
+}
+#bed-br line, #bed-br polygon, #bed-br ellipse, #bed-br circle, #bed-br path, #bed-br rect {
+  animation: strokeOn 3.2s 0.75s ease forwards;
+}
+
+/* ── ZONE BR: pendant drops ── */
+#pendants-br {
+  animation: drawFade 1.9s 0.50s ease forwards, floatF 11s 4.0s ease-in-out infinite;
+}
+#pendants-br line, #pendants-br polygon, #pendants-br ellipse, #pendants-br circle {
+  animation: strokeOn 2.4s 0.50s ease forwards;
+}
+
 
 /* Annotations — last to appear */
 .annot {

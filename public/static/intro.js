@@ -82,8 +82,8 @@
     return depthMap[i % depthMap.length];
   });
 
-  // Central pieces get a special, very slight hover response
-  const centralIds = ['central-sofa', 'central-armchair', 'central-ct', 'central-chandelier', 'central-rug', 'central-room'];
+  // Central/hero pieces get a very slight hover response
+  const centralIds = ['reception-mc', 'pendant-mc', 'sample-board', 'pod-l', 'pod-r'];
 
   function parallax() {
     cx += (mx - cx) * 0.038;
