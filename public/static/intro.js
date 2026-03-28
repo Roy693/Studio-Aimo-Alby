@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════
    STUDIO AIMO — INTRO SCREEN JAVASCRIPT
-   Particles · Parallax · Stroke animation · Arrow
-   Dark sorcery · Chalk drawings come to life
+   Chalk Sequencer · Particles · Parallax · Arrow
+   One object drawn at a time, then dissolves — infinite loop
 ═══════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -23,11 +23,10 @@
     this.r    = Math.random() * 1.4 + 0.20;
     this.vy   = -(Math.random() * 0.28 + 0.06);
     this.vx   = (Math.random() - 0.5) * 0.16;
-    this.wobble = Math.random() * Math.PI * 2; // sine wobble offset
+    this.wobble = Math.random() * Math.PI * 2;
     this.wobbleSpeed = Math.random() * 0.018 + 0.008;
     this.life = 0;
     this.max  = Math.random() * 480 + 200;
-    // Mix of chalk white and very slight warm tones
     const warm = Math.random() > 0.7;
     this.color = warm
       ? 'rgba(220,195,155,' + (Math.random() * 0.14 + 0.04) + ')'
@@ -62,94 +61,291 @@
   window.addEventListener('resize', () => { resize(); initPts(); });
   resize(); initPts(); loop();
 
-  /* ── MOUSE PARALLAX — depth layers ──────────── */
-  const scene  = document.getElementById('main-scene');
-  const items  = scene ? Array.from(scene.querySelectorAll('.fi')) : [];
+  /* ══════════════════════════════════════════════════════
+     CHALK DRAW SEQUENCER
+     Draws one furniture item at a time — stroke by stroke —
+     like a hand tracing chalk on a blackboard.
+     When complete, the piece holds for a moment then dissolves.
+     Next object fades in from a different zone. Infinite loop.
+  ════════════════════════════════════════════════════════ */
+
+  const scene = document.getElementById('main-scene');
+  if (!scene) return;
+
+  // Ordered sequence: mix of zones so the eye travels across canvas
+  // Each entry: [id, label, drawDuration(ms), holdDuration(ms), fadeDuration(ms)]
+  const SEQUENCE = [
+    ['sofa-tl',       'Sectional Sofa',        3200, 1800, 1200],
+    ['kitchen-tc',    'Kitchen Island',         3400, 1800, 1200],
+    ['bookcase-tr',   'Library Wall',           3000, 1600, 1100],
+    ['bathtub-bl',    'Freestanding Bath',      3200, 2000, 1300],
+    ['reception-mc',  'Reception Desk',         3600, 2200, 1400],
+    ['dining-ml',     'Dining Table',           3000, 1800, 1200],
+    ['bed-br',        'Luxury Bedroom',         3400, 2000, 1300],
+    ['ct-tl',         'Coffee Table',           2400, 1400, 1000],
+    ['wardrobe-mr',   'Walk-in Wardrobe',       3200, 1800, 1200],
+    ['draft-table',   'Architect Studio',       3000, 1800, 1200],
+    ['chaise-mr',     'Chaise Longue',          2600, 1600, 1100],
+    ['chandelier-ml', 'Statement Chandelier',   2800, 1600, 1100],
+    ['armchair-tr',   'Reading Chair',          2400, 1400, 1000],
+    ['pendant-mc',    'Pendant Cluster',        2600, 1600, 1100],
+    ['sidetable-bl',  'Marble Side Table',      2000, 1200, 900 ],
+    ['pendants-tl',   'Pendant Trio',           2400, 1400, 1000],
+    ['pendants-br',   'Bedside Pendants',       2200, 1400, 1000],
+    ['lamp-tr',       'Arc Floor Lamp',         2400, 1400, 1000],
+    ['sample-board',  'Material Samples',       2800, 1600, 1100],
+    ['pod-l',         'Pod Chair',              2400, 1400, 1000],
+    ['sconces-bl',    'Wall Sconces',           2000, 1200, 900 ],
+    ['stool-bc',      'Architect Stool',        1800, 1200, 900 ],
+    ['pod-r',         'Lounge Pod',             2400, 1400, 1000],
+  ];
+
+  // Hide all .fi elements initially
+  const allItems = Array.from(scene.querySelectorAll('.fi'));
+  allItems.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transition = 'none';
+  });
+
+  // Also hide conn/annot lines initially
+  scene.querySelectorAll('.conn, .annot').forEach(el => {
+    el.style.opacity = '0';
+  });
+
+  /* ── Per-stroke draw utility ── */
+  function getStrokes(group) {
+    return Array.from(group.querySelectorAll(
+      'line, path, polygon, polyline, ellipse, circle, rect'
+    ));
+  }
+
+  function measureStroke(el) {
+    try {
+      if (el.getTotalLength) return el.getTotalLength();
+    } catch (e) {}
+    // Fallback estimates for elements without getTotalLength
+    const tag = el.tagName.toLowerCase();
+    if (tag === 'line') {
+      const dx = (el.getAttribute('x2') || 0) - (el.getAttribute('x1') || 0);
+      const dy = (el.getAttribute('y2') || 0) - (el.getAttribute('y1') || 0);
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+    if (tag === 'ellipse') {
+      const rx = parseFloat(el.getAttribute('rx') || 0);
+      const ry = parseFloat(el.getAttribute('ry') || 0);
+      return 2 * Math.PI * Math.sqrt((rx * rx + ry * ry) / 2);
+    }
+    if (tag === 'circle') {
+      return 2 * Math.PI * parseFloat(el.getAttribute('r') || 10);
+    }
+    if (tag === 'rect') {
+      const w = parseFloat(el.getAttribute('width') || 0);
+      const h = parseFloat(el.getAttribute('height') || 0);
+      return 2 * (w + h);
+    }
+    return 200; // safe default
+  }
+
+  /* ── Animate a single group: draw then hold then fade ── */
+  function animateItem(entry) {
+    return new Promise(resolve => {
+      const [id, , drawDur, holdDur, fadeDur] = entry;
+      const group = scene.getElementById ? scene.getElementById(id) : document.getElementById(id);
+      if (!group) { resolve(); return; }
+
+      const strokes = getStrokes(group);
+      if (strokes.length === 0) { resolve(); return; }
+
+      // Prepare strokes: set dash arrays
+      strokes.forEach(el => {
+        const len = Math.max(measureStroke(el), 10);
+        el.style.strokeDasharray  = len + 'px';
+        el.style.strokeDashoffset = len + 'px';
+        el.style.transition = 'none';
+        el.style.opacity = '1';
+      });
+
+      // Reveal the group instantly (strokes are still invisible)
+      group.style.transition = 'none';
+      group.style.opacity = '1';
+
+      // ── PHASE 1: Draw strokes staggered ──
+      // Total draw budget split across strokes in a natural stagger
+      const perStrokeDelay = drawDur / (strokes.length + 1);
+      const strokeDuration = drawDur * 0.85; // each stroke draws in this window
+
+      strokes.forEach((el, i) => {
+        const delay = i * perStrokeDelay;
+        const dur   = strokeDuration + Math.random() * 300; // slight variation
+        setTimeout(() => {
+          el.style.transition = 'stroke-dashoffset ' + dur + 'ms cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          el.style.strokeDashoffset = '0px';
+        }, delay);
+      });
+
+      // ── PHASE 2: Hold ──
+      const holdStart = drawDur;
+      setTimeout(() => {
+        // subtle float during hold
+        group.style.transition = 'transform ' + holdDur + 'ms ease-in-out';
+        group.style.transform  = 'translateY(-6px)';
+      }, holdStart);
+
+      // ── PHASE 3: Fade out ──
+      const fadeStart = holdStart + holdDur;
+      setTimeout(() => {
+        group.style.transition = 'opacity ' + fadeDur + 'ms cubic-bezier(0.55, 0, 1, 0.45), transform ' + fadeDur + 'ms ease-in';
+        group.style.opacity    = '0';
+        group.style.transform  = 'translateY(-18px) scale(0.97)';
+      }, fadeStart);
+
+      // ── DONE: reset and resolve ──
+      const totalDur = fadeStart + fadeDur + 80;
+      setTimeout(() => {
+        // Reset for next time this item appears
+        group.style.transition = 'none';
+        group.style.opacity    = '0';
+        group.style.transform  = 'none';
+        strokes.forEach(el => {
+          el.style.transition        = 'none';
+          el.style.strokeDashoffset  = measureStroke(el) + 'px';
+        });
+        resolve();
+      }, totalDur);
+    });
+  }
+
+  /* ── Show connection lines after first draw ── */
+  let connShown = false;
+  function showConnLines() {
+    if (connShown) return;
+    connShown = true;
+    scene.querySelectorAll('.conn').forEach(el => {
+      el.style.transition = 'opacity 3s ease';
+      el.style.opacity    = '0.6';
+    });
+  }
+
+  /* ── Label overlay — shows item name while drawing ── */
+  const labelEl = (function () {
+    const d = document.createElement('div');
+    d.id = 'chalk-label';
+    d.style.cssText = [
+      'position:fixed',
+      'bottom:130px',
+      'left:50%',
+      'transform:translateX(-50%)',
+      'font-family:"Cormorant Garamond",Cormorant,Georgia,serif',
+      'font-size:13px',
+      'letter-spacing:0.30em',
+      'text-transform:uppercase',
+      'color:rgba(238,235,220,0.38)',
+      'pointer-events:none',
+      'z-index:10',
+      'transition:opacity 0.8s ease',
+      'opacity:0',
+      'white-space:nowrap',
+    ].join(';');
+    document.getElementById('intro-screen').appendChild(d);
+    return d;
+  }());
+
+  function showLabel(text, drawDur, holdDur, fadeDur) {
+    labelEl.textContent = text;
+    // Fade in quickly
+    labelEl.style.transition = 'opacity 0.6s ease';
+    labelEl.style.opacity = '1';
+    // Fade out during the fade phase
+    const fadeOutAt = drawDur + holdDur;
+    setTimeout(() => {
+      labelEl.style.transition = 'opacity ' + fadeDur + 'ms ease';
+      labelEl.style.opacity = '0';
+    }, fadeOutAt);
+  }
+
+  /* ── Main sequencer loop ── */
+  let seqIndex = 0;
+  let running  = true;
+
+  async function runSequencer() {
+    // Small initial pause to let CSS and fonts settle
+    await delay(1200);
+
+    while (running) {
+      const entry = SEQUENCE[seqIndex % SEQUENCE.length];
+      seqIndex++;
+
+      // Show connection lines after third item
+      if (seqIndex === 3) showConnLines();
+
+      const [id, label, drawDur, holdDur, fadeDur] = entry;
+
+      // Show label
+      showLabel(label, drawDur, holdDur, fadeDur);
+
+      // Animate the item (draw → hold → fade)
+      await animateItem(entry);
+
+      // Brief gap between objects
+      await delay(320);
+    }
+  }
+
+  function delay(ms) {
+    return new Promise(r => setTimeout(r, ms));
+  }
+
+  runSequencer();
+
+  /* ── Mouse parallax — subtle scene depth ────── */
   let mx = W / 2, my = H / 2;
-  let cx = W / 2, cy = H / 2;
+  let cpx = W / 2, cpy = H / 2;
 
   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 
-  // Varying parallax depth per furniture item — further items move less
-  const strengths = items.map((_, i) => {
-    const depthMap = [
-      0.008, 0.013, 0.005, 0.011, 0.009, 0.014,
-      0.007, 0.012, 0.008, 0.015, 0.006, 0.010,
-      0.007, 0.009, 0.013, 0.008, 0.011, 0.006,
-      0.010, 0.007, 0.012, 0.005, 0.009, 0.013,
-      0.007, 0.010, 0.006, 0.011, 0.008, 0.014
-    ];
-    return depthMap[i % depthMap.length];
-  });
-
-  // Central/hero pieces get a very slight hover response
-  const centralIds = ['reception-mc', 'pendant-mc', 'sample-board', 'pod-l', 'pod-r'];
-
-  function parallax() {
-    cx += (mx - cx) * 0.038;
-    cy += (my - cy) * 0.038;
-    const ox = cx - W / 2;
-    const oy = cy - H / 2;
-    items.forEach((el, i) => {
-      const isCentral = centralIds.some(id => el.id === id);
-      const s = isCentral ? 0.004 : strengths[i];
-      el.style.transform = 'translate(' + (ox * s).toFixed(2) + 'px,' + (oy * s).toFixed(2) + 'px)';
-    });
-    requestAnimationFrame(parallax);
-  }
-  parallax();
-
-  /* ── SVG STROKE PATH-LENGTH NORMALISATION ───── */
-  // Ensures stroke animations look precise for all element types
-  function normaliseStrokes() {
-    const els = scene ? scene.querySelectorAll('line,path,polygon,polyline,ellipse,circle,rect') : [];
-    els.forEach(el => {
-      try {
-        const len = el.getTotalLength ? el.getTotalLength() : 0;
-        if (len > 2) {
-          el.style.strokeDasharray  = len;
-          el.style.strokeDashoffset = len;
-        }
-      } catch (e) { /* skip */ }
-    });
-  }
-  // Run after first two paint frames for accuracy
-  requestAnimationFrame(() => requestAnimationFrame(normaliseStrokes));
+  // Use the SVG element itself for a gentle overall parallax instead
+  // of per-element (since items appear/disappear dynamically)
+  (function parallaxScene() {
+    cpx += (mx - cpx) * 0.028;
+    cpy += (my - cpy) * 0.028;
+    const ox = (cpx - W / 2) * 0.006;
+    const oy = (cpy - H / 2) * 0.006;
+    if (scene) {
+      scene.style.transform = 'translate(' + ox.toFixed(2) + 'px,' + oy.toFixed(2) + 'px)';
+    }
+    requestAnimationFrame(parallaxScene);
+  }());
 
   /* ── HOME PREVIEW CARD ──────────────────────── */
   const preview = document.getElementById('home-preview');
-
   if (preview) {
-    // After preview fades in (CSS anim at 5.2s), switch to idle float
     setTimeout(() => {
       preview.classList.add('preview-visible');
-    }, 6600); // 5.2s delay + 1.2s anim duration + buffer
+    }, 5800);
   }
 
   /* ── ENTER ARROW ────────────────────────────── */
   const arrow = document.getElementById('enter-arrow');
 
   if (arrow) {
-    // Start pulsing 1.8s after it appears (~5.8s from load)
     setTimeout(() => arrow.classList.add('pulsing'), 6000);
 
-    // Click → dramatic exit, then navigate
     arrow.addEventListener('click', function (e) {
       e.preventDefault();
       const dest = this.getAttribute('href');
+      running = false; // stop sequencer
       arrow.classList.remove('pulsing');
-      // Fade out preview card
       if (preview) {
         preview.classList.remove('preview-visible');
         preview.classList.add('preview-exit');
       }
       cancelAnimationFrame(raf);
+      labelEl.style.opacity = '0';
       const screen = document.getElementById('intro-screen');
       if (screen) screen.classList.add('exit');
       setTimeout(() => { window.location.href = dest; }, 900);
     });
 
-    // Keyboard: Enter / ArrowRight / Space navigates
     document.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault();
@@ -158,17 +354,14 @@
     });
   }
 
-  /* ── TOUCH SUPPORT — tap anywhere to enter ── */
+  /* ── TOUCH SUPPORT ──────────────────────────── */
   let touchStartY = 0;
   document.addEventListener('touchstart', e => {
     touchStartY = e.touches[0].clientY;
   }, { passive: true });
   document.addEventListener('touchend', e => {
     const dy = touchStartY - e.changedTouches[0].clientY;
-    // Swipe up > 60px triggers enter
-    if (dy > 60 && arrow) {
-      arrow.click();
-    }
+    if (dy > 60 && arrow) arrow.click();
   }, { passive: true });
 
 })();
