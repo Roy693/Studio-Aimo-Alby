@@ -2300,6 +2300,392 @@ app.get('/', (c) => {
       <line x1="226" y1="-60" x2="234" y2="-60" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
     </g>
 
+    <!-- ══════════════════════════════════════════════════════════════
+         ZONE CENTER — COMMERCIAL INTERIOR 3D HAND-DRAWN SHOWCASE
+         Isometric hotel lobby · reception · lounge pod · material board
+    ══════════════════════════════════════════════════════════════ -->
+
+    <!-- ── RECEPTION / CONCIERGE DESK — hero commercial piece ── -->
+    <!-- large curved reception counter, centre-stage at approx 580,310 -->
+    <g class="fi" id="reception-desk" transform="translate(530,275)" filter="url(#chalk)">
+      <!-- Counter worktop — curved arc front (isometric) -->
+      <polygon points="0,60 240,0 310,36 70,96" fill="none" stroke="rgba(238,235,220,0.92)" stroke-width="2.0"/>
+      <!-- Counter front face -->
+      <polygon points="0,60 0,136 70,168 70,96" fill="none" stroke="rgba(238,235,220,0.72)" stroke-width="1.6"/>
+      <!-- Counter right face -->
+      <polygon points="70,96 70,168 310,120 310,36" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.4"/>
+      <!-- Curved arc detail on front -->
+      <path d="M10,100 Q35,120 70,130" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.8"/>
+      <path d="M2,90 Q36,115 72,128" fill="none" stroke="rgba(238,235,220,0.22)" stroke-width="0.5" stroke-dasharray="3,4"/>
+      <!-- Fluted panel lines on face -->
+      <line x1="16" y1="66" x2="16" y2="140" stroke="rgba(238,235,220,0.28)" stroke-width="0.6"/>
+      <line x1="32" y1="63" x2="32" y2="138" stroke="rgba(238,235,220,0.26)" stroke-width="0.5"/>
+      <line x1="48" y1="60" x2="48" y2="136" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <line x1="64" y1="58" x2="64" y2="134" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <!-- Fluted panel lines on right face -->
+      <line x1="118" y1="96" x2="118" y2="164" stroke="rgba(238,235,220,0.24)" stroke-width="0.5"/>
+      <line x1="172" y1="80" x2="172" y2="148" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <line x1="226" y1="64" x2="226" y2="132" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <line x1="278" y1="50" x2="278" y2="118" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <!-- Stone/marble top inlay -->
+      <polygon points="12,52 228,6 298,32 82,78" fill="none" stroke="rgba(238,235,220,0.30)" stroke-width="0.7" stroke-dasharray="4,3"/>
+      <!-- Marble veining top -->
+      <path d="M60,40 Q120,28 180,38" fill="none" stroke="rgba(238,235,220,0.14)" stroke-width="0.5"/>
+      <path d="M80,50 Q110,42 150,46" fill="none" stroke="rgba(238,235,220,0.10)" stroke-width="0.4"/>
+      <!-- Logo panel on front face — raised relief -->
+      <rect x="12" y="80" width="44" height="28" rx="1" fill="none" stroke="rgba(200,169,110,0.60)" stroke-width="0.9"/>
+      <line x1="18" y1="90" x2="50" y2="90" stroke="rgba(200,169,110,0.38)" stroke-width="0.5"/>
+      <line x1="18" y1="98" x2="50" y2="98" stroke="rgba(200,169,110,0.28)" stroke-width="0.4"/>
+      <!-- Computer monitor on top -->
+      <polygon points="120,6 158,-2 166,6 128,14" fill="none" stroke="rgba(238,235,220,0.70)" stroke-width="1.3"/>
+      <polygon points="120,6 120,-42 128,-46 128,14" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <polygon points="128,-46 128,14 166,6 166,-38" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <!-- Screen bezel -->
+      <polygon points="122,-40 162,-48 164,-6 124,2" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="1.0"/>
+      <!-- Screen glow lines -->
+      <line x1="128" y1="-38" x2="158" y2="-44" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <line x1="128" y1="-28" x2="158" y2="-34" stroke="rgba(238,235,220,0.14)" stroke-width="0.4"/>
+      <line x1="128" y1="-18" x2="158" y2="-24" stroke="rgba(238,235,220,0.12)" stroke-width="0.3"/>
+      <!-- Monitor neck + base -->
+      <line x1="144" y1="6" x2="143" y2="24" stroke="rgba(238,235,220,0.65)" stroke-width="1.2"/>
+      <line x1="134" y1="22" x2="152" y2="18" stroke="rgba(238,235,220,0.55)" stroke-width="1.0"/>
+      <!-- Desk items right side — vase + brochure stand -->
+      <ellipse cx="260" cy="24" rx="14" ry="5" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.1"/>
+      <line x1="246" y1="24" x2="244" y2="-14" stroke="rgba(238,235,220,0.58)" stroke-width="1.1"/>
+      <line x1="274" y1="20" x2="272" y2="-18" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <ellipse cx="258" cy="-16" rx="14" ry="4.5" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- Brochure holder -->
+      <polygon points="200,28 220,22 224,32 204,38" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="0.9"/>
+      <polygon points="200,28 200,10 204,8 204,26" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <polygon points="204,8 204,26 224,18 224,2" fill="none" stroke="rgba(238,235,220,0.32)" stroke-width="0.6"/>
+      <!-- Brochure sheets in holder -->
+      <line x1="206" y1="10" x2="222" y2="4" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <line x1="206" y1="15" x2="222" y2="9" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <!-- Gold accent rail on worktop edge -->
+      <line x1="0" y1="62" x2="240" y2="2" stroke="rgba(200,169,110,0.45)" stroke-width="0.7"/>
+    </g>
+
+    <!-- ── CONCIERGE CHAIR behind desk ── -->
+    <g class="fi" id="concierge-chair" transform="translate(640,220)" filter="url(#chalk-fine)">
+      <!-- Seat -->
+      <polygon points="0,28 68,12 80,22 12,38" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.6"/>
+      <!-- Seat front face -->
+      <polygon points="0,28 0,52 12,60 12,38" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.2"/>
+      <polygon points="12,38 12,60 80,44 80,22" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- High backrest -->
+      <polygon points="0,28 4,-38 72,-52 68,12" fill="none" stroke="rgba(238,235,220,0.80)" stroke-width="1.5"/>
+      <!-- Backrest right depth -->
+      <polygon points="68,12 80,22 76,-44 72,-52" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="1.1"/>
+      <!-- Tufting grid on backrest -->
+      <line x1="22" y1="-40" x2="20" y2="20" stroke="rgba(238,235,220,0.20)" stroke-width="0.5"/>
+      <line x1="44" y1="-46" x2="42" y2="14" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <line x1="4" y1="-16" x2="70" y2="-28" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <line x1="2" y1="0" x2="70" y2="-12" stroke="rgba(238,235,220,0.16)" stroke-width="0.4"/>
+      <!-- Tuft buttons -->
+      <circle cx="22" cy="-16" r="2" fill="none" stroke="rgba(238,235,220,0.32)" stroke-width="0.5"/>
+      <circle cx="44" cy="-28" r="2" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+      <!-- Armrests -->
+      <polygon points="0,28 -10,24 -10,48 0,52" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.2"/>
+      <polygon points="68,12 78,8 78,32 80,22" fill="none" stroke="rgba(238,235,220,0.56)" stroke-width="1.0"/>
+      <!-- 5-star base -->
+      <line x1="40" y1="60" x2="40" y2="88" stroke="rgba(238,235,220,0.72)" stroke-width="1.8"/>
+      <ellipse cx="40" cy="92" rx="30" ry="9" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.2"/>
+      <!-- Caster spokes -->
+      <line x1="10" y1="92" x2="40" y2="90" stroke="rgba(238,235,220,0.40)" stroke-width="0.7"/>
+      <line x1="70" y1="92" x2="40" y2="90" stroke="rgba(238,235,220,0.40)" stroke-width="0.7"/>
+      <line x1="22" y1="84" x2="40" y2="90" stroke="rgba(238,235,220,0.36)" stroke-width="0.6"/>
+      <line x1="58" y1="84" x2="40" y2="90" stroke="rgba(238,235,220,0.36)" stroke-width="0.6"/>
+      <line x1="40" y1="80" x2="40" y2="90" stroke="rgba(238,235,220,0.34)" stroke-width="0.6"/>
+    </g>
+
+    <!-- ── LOUNGE POD CHAIRS — commercial waiting area ── -->
+    <!-- Pod chair 1 -->
+    <g class="fi" id="pod-chair-1" transform="translate(500,480)" filter="url(#chalk)">
+      <!-- Shell back — large sweeping arc -->
+      <ellipse cx="60" cy="0" rx="68" ry="40" fill="none" stroke="rgba(238,235,220,0.86)" stroke-width="1.8"/>
+      <!-- Shell inner curve -->
+      <ellipse cx="60" cy="4" rx="56" ry="32" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <!-- Shell side depth left -->
+      <line x1="-8" y1="0" x2="-4" y2="36" stroke="rgba(238,235,220,0.72)" stroke-width="1.5"/>
+      <!-- Shell side depth right -->
+      <line x1="128" y1="0" x2="124" y2="36" stroke="rgba(238,235,220,0.68)" stroke-width="1.4"/>
+      <!-- Seat base oval -->
+      <ellipse cx="60" cy="36" rx="64" ry="20" fill="none" stroke="rgba(238,235,220,0.80)" stroke-width="1.6"/>
+      <!-- Seat cushion inner -->
+      <ellipse cx="60" cy="34" rx="50" ry="16" fill="none" stroke="rgba(238,235,220,0.35)" stroke-width="0.7"/>
+      <!-- Pedestal stem -->
+      <line x1="60" y1="56" x2="60" y2="88" stroke="rgba(238,235,220,0.75)" stroke-width="2.2"/>
+      <!-- Disc base -->
+      <ellipse cx="60" cy="90" rx="42" ry="13" fill="none" stroke="rgba(238,235,220,0.70)" stroke-width="1.4"/>
+      <ellipse cx="60" cy="90" rx="32" ry="10" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.6"/>
+      <!-- Cushion pleat lines -->
+      <line x1="36" y1="16" x2="32" y2="48" stroke="rgba(238,235,220,0.18)" stroke-width="0.5"/>
+      <line x1="60" y1="8" x2="58" y2="44" stroke="rgba(238,235,220,0.16)" stroke-width="0.4"/>
+      <line x1="84" y1="16" x2="88" y2="46" stroke="rgba(238,235,220,0.18)" stroke-width="0.5"/>
+    </g>
+
+    <!-- Pod chair 2 — rotated facing, right side -->
+    <g class="fi" id="pod-chair-2" transform="translate(690,500)" filter="url(#chalk)">
+      <ellipse cx="55" cy="0" rx="62" ry="36" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.7"/>
+      <ellipse cx="55" cy="4" rx="50" ry="28" fill="none" stroke="rgba(238,235,220,0.34)" stroke-width="0.6" stroke-dasharray="3,4"/>
+      <line x1="-7" y1="0" x2="-4" y2="34" stroke="rgba(238,235,220,0.68)" stroke-width="1.4"/>
+      <line x1="117" y1="0" x2="114" y2="34" stroke="rgba(238,235,220,0.64)" stroke-width="1.3"/>
+      <ellipse cx="55" cy="34" rx="58" ry="18" fill="none" stroke="rgba(238,235,220,0.76)" stroke-width="1.5"/>
+      <ellipse cx="55" cy="32" rx="44" ry="14" fill="none" stroke="rgba(238,235,220,0.30)" stroke-width="0.6"/>
+      <line x1="55" y1="52" x2="55" y2="82" stroke="rgba(238,235,220,0.72)" stroke-width="2.0"/>
+      <ellipse cx="55" cy="84" rx="38" ry="12" fill="none" stroke="rgba(238,235,220,0.65)" stroke-width="1.3"/>
+      <!-- Small side table between pods -->
+      <ellipse cx="140" cy="44" rx="22" ry="7" fill="none" stroke="rgba(238,235,220,0.70)" stroke-width="1.3"/>
+      <line x1="140" y1="51" x2="140" y2="80" stroke="rgba(238,235,220,0.66)" stroke-width="1.5"/>
+      <ellipse cx="140" cy="82" rx="14" ry="4" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- Items on side table -->
+      <ellipse cx="138" cy="40" rx="6" ry="2" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <line x1="138" y1="38" x2="136" y2="20" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <circle cx="135" cy="18" r="4" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.7" filter="url(#glow-micro)"/>
+    </g>
+
+    <!-- ── MATERIAL SAMPLE BOARD — wall-mounted, top centre ── -->
+    <g class="fi" id="sample-board" transform="translate(590,80)" filter="url(#chalk-fine)">
+      <!-- Main board frame — 3D iso -->
+      <polygon points="0,38 280,0 296,12 16,50" fill="none" stroke="rgba(238,235,220,0.82)" stroke-width="1.6"/>
+      <polygon points="0,38 0,200 16,212 16,50" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <polygon points="16,50 16,212 296,174 296,12" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="1.1"/>
+      <!-- Board header strip (title area) -->
+      <polygon points="0,38 280,0 296,12 16,50" fill="none" stroke="rgba(200,169,110,0.40)" stroke-width="0.7" stroke-dasharray="200,2"/>
+      <!-- Sample tile grid — 4×2 on face -->
+      <!-- Row 1 -->
+      <rect x="20" y="55" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <rect x="88" y="49" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.46)" stroke-width="0.9"/>
+      <rect x="156" y="43" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <rect x="224" y="37" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.8"/>
+      <!-- Row 2 -->
+      <rect x="20" y="119" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <rect x="88" y="113" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <rect x="156" y="107" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <rect x="224" y="101" width="58" height="58" fill="none" stroke="rgba(238,235,220,0.34)" stroke-width="0.7"/>
+      <!-- Sample textures — hatch patterns for different materials -->
+      <!-- Tile 1: marble (concentric rings) -->
+      <ellipse cx="49" cy="84" rx="20" ry="20" fill="none" stroke="rgba(238,235,220,0.15)" stroke-width="0.4"/>
+      <ellipse cx="49" cy="84" rx="12" ry="12" fill="none" stroke="rgba(238,235,220,0.12)" stroke-width="0.4"/>
+      <path d="M34,70 Q49,82 64,76" fill="none" stroke="rgba(238,235,220,0.10)" stroke-width="0.4"/>
+      <!-- Tile 2: wood grain (parallel lines) -->
+      <line x1="90" y1="52" x2="144" y2="50" stroke="rgba(238,235,220,0.12)" stroke-width="0.4"/>
+      <line x1="90" y1="60" x2="144" y2="58" stroke="rgba(238,235,220,0.10)" stroke-width="0.4"/>
+      <line x1="90" y1="68" x2="144" y2="66" stroke="rgba(238,235,220,0.10)" stroke-width="0.3"/>
+      <line x1="90" y1="76" x2="144" y2="74" stroke="rgba(238,235,220,0.09)" stroke-width="0.3"/>
+      <line x1="90" y1="84" x2="144" y2="82" stroke="rgba(238,235,220,0.08)" stroke-width="0.3"/>
+      <line x1="90" y1="92" x2="144" y2="90" stroke="rgba(238,235,220,0.08)" stroke-width="0.3"/>
+      <line x1="90" y1="100" x2="144" y2="98" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <!-- Tile 3: fabric weave (cross-hatch) -->
+      <line x1="160" y1="46" x2="160" y2="98" stroke="rgba(238,235,220,0.09)" stroke-width="0.3"/>
+      <line x1="170" y1="44" x2="170" y2="98" stroke="rgba(238,235,220,0.08)" stroke-width="0.3"/>
+      <line x1="180" y1="43" x2="180" y2="99" stroke="rgba(238,235,220,0.08)" stroke-width="0.3"/>
+      <line x1="190" y1="43" x2="190" y2="99" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <line x1="200" y1="43" x2="200" y2="99" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <line x1="160" y1="56" x2="212" y2="48" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <line x1="160" y1="70" x2="212" y2="62" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <line x1="160" y1="84" x2="212" y2="76" stroke="rgba(238,235,220,0.07)" stroke-width="0.3"/>
+      <!-- Tile 4: terrazzo dots -->
+      <circle cx="248" cy="58" r="2" fill="none" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+      <circle cx="258" cy="66" r="1.5" fill="none" stroke="rgba(200,169,110,0.35)" stroke-width="0.5"/>
+      <circle cx="242" cy="72" r="2" fill="none" stroke="rgba(200,169,110,0.38)" stroke-width="0.5"/>
+      <circle cx="270" cy="54" r="1.5" fill="none" stroke="rgba(200,169,110,0.30)" stroke-width="0.4"/>
+      <circle cx="262" cy="80" r="2" fill="none" stroke="rgba(200,169,110,0.35)" stroke-width="0.4"/>
+      <circle cx="250" cy="88" r="1.5" fill="none" stroke="rgba(200,169,110,0.28)" stroke-width="0.4"/>
+      <!-- Gold pin dots marking each sample -->
+      <circle cx="49" cy="55" r="2.5" fill="none" stroke="rgba(200,169,110,0.70)" stroke-width="0.8" filter="url(#glow-micro)"/>
+      <circle cx="117" cy="49" r="2.5" fill="none" stroke="rgba(200,169,110,0.65)" stroke-width="0.8" filter="url(#glow-micro)"/>
+      <circle cx="185" cy="43" r="2.5" fill="none" stroke="rgba(200,169,110,0.60)" stroke-width="0.8" filter="url(#glow-micro)"/>
+      <circle cx="253" cy="37" r="2.5" fill="none" stroke="rgba(200,169,110,0.55)" stroke-width="0.8" filter="url(#glow-micro)"/>
+      <!-- Board hanging wire/bracket -->
+      <line x1="60" y1="38" x2="60" y2="20" stroke="rgba(238,235,220,0.45)" stroke-width="0.7"/>
+      <line x1="220" y1="12" x2="220" y2="-6" stroke="rgba(238,235,220,0.42)" stroke-width="0.7"/>
+      <line x1="58" y1="20" x2="222" y2="-6" stroke="rgba(238,235,220,0.25)" stroke-width="0.5" stroke-dasharray="2,5"/>
+    </g>
+
+    <!-- ── RETAIL DISPLAY SHELVING — right side centre ── -->
+    <g class="fi" id="retail-shelving" transform="translate(900,220)" filter="url(#chalk)">
+      <!-- Tall unit frame — iso 3D -->
+      <polygon points="0,24 200,0 222,12 22,36" fill="none" stroke="rgba(238,235,220,0.85)" stroke-width="1.7"/>
+      <!-- Left side face -->
+      <polygon points="0,24 0,460 22,474 22,36" fill="none" stroke="rgba(238,235,220,0.65)" stroke-width="1.4"/>
+      <!-- Right/top face -->
+      <polygon points="22,36 22,474 222,450 222,12" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.2"/>
+      <!-- Bottom shelf -->
+      <polygon points="0,448 200,424 222,436 22,460" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.2"/>
+      <!-- Shelf 1 -->
+      <polygon points="0,344 200,320 222,332 22,356" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.1"/>
+      <polygon points="0,344 0,356 22,368 22,356" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.8"/>
+      <polygon points="22,356 22,368 222,344 222,332" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <!-- Shelf 2 -->
+      <polygon points="0,240 200,216 222,228 22,252" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.1"/>
+      <polygon points="0,240 0,252 22,264 22,252" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.8"/>
+      <polygon points="22,252 22,264 222,240 222,228" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.7"/>
+      <!-- Shelf 3 -->
+      <polygon points="0,136 200,112 222,124 22,148" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.2"/>
+      <polygon points="0,136 0,148 22,160 22,148" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <polygon points="22,148 22,160 222,136 222,124" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <!-- Back panel lines — vertical dividers -->
+      <line x1="74" y1="14" x2="96" y2="470" stroke="rgba(238,235,220,0.20)" stroke-width="0.5"/>
+      <line x1="148" y1="8" x2="170" y2="464" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <!-- Products on shelf 1 (top) — perfume bottles -->
+      <ellipse cx="40" cy="122" rx="10" ry="3.5" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.0"/>
+      <polygon points="30,122 30,90 50,88 50,120" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="0.9"/>
+      <ellipse cx="40" cy="88" rx="10" ry="3" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.8"/>
+      <line x1="40" y1="85" x2="40" y2="75" stroke="rgba(238,235,220,0.44)" stroke-width="0.9"/>
+      <ellipse cx="40" cy="73" rx="5" ry="2" fill="none" stroke="rgba(238,235,220,0.40)" stroke-width="0.7"/>
+      <!-- Second bottle -->
+      <ellipse cx="80" cy="116" rx="8" ry="3" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="0.9"/>
+      <polygon points="72,116 72,90 88,88 88,114" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="0.8"/>
+      <ellipse cx="80" cy="88" rx="8" ry="2.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.7"/>
+      <line x1="80" y1="85" x2="80" y2="76" stroke="rgba(238,235,220,0.40)" stroke-width="0.8"/>
+      <!-- Products on shelf 2 — small sculptures / art objects -->
+      <polygon points="120,228 140,222 144,240 124,246" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="0.9"/>
+      <polygon points="120,228 120,210 124,208 124,228" fill="none" stroke="rgba(238,235,220,0.42)" stroke-width="0.7"/>
+      <polygon points="124,208 124,228 144,218 144,196" fill="none" stroke="rgba(238,235,220,0.36)" stroke-width="0.6"/>
+      <!-- Small ceramic bowl -->
+      <ellipse cx="170" cy="234" rx="16" ry="5" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.0"/>
+      <path d="M154,234 Q170,224 186,234" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.8"/>
+      <!-- Products on shelf 3 (bottom) — fabric samples rolled -->
+      <ellipse cx="50" cy="340" rx="18" ry="6" fill="none" stroke="rgba(238,235,220,0.60)" stroke-width="1.0"/>
+      <line x1="32" y1="340" x2="32" y2="378" stroke="rgba(238,235,220,0.56)" stroke-width="1.0"/>
+      <line x1="68" y1="340" x2="68" y2="378" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <ellipse cx="50" cy="378" rx="18" ry="6" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="0.9"/>
+      <!-- Rolled tube lines -->
+      <ellipse cx="50" cy="354" rx="18" ry="6" fill="none" stroke="rgba(238,235,220,0.22)" stroke-width="0.4" stroke-dasharray="3,4"/>
+      <ellipse cx="50" cy="366" rx="18" ry="6" fill="none" stroke="rgba(238,235,220,0.18)" stroke-width="0.4" stroke-dasharray="3,4"/>
+      <!-- Second roll beside -->
+      <ellipse cx="100" cy="332" rx="16" ry="5" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="0.9"/>
+      <line x1="84" y1="332" x2="84" y2="368" stroke="rgba(238,235,220,0.50)" stroke-width="0.9"/>
+      <line x1="116" y1="332" x2="116" y2="368" stroke="rgba(238,235,220,0.46)" stroke-width="0.8"/>
+      <ellipse cx="100" cy="368" rx="16" ry="5" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.8"/>
+      <!-- Price tag labels hanging -->
+      <rect x="36" y="355" width="18" height="11" fill="none" stroke="rgba(200,169,110,0.50)" stroke-width="0.7"/>
+      <line x1="36" y1="355" x2="38" y2="348" stroke="rgba(200,169,110,0.40)" stroke-width="0.5"/>
+      <!-- Spotlight track at top of unit -->
+      <line x1="0" y1="8" x2="200" y2="-16" stroke="rgba(238,235,220,0.55)" stroke-width="1.2"/>
+      <ellipse cx="50" cy="2" rx="8" ry="3" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <ellipse cx="130" cy="-10" rx="8" ry="3" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <!-- Spot light cones -->
+      <line x1="50" y1="5" x2="44" y2="60" stroke="rgba(200,169,110,0.12)" stroke-width="0.5" stroke-dasharray="2,6"/>
+      <line x1="50" y1="5" x2="56" y2="60" stroke="rgba(200,169,110,0.12)" stroke-width="0.5" stroke-dasharray="2,6"/>
+      <line x1="130" y1="-7" x2="124" y2="50" stroke="rgba(200,169,110,0.10)" stroke-width="0.5" stroke-dasharray="2,6"/>
+      <line x1="130" y1="-7" x2="136" y2="50" stroke="rgba(200,169,110,0.10)" stroke-width="0.5" stroke-dasharray="2,6"/>
+    </g>
+
+    <!-- ── HOTEL LOBBY PENDANT — grand statement light, upper centre ── -->
+    <g class="fi" id="lobby-pendant" transform="translate(670,10)" filter="url(#chalk)">
+      <!-- Ceiling canopy plate -->
+      <ellipse cx="100" cy="14" rx="28" ry="9" fill="none" stroke="rgba(238,235,220,0.72)" stroke-width="1.4"/>
+      <polygon points="72,14 128,14 130,22 70,22" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- 5 suspension cables -->
+      <line x1="72" y1="18" x2="40" y2="80" stroke="rgba(238,235,220,0.45)" stroke-width="0.7" stroke-dasharray="2,4"/>
+      <line x1="85" y1="14" x2="65" y2="80" stroke="rgba(238,235,220,0.45)" stroke-width="0.7" stroke-dasharray="2,4"/>
+      <line x1="100" y1="14" x2="100" y2="80" stroke="rgba(238,235,220,0.50)" stroke-width="0.8" stroke-dasharray="2,4"/>
+      <line x1="115" y1="14" x2="135" y2="80" stroke="rgba(238,235,220,0.45)" stroke-width="0.7" stroke-dasharray="2,4"/>
+      <line x1="128" y1="18" x2="160" y2="80" stroke="rgba(238,235,220,0.45)" stroke-width="0.7" stroke-dasharray="2,4"/>
+      <!-- Main shade — wide flared trumpet -->
+      <polygon points="22,80 178,80 200,120 0,120" fill="none" stroke="rgba(238,235,220,0.90)" stroke-width="1.9"/>
+      <!-- Top ellipse of shade -->
+      <ellipse cx="100" cy="80" rx="78" ry="24" fill="none" stroke="rgba(238,235,220,0.85)" stroke-width="1.7"/>
+      <!-- Bottom ellipse of shade -->
+      <ellipse cx="100" cy="120" rx="100" ry="30" fill="none" stroke="rgba(238,235,220,0.80)" stroke-width="1.5"/>
+      <!-- Interior shade rings -->
+      <ellipse cx="100" cy="95" rx="88" ry="27" fill="none" stroke="rgba(238,235,220,0.25)" stroke-width="0.5" stroke-dasharray="3,5"/>
+      <ellipse cx="100" cy="108" rx="94" ry="28" fill="none" stroke="rgba(238,235,220,0.20)" stroke-width="0.5" stroke-dasharray="3,5"/>
+      <!-- Shade ribs / fluting -->
+      <line x1="40" y1="80" x2="22" y2="120" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <line x1="58" y1="76" x2="44" y2="118" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <line x1="76" y1="74" x2="66" y2="117" stroke="rgba(238,235,220,0.16)" stroke-width="0.4"/>
+      <line x1="100" y1="73" x2="100" y2="118" stroke="rgba(238,235,220,0.16)" stroke-width="0.4"/>
+      <line x1="124" y1="74" x2="134" y2="117" stroke="rgba(238,235,220,0.16)" stroke-width="0.4"/>
+      <line x1="142" y1="76" x2="156" y2="118" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <line x1="160" y1="80" x2="178" y2="120" stroke="rgba(238,235,220,0.20)" stroke-width="0.4"/>
+      <!-- Bulb cluster inside -->
+      <circle cx="84" cy="110" r="7" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.0" filter="url(#glow-warm)"/>
+      <circle cx="100" cy="112" r="8" fill="none" stroke="rgba(238,235,220,0.62)" stroke-width="1.1" filter="url(#glow-warm)"/>
+      <circle cx="116" cy="110" r="7" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.0" filter="url(#glow-warm)"/>
+      <!-- Gold band on shade bottom -->
+      <ellipse cx="100" cy="122" rx="100" ry="30" fill="none" stroke="rgba(200,169,110,0.55)" stroke-width="0.9"/>
+      <!-- Light cone projection -->
+      <line x1="0" y1="120" x2="-60" y2="220" stroke="rgba(200,169,110,0.08)" stroke-width="0.6" stroke-dasharray="3,8"/>
+      <line x1="200" y1="120" x2="260" y2="220" stroke="rgba(200,169,110,0.08)" stroke-width="0.6" stroke-dasharray="3,8"/>
+      <line x1="100" y1="150" x2="100" y2="260" stroke="rgba(200,169,110,0.06)" stroke-width="0.5" stroke-dasharray="3,8"/>
+    </g>
+
+    <!-- ── DRAFTING TABLE / DESIGN WORKSTATION — lower centre ── -->
+    <g class="fi" id="design-table" transform="translate(545,590)" filter="url(#chalk)">
+      <!-- Tilted worktop — drafting angle -->
+      <polygon points="0,54 260,4 290,24 30,74" fill="none" stroke="rgba(238,235,220,0.88)" stroke-width="1.8"/>
+      <!-- Front apron -->
+      <polygon points="0,54 0,90 30,106 30,74" fill="none" stroke="rgba(238,235,220,0.65)" stroke-width="1.3"/>
+      <!-- Right side -->
+      <polygon points="30,74 30,106 290,60 290,24" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.1"/>
+      <!-- Angled top surface tilt detail line -->
+      <polygon points="4,50 256,6 286,26 34,70" fill="none" stroke="rgba(238,235,220,0.28)" stroke-width="0.6" stroke-dasharray="4,3"/>
+      <!-- Blueprint / drawing on table top -->
+      <line x1="40" y1="38" x2="240" y2="8" stroke="rgba(238,235,220,0.18)" stroke-width="0.5" stroke-dasharray="2,4"/>
+      <line x1="40" y1="48" x2="240" y2="18" stroke="rgba(238,235,220,0.14)" stroke-width="0.4" stroke-dasharray="2,4"/>
+      <line x1="40" y1="58" x2="240" y2="28" stroke="rgba(238,235,220,0.12)" stroke-width="0.3" stroke-dasharray="2,4"/>
+      <!-- Mini floor plan sketch on table -->
+      <rect x="60" y="16" width="80" height="36" fill="none" stroke="rgba(200,169,110,0.38)" stroke-width="0.6" transform="skewX(-6)"/>
+      <line x1="62" y1="34" x2="138" y2="22" stroke="rgba(200,169,110,0.24)" stroke-width="0.4" transform="skewX(-6)"/>
+      <line x1="100" y1="16" x2="100" y2="52" stroke="rgba(200,169,110,0.20)" stroke-width="0.4" transform="skewX(-6)"/>
+      <!-- Parallel ruler on surface -->
+      <line x1="30" y1="62" x2="270" y2="20" stroke="rgba(238,235,220,0.40)" stroke-width="1.0"/>
+      <line x1="30" y1="66" x2="270" y2="24" stroke="rgba(238,235,220,0.28)" stroke-width="0.5"/>
+      <!-- Triangle set square -->
+      <polygon points="190,22 230,16 230,40" fill="none" stroke="rgba(238,235,220,0.50)" stroke-width="0.8"/>
+      <!-- Pen / marker -->
+      <line x1="150" y1="50" x2="220" y2="38" stroke="rgba(200,169,110,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="220" y1="38" x2="228" y2="36" stroke="rgba(238,235,220,0.70)" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Mug on table corner -->
+      <ellipse cx="26" cy="68" rx="11" ry="4" fill="none" stroke="rgba(238,235,220,0.65)" stroke-width="1.2"/>
+      <line x1="15" y1="68" x2="15" y2="100" stroke="rgba(238,235,220,0.60)" stroke-width="1.0"/>
+      <line x1="37" y1="68" x2="37" y2="100" stroke="rgba(238,235,220,0.56)" stroke-width="1.0"/>
+      <ellipse cx="26" cy="100" rx="11" ry="4" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="1.0"/>
+      <!-- Steam wisps from mug -->
+      <path d="M22,66 Q18,56 22,48" fill="none" stroke="rgba(238,235,220,0.22)" stroke-width="0.5"/>
+      <path d="M28,64 Q32,54 28,46" fill="none" stroke="rgba(238,235,220,0.18)" stroke-width="0.4"/>
+      <!-- Legs — adjustable angle trestle -->
+      <line x1="10" y1="88" x2="0" y2="148" stroke="rgba(238,235,220,0.68)" stroke-width="1.5"/>
+      <line x1="28" y1="104" x2="22" y2="164" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <line x1="268" y1="58" x2="264" y2="120" stroke="rgba(238,235,220,0.62)" stroke-width="1.3"/>
+      <line x1="286" y1="52" x2="290" y2="112" stroke="rgba(238,235,220,0.65)" stroke-width="1.3"/>
+      <!-- Cross brace -->
+      <line x1="4" y1="110" x2="280" y2="76" stroke="rgba(238,235,220,0.22)" stroke-width="0.6" stroke-dasharray="4,5"/>
+    </g>
+
+    <!-- ── TALL HOTEL LAMP TORCHIERE — right centre vertical accent ── -->
+    <g class="fi" id="torchiere-lamp" transform="translate(1090,300)" filter="url(#chalk)">
+      <!-- Heavy base -->
+      <polygon points="0,20 80,8 90,16 10,28" fill="none" stroke="rgba(238,235,220,0.78)" stroke-width="1.5"/>
+      <polygon points="0,20 0,36 10,42 10,28" fill="none" stroke="rgba(238,235,220,0.58)" stroke-width="1.1"/>
+      <polygon points="10,28 10,42 90,30 90,16" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.9"/>
+      <!-- Pole shaft — very tall -->
+      <line x1="45" y1="18" x2="42" y2="-280" stroke="rgba(238,235,220,0.82)" stroke-width="1.8"/>
+      <!-- Pole detail rings -->
+      <ellipse cx="43" cy="-80" rx="5" ry="1.5" fill="none" stroke="rgba(238,235,220,0.44)" stroke-width="0.8"/>
+      <ellipse cx="43" cy="-160" rx="5" ry="1.5" fill="none" stroke="rgba(238,235,220,0.38)" stroke-width="0.7"/>
+      <!-- Upward-facing torch cup -->
+      <ellipse cx="42" cy="-280" rx="36" ry="11" fill="none" stroke="rgba(238,235,220,0.88)" stroke-width="1.8"/>
+      <!-- Cup inner -->
+      <ellipse cx="42" cy="-278" rx="28" ry="8" fill="none" stroke="rgba(238,235,220,0.52)" stroke-width="1.0"/>
+      <!-- Cup sides tapering down -->
+      <line x1="6" y1="-280" x2="14" y2="-252" stroke="rgba(238,235,220,0.80)" stroke-width="1.5"/>
+      <line x1="78" y1="-280" x2="70" y2="-252" stroke="rgba(238,235,220,0.76)" stroke-width="1.4"/>
+      <ellipse cx="42" cy="-252" rx="28" ry="8" fill="none" stroke="rgba(238,235,220,0.68)" stroke-width="1.3"/>
+      <!-- Bulb glow upward -->
+      <circle cx="42" cy="-276" r="8" fill="none" stroke="rgba(238,235,220,0.55)" stroke-width="1.0" filter="url(#glow-warm)"/>
+      <circle cx="42" cy="-276" r="4" fill="none" stroke="rgba(238,235,220,0.48)" stroke-width="0.8"/>
+      <!-- Upward light fan -->
+      <line x1="6" y1="-286" x2="-20" y2="-360" stroke="rgba(200,169,110,0.10)" stroke-width="0.6" stroke-dasharray="3,7"/>
+      <line x1="42" y1="-292" x2="42" y2="-380" stroke="rgba(200,169,110,0.10)" stroke-width="0.6" stroke-dasharray="3,7"/>
+      <line x1="78" y1="-286" x2="104" y2="-360" stroke="rgba(200,169,110,0.10)" stroke-width="0.6" stroke-dasharray="3,7"/>
+      <!-- Gold band on cup rim -->
+      <ellipse cx="42" cy="-281" rx="36" ry="11" fill="none" stroke="rgba(200,169,110,0.50)" stroke-width="0.7"/>
+    </g>
+
     <!-- ──────────────────────────────────────────────────────────────
          BLUEPRINT ANNOTATIONS — dimension lines, axes
     ─────────────────────────────────────────────────────────────── -->

@@ -593,6 +593,86 @@ html, body {
   animation: strokeOn 2.5s 2.88s ease forwards;
 }
 
+/* ── COMMERCIAL CENTRE ZONE — new elements ── */
+
+/* Reception desk — centrepiece, drawn early */
+#reception-desk {
+  animation: drawFade 2.8s 0.06s ease forwards, floatA 16s 4.0s ease-in-out infinite;
+}
+#reception-desk polygon, #reception-desk line, #reception-desk path,
+#reception-desk ellipse, #reception-desk circle, #reception-desk rect {
+  animation: strokeOn 3.4s 0.06s ease forwards;
+}
+
+/* Concierge chair behind desk */
+#concierge-chair {
+  animation: drawFade 2.2s 0.38s ease forwards, floatC 14s 4.2s ease-in-out infinite;
+}
+#concierge-chair polygon, #concierge-chair line, #concierge-chair ellipse, #concierge-chair circle {
+  animation: strokeOn 2.7s 0.38s ease forwards;
+}
+
+/* Pod chair 1 */
+#pod-chair-1 {
+  animation: drawFade 2.4s 0.65s ease forwards, floatB 13s 4.5s ease-in-out infinite;
+}
+#pod-chair-1 ellipse, #pod-chair-1 line, #pod-chair-1 polygon, #pod-chair-1 circle {
+  animation: strokeOn 2.9s 0.65s ease forwards;
+}
+
+/* Pod chair 2 + side table */
+#pod-chair-2 {
+  animation: drawFade 2.3s 0.80s ease forwards, floatC 12s 4.8s ease-in-out infinite;
+}
+#pod-chair-2 ellipse, #pod-chair-2 line, #pod-chair-2 polygon, #pod-chair-2 circle {
+  animation: strokeOn 2.8s 0.80s ease forwards;
+}
+
+/* Material sample board */
+#sample-board {
+  animation: drawFade 2.5s 0.22s ease forwards, floatD 18s 3.8s ease-in-out infinite;
+}
+#sample-board polygon, #sample-board line, #sample-board rect,
+#sample-board ellipse, #sample-board circle, #sample-board path {
+  animation: strokeOn 3.0s 0.22s ease forwards;
+}
+
+/* Retail display shelving */
+#retail-shelving {
+  animation: drawFade 2.6s 0.15s ease forwards, floatA 20s 3.6s ease-in-out infinite;
+}
+#retail-shelving polygon, #retail-shelving line, #retail-shelving ellipse,
+#retail-shelving circle, #retail-shelving rect, #retail-shelving path {
+  animation: strokeOn 3.1s 0.15s ease forwards;
+}
+
+/* Hotel lobby pendant */
+#lobby-pendant {
+  animation: drawFade 2.4s 0.18s ease forwards, floatF 12s 3.8s ease-in-out infinite;
+}
+#lobby-pendant polygon, #lobby-pendant line, #lobby-pendant ellipse,
+#lobby-pendant circle, #lobby-pendant rect, #lobby-pendant path {
+  animation: strokeOn 2.9s 0.18s ease forwards;
+}
+
+/* Design drafting table */
+#design-table {
+  animation: drawFade 2.2s 1.10s ease forwards, floatE 15s 4.8s ease-in-out infinite;
+}
+#design-table polygon, #design-table line, #design-table ellipse,
+#design-table circle, #design-table rect, #design-table path {
+  animation: strokeOn 2.7s 1.10s ease forwards;
+}
+
+/* Torchiere tall lamp */
+#torchiere-lamp {
+  animation: drawFade 2.0s 0.55s ease forwards, floatF 10s 3.8s ease-in-out infinite;
+}
+#torchiere-lamp polygon, #torchiere-lamp line, #torchiere-lamp ellipse,
+#torchiere-lamp circle {
+  animation: strokeOn 2.5s 0.55s ease forwards;
+}
+
 /* Annotations — last to appear */
 .annot {
   opacity: 0;
